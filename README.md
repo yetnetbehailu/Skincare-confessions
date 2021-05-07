@@ -32,3 +32,15 @@ _The aim of this project is to combine my current knowledge in HTML, CSS and Jav
    - _"As a **user**, I'd like to mark reviews I want to preserve. _"
 
    - _"As a **user**, I want to be able to upload images of what I review, so that it is easier to associate the actual item with item name/description."_
+
+- ### Site Owner Goals ###
+
+    - _"As **site owner**, I want to connect like-minded individuals and give them the opportunity come together and share their experiences. "_
+
+    - _"As **site owner**, I would like to collect users e-mail addresses for newsletters to expand the community."_
+ 
+    - _"As **site owner**, I want to raise awareness of the organization and clarify its mission."_
+ 
+    - _"As **site owner**, I want my application to become the number 1 search engine for skincare reviews."_
+ 
+
