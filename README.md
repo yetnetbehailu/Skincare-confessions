@@ -42,5 +42,24 @@ _The aim of this project is to combine my current knowledge in HTML, CSS and Jav
     - _"As **site owner**, I want to raise awareness of the organization and clarify its mission."_
  
     - _"As **site owner**, I want my application to become the number 1 search engine for skincare reviews."_
- 
+
+**Below is a table depiction of site feature opportunities evaluated in terms of importance for the organization and measuring of how realistic the features are to implement &#40;viability and feasibility&#41;. Measured on a scale of 1 &#91;least&#93; - 5 &#91;most&#93;.**
+
+| Opportunity                                 | Importance | Viability / Feasibility |
+| :------------------------------------------ | :--------: | :---------------------: |
+| Create an Online Presence                   |     5      |            5            |
+| Register                                    |     5      |            5            |
+| Login / Logout                              |     5      |            5            |
+| Create / Update / Delete Reviews            |     5      |            5            |
+| Responsiveness                              |     5      |            4            |
+| Search Reviews By Keywords                  |     4      |            5            |
+| Show Reviews By Category                    |     4      |            5            |
+| Subscribe To Newsletter                     |     4      |            4            |
+| Manage Review Category &#40;Admin only&#41; |     3      |            5            |
+| Page 404                                    |     3      |            5            |
+| Image Upload For Each Review                |     4      |            2            |
+| Pagination                                  |     3      |            3            |
+| Rating of Reviews                           |     3      |            3            |
+| “Like” Reaction on Reviews                  |     2      |            2            |
+| Resetting Password When Users Forget It     |     5      |            2            |
 
