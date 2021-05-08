@@ -43,6 +43,8 @@ _The aim of this project is to combine my current knowledge in HTML, CSS and Jav
  
     - _"As **site owner**, I want my application to become the number 1 search engine for skincare reviews."_
 
+     - _"As **site owner**, I want a simple visually appealing application easy to use across various screen devices."_
+
 **Below is a table depiction of site feature opportunities evaluated in terms of importance for the organization and measuring of how realistic the features are to implement &#40;viability and feasibility&#41;. Measured on a scale of 1 &#91;least&#93; - 5 &#91;most&#93;.**
 
 | Opportunity                                 | Importance | Viability / Feasibility |
@@ -62,4 +64,58 @@ _The aim of this project is to combine my current knowledge in HTML, CSS and Jav
 | Rating of Reviews                           |     3      |            3            |
 | “Like” Reaction on Reviews                  |     2      |            2            |
 | Resetting Password When Users Forget It     |     5      |            2            |
+
+### The Scope Plane
+
+The essential functional specifications and content for the website which are outlined below were determined based on users and site owners wants and needs, so the site will deliver specific for its intended use. 
+
+**Features & Content this project will include;**
+
+- All pages
+   - A simple navigation bar containing site overview list, allowing users to easily navigate across the different site pages. On smaller resolution devices such as mobile, tablet the navbar is collapsed into a burger drop down menu, providing a cleaner aesthetic and better user experience. A side bar navigation appears when the burger icon is clicked. 
+   - Footer which features links to social media channels opening in new window tabs.
+
+- Registration page which allows a user to create a personal account choosing username and password. Below the form is a link re-directing to the login page for existing users. For the account to be created, all fields must pass validation:
+   - Username must be between 3 and 15 characters
+   - Password must be at least 8 characters
+   - Confirm password field should match the password field
+
+
+- Login page features the form with "username" and "password" fields which must be filled and match the ones in the database to access users personal account. If entered inaccurately when submitted a flash message will display an error description, to alert user. A link below form will help re-direct already registered users to login page.
+
+- Logout link button will end user session and redirect to the homepage.
+
+- Subscription function collecting users e-mail addresses for users interested in receiving newsletter updates.
+
+- Manage categories page for authorized admin use only, to create update and delete category list display.
+
+- Create / Update / Delete functions;
+   On users Add Reviews page is where personal reviews are created. Ones all the criterias on the validation form are meet the review can be added;
+
+   - Product category of review must be selected 
+
+   - Product brand that's being subject of the review is required, must be between 1 and 25 characters.
+
+   - A Product description is required and must contain between 10 and 2000 characters.
+
+   - Product cost will be required information
+   
+   - Reviews must be rated a score between 1 and 5 star icons.
+
+   - There will be the option to upload an image. If a review is added without an image, a default image will be adapted.
+
+   - Search tags will be optional to add 
+
+   - On users My Review page they are able to view all their entries, would they however want to make a new entry then there will be an add button which would re-direct to the Add Review page. Otherwise if user wishes to make modifications there will also be an Edit button available which would re-direct user to their personal edit page, where same validation form as in add review page will be displayed. A message will appear confirming the success or failure of the update made. If a user wishes to delete their entry there will also be a delete button presented on the My reviews page, the review will only be deleted ones the user respond to the confirmation dialog box.
+
+- Pagination will be another existing feature on the website as the community grows and the number of reviews increases this will improve the user experience. 
+
+- 404 page that appears for invalid URL directing users back to Home page will be provided.
+
+- Reset Password function that enables users who happen to forget their password the opportunity to re-new it.
+
+- The informative content that will be present on the website are;
+   - Text presentation about the web application and text description of each user review.
+   - Images (hero image, logo, product images) will appear on site as well. 
+   - Icons signalmen that provides predictability.
 
