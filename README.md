@@ -119,3 +119,27 @@ The essential functional specifications and content for the website which are ou
    - Images (hero image, logo, product images) will appear on site as well. 
    - Icons signalmen that provides predictability.
 
+### The Structure Plane
+
+The main focus of the structure plane is how users recive and get to specific information on the website.
+
+- Using the navigation bar conviniently placed top of website, users can easily navigate the website to find what they are interestend in. 
+
+- For a more specific & qucik search, on the Browse Reviews and My Reviews collection page users can also opt to use the search bar adapting keywords matching their specific quest.
+
+- Pages available for public display are Home, Browse Reviews, Register and Login.
+
+- To access full site features such as adding, updating and deleting own reviews also having access to a personal review collection page user will have to register and sign in.
+
+- Note Admin user account has additional access to Manage Categories page.
+
+-  To not overwhelm the user, text information is keept brief with focused content information. Attention grabbing and descriptive imagery objects also incorporated on the site (e.g logo). Connection points are provided via links to Social Media in Footer. 
+
+- Page 404 that appears for invalid URL directing users back to Home page. Design structure similar to the other website components so that the layout remains consistent and user finds familiarity.
+
+- Full description of a review post are accessible by any user on Review details page which renders when a user clicks on a post. 
+
+Below is a chart of the database structure showing the collections that will be retaining documented data. 
+> **Note:**<br>
+> Chart constructed before site develpoment process using [dbdiagram.io](https://dbdiagram.io) 
+![dbdiagram.io](database.png)
