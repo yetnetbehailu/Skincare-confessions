@@ -121,11 +121,11 @@ The essential functional specifications and content for the website which are ou
 
 ### The Structure Plane
 
-The main focus of the structure plane is how users recive and get to specific information on the website.
+The main focus of the structure plane is how users receive and get to specific information on the website.
 
-- Using the navigation bar conviniently placed top of website, users can easily navigate the website to find what they are interestend in. 
+- Using the navigation bar conveniently placed top of website, users can easily navigate the website to find what they are interested in. 
 
-- For a more specific & qucik search, on the Browse Reviews and My Reviews collection page users can also opt to use the search bar adapting keywords matching their specific quest.
+- For a more specific & quick search, on the Browse Reviews and My Reviews collection page users can also opt to use the search bar adapting keywords matching their specific quest.
 
 - Pages available for public display are Home, Browse Reviews, Register and Login.
 
@@ -133,7 +133,7 @@ The main focus of the structure plane is how users recive and get to specific in
 
 - Note Admin user account has additional access to Manage Categories page.
 
--  To not overwhelm the user, text information is keept brief with focused content information. Attention grabbing and descriptive imagery objects also incorporated on the site (e.g logo). Connection points are provided via links to Social Media in Footer. 
+-  To not overwhelm the user, text information is kept brief with focused content information. Attention grabbing and descriptive imagery objects also incorporated on the site (e.g logo). Connection points are provided via links to Social Media in Footer. 
 
 - Page 404 that appears for invalid URL directing users back to Home page. Design structure similar to the other website components so that the layout remains consistent and user finds familiarity.
 
@@ -141,5 +141,31 @@ The main focus of the structure plane is how users recive and get to specific in
 
 Below is a chart of the database structure showing the collections that will be retaining documented data. 
 > **Note:**<br>
-> Chart constructed before site develpoment process using [dbdiagram.io](https://dbdiagram.io) 
+> Chart constructed before site development process using [dbdiagram.io](https://dbdiagram.io) 
 ![dbdiagram.io](database.png)
+
+### The Skeleton Plane 
+Before starting the development wireframe sketches were made using [Balsamiq wireframes](https://balsamiq.cloud/#). These display the actual arrangement of the various pieces of content on the website. Which makes for a perfect guideline during development of the interface, navigation, and information design. 
+
+- [Wireframes: Home Page](wireframes/home-wireframes.png)
+
+- [Wireframes: About Page](wireframes/about-wireframes.png)
+
+- [Wireframes: Browse Reviews Page](wireframes/browse-wireframes.png)
+
+- [Wireframes: Login & Register Pages](wireframes/login-register-wireframes.png)
+
+- [Wireframes: Add Reviews](wireframes/add_reviews-wireframes.png)
+
+- [Wireframes: My Reviews](wireframes/my_reviews-wireframes.png)
+
+- [Wireframes: Review_details](wireframes/review_details-wireframes.png)
+
+- [Wireframes: Manage Category](wireframes/manage_categories-wireframes.png)
+
+- [Wireframes: Edit Category](wireframes/edit_categories-wireframes.png)
+
+- [Wireframes: Review details Category](wireframes/review_details-wireframes.png)
+
+- [Wireframes: Page 404](wireframes/page_404-wireframes.png)
+
