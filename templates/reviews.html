@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADD REVIEW</title>
-</head>
-<body>
+{% extends 'base.html'%}
+{% block content %}
     {% for review in reviews %}
         Category:{{ review.category_name }}<br>
         Product brand:{{ review.product_name }}<br>
@@ -19,5 +12,4 @@
         Posted by:{{ review.added_by }}<br>
         Created:{{ review.created_at }}<br>
     {% endfor %}
-</body>
-</html>
+{% endblock %}
