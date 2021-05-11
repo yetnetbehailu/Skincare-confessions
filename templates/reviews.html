@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD REVIEW</title>
+</head>
+<body>
+    {% for review in reviews %}
+        Category:{{ review.category_name }}<br>
+        Product brand:{{ review.product_name }}<br>
+        Product review:{{ review.product_description }}<br>
+        Price:{{ review.price }}<br>
+        Search tags:{{ review.search_tags }}<br>
+        Vegan:{{ review.is_vegan }}<br>
+        Rating:{{ review.rate }}<br>
+        Image:{{ review.image_url }}<br>
+        Posted by:{{ review.added_by }}<br>
+        Created:{{ review.created_at }}<br>
+    {% endfor %}
+</body>
+</html>
