@@ -142,7 +142,7 @@ The main focus of the structure plane is how users receive and get to specific i
 Below is a chart of the database structure showing the collections that will be retaining documented data. 
 > **Note:**<br>
 > Chart constructed before site development process using [dbdiagram.io](https://dbdiagram.io) 
-![dbdiagram.io](database.png)
+![dbdiagram.io](static/img/database.png)
 
 ### The Skeleton Plane 
 Before starting the development wireframe sketches were made using [Balsamiq wireframes](https://balsamiq.cloud/#). These display the actual arrangement of the various pieces of content on the website. Which makes for a perfect guideline during development of the interface, navigation, and information design. 
