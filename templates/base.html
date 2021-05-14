@@ -18,12 +18,51 @@
         <div class="wrapper">
             <!-- Bootstrap sidebar- modified https://bootstrapious.com/tutorial/sidebar/index2.html -->
             <!-- Topnav displayed -->
-                <nav class="navbar bg-white">
+                <nav id="topnav" class="navbar bg-white">
                     <div class="container-fluid">
-                        <button type="button" id="sidebarCollapse" class="btn burgerBtn"> 
-                            <i class="fas fa-align-left"></i>
-                        </button>
-                        <h6 class="header-title ">Skincare Confessions<img class="small-logo" src="static/img/mobile-logo.jpg" alt="Skincare confessions logo"></h6> 
+                        
+                            <button type="button" id="sidebarCollapse" class="btn burgerBtn"> 
+                                <i class="fas fa-align-left"></i>
+                            </button>
+                            <h6 class="header-title ">Skincare Confessions<img class="small-logo" src="static/img/mobile-logo.jpg" alt="Skincare confessions logo"></h6> 
+                      
+                        <ul class="top-menu">
+                            <li class="active">
+                                <a href="#home"><i class="fas fa-home"></i> HOME <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fas fa-align-left"></i> ABOUT US</a>
+                            </li>
+                            <li>
+                                <a href="#browseSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="far fa-comment-alt"></i> BROWSE REVIEWS</a>
+                                <ul class="collapse" id="browseSubmenu">
+                                    <li>
+                                        <a href="#">Category-name 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Category-name 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Category-name 3</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fas fa-user"></i> MY REVIEWS</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fas fa-plus-square"></i> ADD REVIEWS</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fas fa-sign-in-alt"></i> LOGOUT</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fas fa-sign-in-alt"></i> LOGIN</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fas fa-user-plus"></i> REGISTER</a>
+                            </li>
+                        </ul>
                     </div>
                 </nav>
             <!-- Sidebar slide in -->
@@ -31,10 +70,9 @@
                 <div class="sidebar-header">
                     <h3>SKINCARE CONFESSIONS <i class="fas fa-leaf"></i></h3>
                 </div>
-    
                 <ul class="components">
                     <li class="active">
-                        <a href="#home"><i class="fas fa-home"></i> HOME</a>
+                        <a href="#home"><i class="fas fa-home"></i> HOME <span class="sr-only">(current)</span></a>
                     </li>
                     <li>
                         <a href="#"><i class="fas fa-align-left"></i> ABOUT US</a>
