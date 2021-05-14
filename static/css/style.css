@@ -57,8 +57,8 @@ body {
 }
 
 #sidebar a {
-    padding: 10px;
-    display: block;
+    padding: 10px 10px 10px 25px;
+    display: inline-block;
     color: #759e71;
     text-decoration: none;
 }
@@ -97,6 +97,19 @@ a[data-toggle="collapse"] {
     margin: 5px;
 }
 
+/* ---------------------------------------------------
+    Hover Effects
+----------------------------------------------------- */
+.hvr-expand {
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.hvr-expand:hover,
+.hvr-expand:focus,
+.hvr-expand:active {
+    transform: scale(1.1);
+}
 
 /* ---------------------------------------------------
     MEDIAQUERIES
