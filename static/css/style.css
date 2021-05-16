@@ -150,6 +150,43 @@ a[data-toggle="collapse"] {
     color: purple;
   
 }
+
+/* ---------------------------------------------------
+    Register page
+----------------------------------------------------- */
+.register-form {
+    display: flex;
+    justify-content: center;
+    font-family: 'Vollkorn', Poppins;
+}
+
+.form-control-lg { 
+    border-top: 0px;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    padding: 0 12px 0;
+}  
+
+.form-group input:focus {
+    outline-style: none;
+    box-shadow: 0 3px 0 rgb(120 146 106);
+    border-bottom: none;
+    background-color: #dbffc9;
+}
+
+.form-group i {
+    margin-left: -23px;
+}
+
+.submitBtn {
+    text-align: center;
+}
+
+.redirect-link {
+    text-align: center;
+}
+
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
