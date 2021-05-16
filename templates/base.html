@@ -60,7 +60,7 @@
                                 <a href="#" class="hvr-expand"><i class="fas fa-sign-in-alt"></i> LOGIN</a>
                             </li>
                             <li>
-                                <a href="#" class="hvr-expand"><i class="fas fa-user-plus"></i> REGISTER</a>
+                                <a href="{{url_for('register')}}" class="hvr-expand"><i class="fas fa-user-plus"></i> REGISTER</a>
                             </li>
                         </ul>
                     </div>
@@ -107,13 +107,13 @@
                         <a href="#" class="hvr-expand"><i class="fas fa-sign-in-alt"></i> LOGIN</a>
                     </li>
                     <li>
-                        <a href="#" class="hvr-expand"><i class="fas fa-user-plus"></i> REGISTER</a>
+                        <a href="{{url_for('register')}}" class="hvr-expand"><i class="fas fa-user-plus"></i> REGISTER</a>
                     </li>
                 </ul>
             </nav>
         </div>
         <!-- Page Content  -->
-        <div class="page container">
+        <div class="page">
             {% block content%} 
             {% endblock %}
             </div>
