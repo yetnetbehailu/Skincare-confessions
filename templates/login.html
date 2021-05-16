@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content%}
+    <div class="login-form">
+        <form method="POST" action="">
+            <!-- Username input -->
+            <div class="form-group">
+                {{form.hidden_tag()}}
+                <h3 class="text-center"> Login</h3>
+                {{ form.username.label(class="form-label d-block mb-0")}}
+                <i class="fas fa-user"></i>{{ form.username(class="form-control-lg mb-3", placeholder="Enter username")}}
+            </div>
+            <!-- Password input  -->
+            <div class="form-group">
+                {{ form.password.label (class="form-label d-block mb-0")}}
+                <i class="fas fa-lock"></i>{{ form.password(class="form-control-lg mb-3", placeholder="Enter password")}}
+            </div>
+            <!-- Login Button  -->
+            <div class="submitBtn">
+                {{ form.submit(class=" btn-outline w-100")}}
+            </div>
+            <!-- Link redirect to Register page -->
+            <div class="redirect-link pt-2">
+                <small class="text-muted">
+                    Don't have an account <a href="{{url_for('register')}}">Create one!</a>
+                </small>
+            </div>
+        </form>
+    </div>    
+{% endblock %}

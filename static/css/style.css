@@ -152,7 +152,7 @@ a[data-toggle="collapse"] {
 }
 
 /* ---------------------------------------------------
-    Register page
+    Register - Login pages styling
 ----------------------------------------------------- */
 .register-form {
     display: flex;
@@ -185,6 +185,12 @@ a[data-toggle="collapse"] {
 
 .redirect-link {
     text-align: center;
+}
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    font-family: 'Vollkorn', Poppins;
 }
 
 /* ---------------------------------------------------
