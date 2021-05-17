@@ -5,7 +5,8 @@
             <!-- Username input -->
             <div class="form-group">
                 {{form.hidden_tag()}}
-                <h3 class="text-center">Create Account</h3>
+                <img class="psst" src="static/img/psst.jpg" alt="gossip girls"><h5 class="text-center m-0">Psst...</h5>
+                <h3 class="text-center">Create an account</h3>
                 {{ form.username.label(class="form-label d-block mb-0")}}
                 {% if form.username.errors %}
                     {{ form.username(class="form-control-lg mb-3 is-invalid", placeholder="Enter username")}}
