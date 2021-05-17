@@ -28,10 +28,10 @@
                       
                         <ul class="top-menu">
                             <li class="active">
-                                <a href="#home" class="hvr-expand"><i class="fas fa-home"></i> HOME <span class="sr-only">(current)</span></a>
+                                <a href="{{url_for('home')}}" class="hvr-expand"><i class="fas fa-home"></i> HOME <span class="sr-only">(current)</span></a>
                             </li>
                             <li>
-                                <a href="#" class="hvr-expand"><i class="fas fa-align-left"></i> ABOUT US</a>
+                                <a href="" class="hvr-expand"><i class="fas fa-align-left"></i> ABOUT US</a>
                             </li>
                             <li>
                                 <a href="#browseSubmenu" class="hvr-expand" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="far fa-comment-alt"></i> BROWSE REVIEWS</a>
@@ -72,7 +72,7 @@
                 </div>
                 <ul class="components">
                     <li class="active">
-                        <a href="#home" class="hvr-expand"><i class="fas fa-home"></i> HOME <span class="sr-only">(current)</span></a>
+                        <a href="{{url_for('home')}}" class="hvr-expand"><i class="fas fa-home"></i> HOME <span class="sr-only">(current)</span></a>
                     </li>
                     <li>
                         <a href="#" class="hvr-expand"><i class="fas fa-align-left"></i> ABOUT US</a>
@@ -114,6 +114,15 @@
         </div>
         <!-- Page Content  -->
         <div class="page">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith%}
             {% block content%} 
             {% endblock %}
             </div>
