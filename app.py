@@ -20,6 +20,11 @@ app.config['SECRET_KEY'] = 'SECRET_KEY'
 mongo = PyMongo(app)
 
 
+@app.route('/home')
+def home():
+    return render_template('home.html')
+
+
 @app.route("/")
 @app.route("/get_reviews")
 def get_reviews():
@@ -30,6 +35,10 @@ def get_reviews():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     form = RegisterForm()
+    if form.validate_on_submit():
+        flash(f'Account successfully created for {form.username.data} \u2713',
+              'success')
+        return redirect(url_for('home'))
     return render_template("register.html", title='Register', form=form)
 
 
