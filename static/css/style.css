@@ -9,7 +9,6 @@ body {
     width: 100vw;
     background: #fff;
     border: none;
-    margin-bottom: 14px;
     box-shadow: 1px 2px 3px rgb(120 146 106);
 }
 
@@ -84,7 +83,7 @@ a[data-toggle="collapse"] {
     CONTENT STYLE
 ----------------------------------------------------- */
 .page {
-    height: calc(100vh - 12rem);
+    height: auto;
 }
 
 .upload-img{
@@ -127,6 +126,7 @@ a[data-toggle="collapse"] {
     background-color: #638660;
     color: #0e1012;
     font-size: 70%;
+    margin-top: 2rem;
 }
 
 .social-links {
@@ -181,6 +181,7 @@ a[data-toggle="collapse"] {
 
 .submitBtn {
     text-align: center;
+    margin-top: 10px;
 }
 
 .redirect-link {
@@ -191,6 +192,14 @@ a[data-toggle="collapse"] {
     display: flex;
     justify-content: center;
     font-family: 'Vollkorn', Poppins;
+}
+
+.psst {
+    height: 6rem;
+    padding-top: 5px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
 }
 
 /* ---------------------------------------------------
