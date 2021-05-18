@@ -166,6 +166,7 @@ a[data-toggle="collapse"] {
     border-right: 0;
     border-radius: 0;
     padding: 0 12px 0;
+    margin-bottom: 13px ;
 }  
 
 .form-group input:focus {
@@ -192,6 +193,10 @@ a[data-toggle="collapse"] {
     display: flex;
     justify-content: center;
     font-family: 'Vollkorn', Poppins;
+}
+
+.invalid-feedback {
+    margin: 0;
 }
 
 .psst {
