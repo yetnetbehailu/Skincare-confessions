@@ -69,16 +69,40 @@ def register():
     return render_template("register.html", title='Register', form=form)
 
 
+"""
+# Login Route
+ ---------------
+# when logging in to account if user exists in database,
+# is re-directed to home page else login page displayed.
+# The input password has to match the hashed password saved in database
+"""
+
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        if form.username.data == 'Test' and form.password.data == 'fakepasswrd':
-            flash('You have successfully logged-in \u2713', 'success')
-            return redirect(url_for('home'))
+        # Check if username exists in db
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form["username"].lower()})
+        if existing_user:
+            # Verify hashed password matches user input
+            if check_password_hash(existing_user["password"],
+                                   request.form["password"]):
+                # If password match add user to session cookie
+                session["user"] = request.form["username"]
+                flash('Welcome back'f' {form.username.data}\u0021', 'success')
+                return redirect(url_for('home'))
+            else:
+                # Password not a match
+                flash('Username or password is incorrect. Please try again ',
+                      'danger')
+                return redirect(url_for("login"))
         else:
+            # username doesn't exist
             flash('Username or password is incorrect. Please try again ',
                   'danger')
+            return redirect(url_for("login"))
     return render_template("login.html", title='Login', form=form)
 
 
