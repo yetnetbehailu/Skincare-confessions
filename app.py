@@ -5,6 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from forms import RegisterForm, LoginForm
+from werkzeug.security import generate_password_hash, check_password_hash
 
 if os.path.exists("env.py"):
     import env
@@ -32,13 +33,39 @@ def get_reviews():
     return render_template("reviews.html", reviews=reviews)
 
 
+"""
+# Register Route
+-------------------
+# When registering for an account, if username input does not already exists
+# in database, and password fields do match then a new user is created.
+# To make password extra secure it's hashed using werkzeug.security.
+# Once registration is valid user is automatically logged in and re-directed to
+# home page.
+"""
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     form = RegisterForm()
     if form.validate_on_submit():
-        flash(f'Account successfully created for {form.username.data} \u2713',
-              'success')
-        return redirect(url_for('home'))
+        # Check if username already exist in db
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form["username"].lower()})
+        if existing_user:
+            flash('Sorry, this username has been taken')
+            return redirect(url_for("register"))
+        else:
+            new_user = {
+                "username": request.form["username"].lower(),
+                "password": generate_password_hash(request.form["password"])
+            }
+            mongo.db.users.insert_one(new_user)
+
+            # Put the new user into 'session' cookie
+            session["user"] = request.form["username"]
+            flash('Account successfully created for'
+                  f' {form.username.data}\u2713', 'success')
+            return redirect(url_for('home'))
     return render_template("register.html", title='Register', form=form)
 
 
