@@ -89,6 +89,14 @@ a[data-toggle="collapse"] {
 .upload-img{
     overflow: hidden;
 }
+
+.alert-success {
+    text-align: center;
+}
+
+.alert-danger {
+    text-align: center;
+}
 /* ---------------------------------------------------
     SITE LOGO
 ----------------------------------------------------- */
