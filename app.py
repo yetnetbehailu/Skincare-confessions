@@ -21,16 +21,45 @@ app.config['SECRET_KEY'] = 'SECRET_KEY'
 mongo = PyMongo(app)
 
 
+"""
+#   Home Route
+-------------------
+
+"""
+
+
 @app.route('/home')
 def home():
     return render_template('home.html')
 
 
+"""
+#   Add Reviews Route
+-------------------
+
+"""
+
+
 @app.route("/")
-@app.route("/get_reviews")
-def get_reviews():
+@app.route("/add_reviews")
+def add_reviews():
     reviews = mongo.db.reviews.find()
-    return render_template("reviews.html", reviews=reviews)
+    return render_template("add_reviews.html", reviews=reviews)
+
+
+"""
+#   My Reviews Route
+-------------------
+
+"""
+
+
+@app.route('/my_reviews/<username>', methods=['GET', 'POST'])
+def my_reviews(username):
+    # Grab sessions username from db
+    username = mongo.db.users.find_one({'username':
+                                        session['user'].lower()})['username']
+    return render_template('my_reviews.html', username=username)
 
 
 """
