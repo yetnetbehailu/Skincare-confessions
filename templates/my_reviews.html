@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2 class="user-headtitel">{{username|capitalize }}'s Reviews</h2>
+    <div class="link_btn">
+        <button type="button" class="btn-outline redirect_btn"><a href="{{url_for('add_reviews')}}">ADD NEW REVIEW</a></button>
+    </div>
+    <div class="search-bar">
+        <form action="" method="GET">
+            <input type="search" name="browse" id="browse" placeholder="&#128269;  Search...">
+        </form>
+    </div>
+{% endblock %}
