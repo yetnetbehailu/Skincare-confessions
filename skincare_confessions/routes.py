@@ -109,7 +109,11 @@ def login():
                 # If password match add user to session cookie
                 session["user"] = request.form["username"]
                 flash('Welcome back'f' {form.username.data}\u0021', 'success')
-                return redirect(url_for('home'))
+                # Link clicked prior to login get URI parameter & re-direct to
+                # page on login
+                view_next = request.args.get('view')
+                return redirect(view_next) if view_next else redirect(url_for
+                                                                      ('home'))
             else:
                 # Password not a match
                 flash('Username or password is incorrect. Please try again ',
