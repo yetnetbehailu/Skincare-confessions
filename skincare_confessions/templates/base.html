@@ -47,21 +47,24 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="#" class="hvr-expand"><i class="fas fa-user"></i> MY REVIEWS</a>
-                            </li>
-                            <li>
-                                <a href="{{url_for('get_reviews')}}" class="hvr-expand"><i class="fas fa-plus-square"></i> ADD REVIEWS</a>
-                            </li>
-                            <li>
-                                <a href="#" class="hvr-expand"><i class="fas fa-sign-in-alt"></i> LOGOUT</a>
-                            </li>
-                            <li>
-                                <a href="{{url_for('login')}}" class="hvr-expand"><i class="fas fa-sign-in-alt"></i> LOGIN</a>
-                            </li>
-                            <li>
-                                <a href="{{url_for('register')}}" class="hvr-expand"><i class="fas fa-user-plus"></i> REGISTER</a>
-                            </li>
+                            {% if session.user %}
+                                <li>
+                                    <a href="{{url_for('my_reviews')}}" class="hvr-expand"><i class="fas fa-user"></i> MY REVIEWS</a>
+                                </li>
+                                <li>
+                                    <a href="{{url_for('add_reviews')}}" class="hvr-expand"><i class="fas fa-plus-square"></i> ADD REVIEWS</a>
+                                </li>
+                                <li>
+                                    <a href="{{url_for('logout')}}" class="hvr-expand"><i class="fas fa-sign-in-alt"></i> LOGOUT</a>
+                                </li>
+                            {% else %}
+                                <li>
+                                    <a href="{{url_for('login')}}" class="hvr-expand"><i class="fas fa-sign-in-alt"></i> LOGIN</a>
+                                </li>
+                                <li>
+                                    <a href="{{url_for('register')}}" class="hvr-expand"><i class="fas fa-user-plus"></i> REGISTER</a>
+                                </li>
+                            {% endif %}
                         </ul>
                     </div>
                 </nav>
@@ -91,24 +94,24 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#" class="hvr-expand"><i class="fas fa-user"></i> MY REVIEWS</a>
-                    </li>
-                    <li>
-                        <a href="{{url_for('get_reviews')}}" class="hvr-expand"><i class="fas fa-plus-square"></i> ADD REVIEWS</a>
-                    </li>
-                </ul>
-    
-                <ul class="loglist-register">
-                    <li>
-                        <a href="#" class="hvr-expand"><i class="fas fa-sign-in-alt"></i> LOGOUT</a>
-                    </li>
-                    <li>
-                        <a href="{{url_for('login')}}" class="hvr-expand"><i class="fas fa-sign-in-alt"></i> LOGIN</a>
-                    </li>
-                    <li>
-                        <a href="{{url_for('register')}}" class="hvr-expand"><i class="fas fa-user-plus"></i> REGISTER</a>
-                    </li>
+                    {% if session.user %}
+                        <li>
+                            <a href="{{url_for('my_reviews')}}" class="hvr-expand"><i class="fas fa-user"></i> MY REVIEWS</a>
+                        </li>
+                        <li>
+                            <a href="{{url_for('add_reviews')}}" class="hvr-expand"><i class="fas fa-plus-square"></i> ADD REVIEWS</a>
+                        </li>
+                        <li>
+                            <a href="{{url_for('logout')}}" class="hvr-expand"><i class="fas fa-sign-in-alt"></i> LOGOUT</a>
+                        </li>
+                    {% else %}
+                        <li>
+                            <a href="{{url_for('login')}}" class="hvr-expand"><i class="fas fa-sign-in-alt"></i> LOGIN</a>
+                        </li>
+                        <li>
+                            <a href="{{url_for('register')}}" class="hvr-expand"><i class="fas fa-user-plus"></i> REGISTER</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </nav>
         </div>

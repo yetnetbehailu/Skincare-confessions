@@ -1,25 +1,8 @@
-import os
-from flask import (
-    Flask, flash, render_template,
-    redirect, request, session, url_for)
-from flask_pymongo import PyMongo
+from flask import flash, render_template, redirect, request, session, url_for
+from skincare_confessions import app, mongo
+from skincare_confessions.forms import RegisterForm, LoginForm
 from bson.objectid import ObjectId
-from forms import RegisterForm, LoginForm
 from werkzeug.security import generate_password_hash, check_password_hash
-
-if os.path.exists("env.py"):
-    import env
-
-
-app = Flask(__name__)
-
-app.config["Mongo_DBNAME"] = os.environ.get("MONGO_DBNAME")
-app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.secret_key = os.environ.get("SECRET_KEY")
-
-app.config['SECRET_KEY'] = 'SECRET_KEY'
-mongo = PyMongo(app)
-
 
 """
 #   Home Route
@@ -54,12 +37,17 @@ def add_reviews():
 """
 
 
-@app.route('/my_reviews/<username>', methods=['GET', 'POST'])
-def my_reviews(username):
+@app.route('/my_reviews', methods=['GET', 'POST'])
+def my_reviews():
     # Grab sessions username from db
-    username = mongo.db.users.find_one({'username':
-                                        session['user'].lower()})['username']
-    return render_template('my_reviews.html', username=username)
+    if 'user' in session:
+        username = mongo.db.users.find_one({'username':
+                                            session['user'].lower()
+                                            })['username']
+        return render_template('my_reviews.html', username=username)
+    else:
+        return redirect(url_for('login'))
+    print(my_reviews())
 
 
 """
@@ -135,7 +123,8 @@ def login():
     return render_template("login.html", title='Login', form=form)
 
 
-if __name__ == "__main__":
-    app.run(host=os.environ.get("IP"),
-            port=int(os.environ.get("PORT")),
-            debug=True)  # Change to false before final deployment, delete msg
+@app.route('/logout')
+def logout():
+    # Deletes user session cookie removes logged in state
+    session.pop('user')
+    return redirect(url_for('login'))

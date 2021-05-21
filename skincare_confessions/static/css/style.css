@@ -50,9 +50,12 @@ body {
 }
 
 .components {
-    padding: 20px 0;
-    border-bottom: 1px solid #759e71;
+    padding: 0;
     list-style: none;
+}
+
+ul.components li {
+    border-bottom: 1px solid #759e71;
 }
 
 #sidebar a {
@@ -72,11 +75,6 @@ a[data-toggle="collapse"] {
     top: 50%;
     right: 20px;
     transform: translateY(-50%);
-}
-
-.loglist-register {
-    padding: 0;
-    list-style: none;
 }
 
 /* ---------------------------------------------------
@@ -215,9 +213,43 @@ a[data-toggle="collapse"] {
     margin: auto;
 }
 
+
+/* ---------------------------------------------------
+    My-reviews page
+----------------------------------------------------- */
+.user-headtitel {
+    font-family: 'Vollkorn', Poppins;
+    text-align: center;
+    margin: 15px;
+    padding-top: 5px;
+    text-shadow: 2px 1px 3px rgb(0 0 0 / 50%);
+    
+}
+
+.redirect_btn {
+    width: 30%;
+    border-style: none;
+    box-shadow: 0px 1px 5px 1px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}
+
+.link_btn {
+    text-align: center;
+}
+
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
+@media (max-width: 768px) {
+    .redirect_btn {
+        font-size: x-small;
+    }
+}
 @media ( min-width: 634px) {
     .social-links i {
         font-size: 1.33em;
