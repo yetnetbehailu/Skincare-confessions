@@ -1,15 +1,64 @@
-{% extends 'base.html'%}
+{% extends 'base.html'%} 
 {% block content %}
-        {% for review in reviews %}
-            Category:{{ review.category_name }}<br>
-            Product brand:{{ review.product_name }}<br>
-            Product review:{{ review.product_description }}<br>
-            Price:{{ review.price }}<br>
-            Search tags:{{ review.search_tags }}<br>
-            Vegan:{{ review.is_vegan }}<br>
-            Rating:{{ review.rate }}<br>
-            <div class="upload-img"> Image:{{ review.image_url }}<br></div>
-            Posted by:{{ review.added_by }}<br>
-            Created:{{ review.created_at }}<br>
-        {% endfor %} 
+<div class="add-review-bg">
+    <h2 class="user-headtitel mb-0">{{username|capitalize }}'s</h2>
+    <h3 class="review_slogan">Skincare Confessions</h3>
+    <form action="" method="POST">
+        {{form.hidden_tag()}}
+        <div class="container review-content">
+            <!-- skincare category dropdown menu -->
+            <div class="row">
+                <div class="col input-field">
+                    <label for="skincare_categories"> Skincare Categories </label>
+                    <select id="category_name" name="category_name" class="category-field d-block" required>
+                        <option value="" disabled selected>Select an option</option>
+                        {% for category in category_name %}
+                        <option value="{{category.category_name}}">
+                            {{category.category_name}}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <!-- brand name stringfield -->
+            <div class="row">
+                <div class="input-field">
+                    {{ form.brand_name.label(class="form-label d-block mb-0")}} {% if form.brand_name.errors %} 
+                        {{ form.brand_name(class="form-control is-invalid review-input", placeholder="Provide brand name")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.brand_name.errors %}
+                        <span>
+                            {{error}}
+                        </span>
+                        {% endfor %}
+                    </div>
+                    {% else %} 
+                        {{ form.brand_name(class="form-control review-input", placeholder="Provide brand name")}} {% endif %}
+                </div>
+            </div>
+            <!-- Product review textfield -->
+            <div class="row">
+                <div class="input-field col-12">
+                    {{ form.product_review.label(class="form-label d-block mb-0")}} 
+                    {% if form.product_review.errors %} 
+                        {{ form.product_review(class="form-control is-invalid review-input", placeholder="Provide brand name")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.brand_name.errors %}
+                        <span>
+                            {{error}}
+                        </span>
+                        {% endfor %}
+                    </div>
+                    {% else %} 
+                        {{ form.product_review(class="form-control", placeholder="Enter password")}} 
+                    {% endif %}
+                </div>
+            </div>
+            <div class="add_form_btns">
+                <button type="submit" class="add_review_btn">Add Review</button>
+                <button type="submit" class="cancel_btn">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>
 {% endblock %}
