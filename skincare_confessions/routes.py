@@ -15,6 +15,7 @@ categories = mongo.db.categories
 """
 
 
+@app.route("/")
 @app.route('/home')
 def home():
     return render_template('home.html')
@@ -27,7 +28,6 @@ def home():
 """
 
 
-@app.route("/")
 @app.route("/add_reviews", methods=["GET", "POST"])
 def add_reviews():
     """ Displays Add review form when user is logged in, preventing guest
@@ -46,11 +46,12 @@ def add_reviews():
                                             })['username']
         add_review_form = AddReviewForm()
         category_name = categories.find()
-        if request.method == 'POST':
+        if add_review_form.validate_on_submit():
             review = {
                 'category_name': request.form.get('category_name'),
                 'brand_name ': request.form.get('brand_name'),
                 'product_review': request.form.get('product_review'),
+                'price': request.form.get('price'),
             }
             reviews.insert_one(review)
             flash('Review successfully added', 'succes')
