@@ -1,7 +1,8 @@
 from flask_wtf import FlaskForm
 from wtforms import (StringField, PasswordField, SubmitField,
-                     TextAreaField)
-from wtforms.validators import DataRequired, Length, EqualTo, Regexp
+                     TextAreaField, DecimalField)
+from wtforms.validators import (DataRequired, Length, EqualTo, Regexp, Optional
+                                )
 
 
 class RegisterForm(FlaskForm):
@@ -35,8 +36,9 @@ class AddReviewForm(FlaskForm):
                                       message="Brand name can't start with"
                                       "space")])
     product_review = TextAreaField(
-            'Product Review', validators=[DataRequired(),
-                                          Length(min=10, max=2000),
-                                          Regexp('^([a-zA-Z0-9-!@#$%^&*])',
-                                          message="Product review can't start"
-                                          "with space")])
+            'Product Review',
+            validators=[DataRequired(), Length(min=10, max=2000),
+                        Regexp('^([a-zA-Z0-9-!@#$%^&*])',
+                        message="Product review can't start with space")])
+    price = DecimalField('Price', validators=[DataRequired()])
+    submit = SubmitField('Add')

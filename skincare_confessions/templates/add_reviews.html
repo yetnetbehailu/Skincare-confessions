@@ -53,6 +53,20 @@
                         {{ form.product_review(class="form-control", placeholder="Write few sentences about your product")}} 
                     {% endif %}
                 </div>
+            </div>    
+                 <!-- Price decimalField -->
+            <div class="row">    
+                 <div class="col s-12 md-4 input-field">
+                    {{ form.price.label(class="form-label d-block mb-0")}} {% if form.price.errors %} 
+                    {{ form.price(class="form-control is-invalid review-input", placeholder="Purchase cost")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.price.errors %}
+                        <span>
+                            {{error}}
+                        </span>
+                        {% endfor %}
+                    </div>
+                    {% else %} {{ form.price(class="form-control review-input", placeholder="Purchase cost")}} {% endif %}
                 </div>
             </div>
             <div class="add_form_btns">
