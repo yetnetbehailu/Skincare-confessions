@@ -49,4 +49,9 @@ class AddReviewForm(FlaskForm):
                                  ('3', 'Good'),
                                  ('4', 'Very Good'),
                                  ('5', 'Fantastic')])
+    tags = StringField(
+        'Search tag', validators=[DataRequired(), Length(min=1, max=30),
+                                  Regexp('^([a-zA-Z0-9-!@#$%^&*])',
+                                  message="Search tag can't start with space")
+                                  ])                             
     submit = SubmitField('Add')

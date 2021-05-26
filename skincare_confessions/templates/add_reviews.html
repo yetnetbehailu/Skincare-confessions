@@ -97,6 +97,20 @@
                     {% endif %}
                 </div>
             </div>
+            <!-- Search stringfield -->
+            <div class="row">
+                <div class="col-12 input-field">
+                    {{ form.tags.label(class="form-label d-block mb-0")}} {% if form.tags.errors %} {{ form.tags(class="form-control is-invalid review-input", placeholder="Search tags")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.tags.errors %}
+                        <span>
+                            {{error}}
+                        </span>
+                        {% endfor %}
+                    </div>
+                    {% else %} {{ form.tags(class="form-control review-input", placeholder="Search tags")}} {% endif %}
+                </div>
+            </div>
             <div class="add_form_btns">
                     {{ form.submit(class="add_review_btn")}}
                 <button type="submit" class="cancel_btn">Cancel</button>
