@@ -9,7 +9,7 @@
             <!-- skincare category dropdown menu -->
             <div class="row">
                 <div class="col input-field">
-                    <label for="skincare_categories"> Skincare Categories </label>
+                    <label for="skincare_categories"> Skincare Category </label>
                     <select id="category_name" name="category_name" class="category-field d-block" required>
                         <option value="" disabled selected>Select an option</option>
                         {% for category in category_name %}
@@ -41,21 +41,22 @@
                 <div class="input-field col-12">
                     {{ form.product_review.label(class="form-label d-block mb-0")}} 
                     {% if form.product_review.errors %} 
-                        {{ form.product_review(class="form-control is-invalid review-input", placeholder="Provide brand name")}}
+                        {{ form.product_review(class="form-control is-invalid review-input", placeholder="Write few sentences about your product")}}
                     <div class="invalid-feedback">
-                        {% for error in form.brand_name.errors %}
+                        {% for error in form.product_review.errors %}
                         <span>
                             {{error}}
                         </span>
                         {% endfor %}
                     </div>
                     {% else %} 
-                        {{ form.product_review(class="form-control", placeholder="Enter password")}} 
+                        {{ form.product_review(class="form-control", placeholder="Write few sentences about your product")}} 
                     {% endif %}
+                </div>
                 </div>
             </div>
             <div class="add_form_btns">
-                <button type="submit" class="add_review_btn">Add Review</button>
+                    {{ form.submit(class="add_review_btn")}}
                 <button type="submit" class="cancel_btn">Cancel</button>
             </div>
         </div>
