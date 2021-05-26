@@ -52,6 +52,8 @@ def add_reviews():
                 'brand_name ': request.form.get('brand_name'),
                 'product_review': request.form.get('product_review'),
                 'price': request.form.get('price'),
+                'is_vegan': request.form.get('is_vegan'),
+                'rating': request.form.get('rating')
             }
             reviews.insert_one(review)
             flash('Review successfully added', 'succes')

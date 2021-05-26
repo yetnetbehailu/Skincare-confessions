@@ -68,6 +68,34 @@
                     </div>
                     {% else %} {{ form.price(class="form-control review-input", placeholder="Purchase cost")}} {% endif %}
                 </div>
+                <!-- Boolean field -->
+                <div class="col s-12 md-4 custom-control custom-switch input-field">
+                    {{ form.is_vegan.label(class="custom-control-label d-block mb-0")}} {% if form.is_vegan.errors %} {{ form.is_vegan(class="custom-control-input custom-switch is-invalid")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.is_vegan.errors %}
+                        <span>
+                            {{error}}
+                        </span>
+                        {% endfor %}
+                    </div>
+                    {% else %} {{ form.is_vegan(class="custom-control-input custom-switch")}} {% endif %}
+                </div>
+                <!-- Rating -->
+                <div class="col s-12 md-4 input-field">
+                    {{ form.rating.label(class="form-label d-block mb-0")}} 
+                    {% if form.rating.errors %} 
+                    {{form.rating(class=" is-invalid review-input")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.rating.errors %}
+                        <span>
+                            {{error}}
+                        </span>
+                        {% endfor %}
+                    </div>
+                    {% else %} 
+                    {{ form.rating(class="review-input")}} 
+                    {% endif %}
+                </div>
             </div>
             <div class="add_form_btns">
                     {{ form.submit(class="add_review_btn")}}

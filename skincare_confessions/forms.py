@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import (StringField, PasswordField, SubmitField,
-                     TextAreaField, DecimalField)
+                     TextAreaField, BooleanField,
+                     DecimalField, RadioField)
 from wtforms.validators import (DataRequired, Length, EqualTo, Regexp, Optional
                                 )
 
@@ -41,4 +42,11 @@ class AddReviewForm(FlaskForm):
                         Regexp('^([a-zA-Z0-9-!@#$%^&*])',
                         message="Product review can't start with space")])
     price = DecimalField('Price', validators=[DataRequired()])
+    is_vegan = BooleanField('Vegan')
+    rating = RadioField('Rating', validators=[DataRequired()],
+                        choices=[('1', 'Boycott'),
+                                 ('2', 'Poor'),
+                                 ('3', 'Good'),
+                                 ('4', 'Very Good'),
+                                 ('5', 'Fantastic')])
     submit = SubmitField('Add')
