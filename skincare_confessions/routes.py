@@ -3,7 +3,7 @@ from skincare_confessions import app, mongo
 from skincare_confessions.forms import RegisterForm, LoginForm, AddReviewForm
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-
+from bson.decimal128 import Decimal128
 
 reviews = mongo.db.reviews
 categories = mongo.db.categories
@@ -47,18 +47,22 @@ def add_reviews():
         add_review_form = AddReviewForm()
         category_name = categories.find()
         if add_review_form.validate_on_submit():
+            is_vegan = True if request.form.get("is_vegan") else False
+            price = Decimal128(str((request.form.get('price'))))
+            rating = int(request.form.get('rating'))
             review = {
                 'category_name': request.form.get('category_name'),
                 'brand_name ': request.form.get('brand_name'),
                 'product_review': request.form.get('product_review'),
-                'price': request.form.get('price'),
-                'is_vegan': request.form.get('is_vegan'),
-                'rating': request.form.get('rating'),
-                'tags ': request.form.get('tags')
+                'price': (price),
+                'is_vegan': (is_vegan),
+                'rating': (rating),
+                'tags ': request.form.get('tags'),
             }
             reviews.insert_one(review)
             flash('Review successfully added', 'succes')
-            return redirect(url_for('my_reviews', review=review))
+            return redirect(url_for('my_reviews', review=review,
+                            is_vegan=is_vegan, price=price, rating=rating))
         return render_template("add_reviews.html", username=username,
                                category_name=category_name,
                                form=add_review_form)
