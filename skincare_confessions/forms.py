@@ -4,6 +4,7 @@ from wtforms import (StringField, PasswordField, SubmitField,
                      DecimalField, RadioField)
 from wtforms.validators import (DataRequired, Length, EqualTo, Regexp, Optional
                                 )
+from flask_wtf.file import FileField, FileAllowed
 
 
 class RegisterForm(FlaskForm):
@@ -53,5 +54,8 @@ class AddReviewForm(FlaskForm):
         'Search tag', validators=[DataRequired(), Length(min=1, max=30),
                                   Regexp('^([a-zA-Z0-9-!@#$%^&*])',
                                   message="Search tag can't start with space")
-                                  ])                             
+                                  ])
+    upload_img = FileField(
+        'Upload image:',
+        validators=[FileAllowed(['jpg', 'png', 'jpeg'])])
     submit = SubmitField('Add')

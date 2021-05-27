@@ -3,7 +3,7 @@
 <div class="add-review-bg">
     <h2 class="user-headtitel mb-0">{{username|capitalize }}'s</h2>
     <h3 class="review_slogan">Skincare Confessions</h3>
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         {{form.hidden_tag()}}
         <div class="container review-content">
             <!-- skincare category dropdown menu -->
@@ -110,6 +110,18 @@
                     </div>
                     {% else %} {{ form.tags(class="form-control review-input", placeholder="Search tags")}} {% endif %}
                 </div>
+            </div>
+            <!-- Upload image filefield -->
+            <div class="row">
+                {{ form.upload_img.label(class="form-control-label") }}
+                {{ form.upload_img(class="form-control-file")}}
+                {% if form.upload_img.errors %}
+                    {% for error in form.upload_img.errors %}
+                    <span class="text-danger">
+                        {{error}}
+                    </span>
+                    {% endfor %}
+                {% endif %}
             </div>
             <div class="add_form_btns">
                     {{ form.submit(class="add_review_btn")}}
