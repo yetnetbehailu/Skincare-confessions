@@ -119,6 +119,7 @@ a[data-toggle="collapse"] {
     transform: scale(1.1);
 }
 
+
 /* ---------------------------------------------------
     Footer Content
 ----------------------------------------------------- */
@@ -132,7 +133,6 @@ a[data-toggle="collapse"] {
     background-color: #638660;
     color: #0e1012;
     font-size: 70%;
-    margin-top: 2rem;
 }
 
 .social-links {
@@ -164,6 +164,7 @@ a[data-toggle="collapse"] {
     display: flex;
     justify-content: center;
     font-family: 'Vollkorn', Poppins;
+    margin-bottom: 2rem;
 }
 
 .form-control-lg { 
@@ -199,6 +200,7 @@ a[data-toggle="collapse"] {
     display: flex;
     justify-content: center;
     font-family: 'Vollkorn', Poppins;
+    margin-bottom: 2rem;
 }
 
 .invalid-feedback {
@@ -220,7 +222,6 @@ a[data-toggle="collapse"] {
 .user-headtitel {
     font-family: 'Vollkorn', Poppins;
     text-align: center;
-    margin: 15px;
     padding-top: 5px;
     text-shadow: 2px 1px 3px rgb(0 0 0 / 50%);
     
@@ -240,6 +241,156 @@ a[data-toggle="collapse"] {
 
 .link_btn {
     text-align: center;
+}
+
+
+/* ---------------------------------------------------
+    Add_reviews Page 
+----------------------------------------------------- */
+.add-review-bg {
+    padding-bottom: 2rem;
+    padding-top: 15px;
+    background-color: #e7ffe5;
+}
+
+.review_slogan {
+    text-shadow: 1px 1px 4px rgb(0 0 0 / 50%);
+    text-align: center;
+    font-family: 'Vollkorn', Poppins;
+}
+
+
+.review-content {
+    box-shadow: 0px 1px 3px 2px #00000038;
+    border-radius: 3px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #fff;
+}
+
+
+.review-content input:focus{
+    outline-style: none;
+    box-shadow: 0 3px 0 rgb(120 146 106);
+    border-bottom: none;
+}
+
+
+.category-field {
+    width: 100%;
+    height: 2.5rem;
+    margin-bottom: 13px;
+    border: 3px dashed;
+    color: #7f7f7f;
+}
+
+#category_name:focus {
+    outline-style: none;
+    box-shadow: 0px 0px 3px 2px rgb(120 146 106);
+    border: none;
+}
+
+#product_review {
+    border: 3px solid #7f7f7f;
+    margin-bottom: 13px;
+}
+
+#product_review:focus{
+    border: none;
+    box-shadow: 0px 0px 3px 2px rgb(120 146 106);
+    outline-style: none;
+}
+
+.review-input {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 3px solid rgb(0 0 0 / 0.5);
+    border-radius: 0;
+    margin-bottom: 13px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#price {
+    width: 8.5rem;
+}
+
+#is_vegan {
+    box-shadow: none;
+}
+
+#rating {
+    box-shadow: none;
+    list-style: none;
+    border-bottom: none;
+}
+#tags {
+    margin-bottom: 13px;
+    border: 2px solid #7f7f7f;
+}
+
+#tags:focus {
+    border: none;
+    box-shadow: 0px 0px 3px 2px rgb(120 146 106);
+    outline-style: none;
+}
+
+.file-field {
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    border-radius: 4px;
+    border: 2px solid #7f7f7f;
+    padding: 0;
+}
+
+.file-label {
+    background-color: #afafaf;
+    padding: 3px;
+}
+
+#upload_img {
+    opacity: 0;
+    z-index: 1;
+    width: 57%;
+}
+
+#custom-field {
+    width: 57%;
+}
+
+#custom-field:focus {
+    box-shadow: none;
+    list-style: none;
+    border-bottom: none;
+}
+
+.add_review_btn {
+    box-shadow: 0px 1px 5px rgb(0 0 0 / 60%);
+}
+
+#submit:focus{
+    box-shadow:  0px 1px 5px rgb(0 0 0 / 60%);
+    list-style: none;
+    border: none;
+}
+
+.cancel_btn {
+    box-shadow: 0px 1px 5px rgb(0 0 0 / 60%);
+}
+
+#cancel:focus {
+   box-shadow: 0px 1px 5px rgb(0 0 0 / 60%);
+    list-style: none;
+    border: none;
+}
+
+.add_form_btns {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
 }
 
 /* ---------------------------------------------------
