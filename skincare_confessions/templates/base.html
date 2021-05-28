@@ -34,18 +34,7 @@
                                 <a href="" class="hvr-expand"><i class="fas fa-align-left"></i> ABOUT US</a>
                             </li>
                             <li>
-                                <a href="#browseSubmenu" class="hvr-expand" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="far fa-comment-alt"></i> BROWSE REVIEWS</a>
-                                <ul class="collapse" id="browseSubmenu">
-                                    <li>
-                                        <a href="#">Category-name 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Category-name 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Category-name 3</a>
-                                    </li>
-                                </ul>
+                                <a href="{{url_for('browse_reviews')}}" class="hvr-expand"><i class="far fa-comment-alt"></i> BROWSE REVIEWS</a>
                             </li>
                             {% if session.user %}
                                 <li>
@@ -81,18 +70,7 @@
                         <a href="#" class="hvr-expand"><i class="fas fa-align-left"></i> ABOUT US</a>
                     </li>
                     <li>
-                        <a href="#browseSubmenu"  class="hvr-expand" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="far fa-comment-alt"></i> BROWSE REVIEWS</a>
-                        <ul class="collapse" id="browseSubmenu">
-                            <li>
-                                <a href="#">Category-name 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Category-name 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Category-name 3</a>
-                            </li>
-                        </ul>
+                        <a href="{{url_for('browse_reviews')}}"  class="hvr-expand"><i class="far fa-comment-alt"></i> BROWSE REVIEWS</a>
                     </li>
                     {% if session.user %}
                         <li>

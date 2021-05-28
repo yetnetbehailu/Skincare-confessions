@@ -89,6 +89,19 @@ def my_reviews():
 
 
 """
+#   All Reviews listing Route
+-------------------
+
+"""
+
+
+@app.route('/browse_reviews')
+def browse_reviews():
+    
+    return render_template('browse_reviews.html')
+
+
+"""
 # Register Route
 -------------------
 # When registering for an account, if username input does not already exists
