@@ -100,7 +100,7 @@
             <!-- Search stringfield -->
             <div class="row">
                 <div class="col-12 input-field">
-                    {{ form.tags.label(class="form-label d-block mb-0")}} {% if form.tags.errors %} {{ form.tags(class="form-control is-invalid review-input", placeholder="Search tags")}}
+                    {{ form.tags.label(class="form-label d-block mb-0")}} {% if form.tags.errors %} {{ form.tags(class="form-control is-invalid", placeholder="Search tags")}}
                     <div class="invalid-feedback">
                         {% for error in form.tags.errors %}
                         <span>
@@ -108,24 +108,26 @@
                         </span>
                         {% endfor %}
                     </div>
-                    {% else %} {{ form.tags(class="form-control review-input", placeholder="Search tags")}} {% endif %}
+                    {% else %} {{ form.tags(class="form-control", placeholder="Search tags")}} {% endif %}
                 </div>
             </div>
             <!-- Upload image filefield -->
             <div class="row">
-                {{ form.upload_img.label(class="form-control-label") }}
-                {{ form.upload_img(class="form-control-file")}}
-                {% if form.upload_img.errors %}
-                    {% for error in form.upload_img.errors %}
-                    <span class="text-danger">
-                        {{error}}
-                    </span>
-                    {% endfor %}
-                {% endif %}
+                 <div class="col-12 file-field">
+                    {{ form.upload_img(class="form-control-field", id="custom-field")}}
+                    {{ form.upload_img.label(class="file-label upload_img") }}
+                    {% if form.upload_img.errors %}
+                        {% for error in form.upload_img.errors %}
+                        <span class="text-danger">
+                            {{error}}
+                        </span>
+                        {% endfor %}
+                    {% endif %}
+                </div>
             </div>
             <div class="add_form_btns">
                     {{ form.submit(class="add_review_btn")}}
-                <button type="submit" class="cancel_btn">Cancel</button>
+                    {{ form.cancel(class="cancel_btn")}}
             </div>
         </div>
     </form>
