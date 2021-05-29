@@ -11,7 +11,9 @@
         <!-- Main content card-decks -->
         <div class="card-decks">
             <div class="row">
-
+                {% for entry in entries %}
+                    {% include "review_cards.html" %} 
+                {% endfor %}
             </div>
             <!--Pagination-->
             <ul class="pagination center-align">

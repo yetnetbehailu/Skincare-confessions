@@ -1,0 +1,42 @@
+<!--Review card-->
+<div class="col s-12 md-4 lg-3">
+    <div class="card">
+        <h6>{{entry.category_name|capitalize}}</h6>
+        <!-- Checkbox y/n favorite display -->
+        <span><i class="far fa-heart"></i></span>
+        <div class="card-image">
+                <!-- Review image if assigned by user otherwise default placeholder put in place-->
+
+                <img src="" class="" alt="" />
+
+                <img src="" class="" alt="" />
+        </div>
+        <div class="col 8">
+            <p>{{entry.brand_name|capitalize}}</p>
+        </div>
+        <div class="col 4">
+            {% if entry.is_vegan==True %}
+                <i class="fas fa-leaf">Is Vegan</i>
+            {% else %}
+                <i class="fas fa-leaf">Is not Vegan</i>
+            {% endif %}
+        </div>
+        <div class="col 6">
+            <p>{{entry.price}}</p>
+        </div>
+        <div class="col 6">
+            <p>{{entry.rating}}</p>
+        </div>
+        <div class="col 6">
+            <!-- Posted by -->
+            <p></p>
+        </div>
+        <div class="col 6">
+            <!-- Post date -->
+            <p></p>
+        </div>
+        <div class="col 12">
+            <p>{{entry.tags}}</p>
+        </div>
+    </div>
+</div>

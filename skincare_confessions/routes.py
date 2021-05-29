@@ -97,8 +97,8 @@ def my_reviews():
 
 @app.route('/browse_reviews')
 def browse_reviews():
-    
-    return render_template('browse_reviews.html')
+    entries = reviews.find()
+    return render_template('browse_reviews.html', entries=entries)
 
 
 """
