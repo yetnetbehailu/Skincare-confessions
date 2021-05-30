@@ -50,19 +50,19 @@ def add_reviews():
             is_vegan = True if request.form.get("is_vegan") else False
             price = Decimal128(str((request.form.get('price'))))
             rating = int(request.form.get('rating'))
+            brand_name = str(request.form.get('brand_name'))
             review = {
                 'category_name': request.form.get('category_name'),
-                'brand_name ': request.form.get('brand_name'),
+                'brand_name': brand_name,
                 'product_review': request.form.get('product_review'),
-                'price': (price),
-                'is_vegan': (is_vegan),
-                'rating': (rating),
-                'tags ': request.form.get('tags'),
+                'price': price,
+                'is_vegan': is_vegan,
+                'rating': rating,
+                'tags': request.form.get('tags'),
             }
             reviews.insert_one(review)
             flash('Review successfully added', 'succes')
-            return redirect(url_for('my_reviews', review=review,
-                            is_vegan=is_vegan, price=price, rating=rating))
+            return redirect(url_for('my_reviews', review=review))
         return render_template("add_reviews.html", username=username,
                                category_name=category_name,
                                form=add_review_form)
@@ -98,7 +98,8 @@ def my_reviews():
 @app.route('/browse_reviews')
 def browse_reviews():
     entries = reviews.find()
-    return render_template('browse_reviews.html', entries=entries)
+    return render_template(
+        'browse_reviews.html', entries=entries)
 
 
 """
