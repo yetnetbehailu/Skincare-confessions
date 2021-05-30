@@ -4,6 +4,8 @@ from skincare_confessions.forms import RegisterForm, LoginForm, AddReviewForm
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from bson.decimal128 import Decimal128
+import math
+from flask_pymongo import pymongo
 
 reviews = mongo.db.reviews
 categories = mongo.db.categories
@@ -97,9 +99,18 @@ def my_reviews():
 
 @app.route('/browse_reviews')
 def browse_reviews():
-    entries = reviews.find()
+    total = reviews.count()
+    card_per_page = 12
+    current_page = int(request.args.get('current_page', 1))
+    pages = range(1, int(math.ceil(total / card_per_page)) + 1)
+    # Sorts latest entry first skipping the given number of documents in the
+    # query.
+    entries = reviews.find().sort('_id', pymongo.DESCENDING).skip(
+        (current_page - 1)*card_per_page).limit(card_per_page)
     return render_template(
-        'browse_reviews.html', entries=entries)
+        'browse_reviews.html', title='All Reviews', entries=entries,
+        total=total, pages=pages,
+        current_page=current_page)
 
 
 """
