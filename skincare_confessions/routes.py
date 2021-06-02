@@ -54,6 +54,7 @@ def add_reviews():
             price = Decimal128(str((request.form.get('price'))))
             rating = int(request.form.get('rating'))
             brand_name = str(request.form.get('brand_name'))
+            is_fave = True if request.form.get("is_fave") else False
             review = {
                 'category_name': request.form.get('category_name'),
                 'brand_name': brand_name,
@@ -63,6 +64,7 @@ def add_reviews():
                 'rating': rating,
                 'tags': request.form.get('tags'),
                 'added_by': session["user"],
+                'is_fave': is_fave
             }
             reviews.insert_one(review)
             flash('Review successfully added', 'succes')

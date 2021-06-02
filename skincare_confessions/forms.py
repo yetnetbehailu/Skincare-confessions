@@ -60,3 +60,5 @@ class AddReviewForm(FlaskForm):
         validators=[FileAllowed(['jpg', 'png', 'jpeg'])])
     submit = SubmitField('Add')
     cancel = SubmitField('Cancel')
+
+    is_fave = BooleanField('is_fave')
