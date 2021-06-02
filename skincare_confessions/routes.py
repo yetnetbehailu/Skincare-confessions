@@ -9,6 +9,7 @@ from flask_pymongo import pymongo
 
 reviews = mongo.db.reviews
 categories = mongo.db.categories
+users = mongo.db.users
 
 """
 #   Home Route
@@ -43,9 +44,9 @@ def add_reviews():
      """
 
     if 'user' in session:
-        username = mongo.db.users.find_one({'username':
-                                            session['user'].lower()
-                                            })['username']
+        username = users.find_one({'username':
+                                   session['user'].lower()
+                                   })['username']
         add_review_form = AddReviewForm()
         category_name = categories.find()
         if add_review_form.validate_on_submit():
@@ -61,6 +62,7 @@ def add_reviews():
                 'is_vegan': is_vegan,
                 'rating': rating,
                 'tags': request.form.get('tags'),
+                'added_by': session["user"],
             }
             reviews.insert_one(review)
             flash('Review successfully added', 'succes')
@@ -82,12 +84,15 @@ def add_reviews():
 def my_reviews():
     # Grab sessions username from db
     if 'user' in session:
-        username = mongo.db.users.find_one({'username':
-                                            session['user'].lower()
-                                            })['username']
-        return render_template('my_reviews.html', username=username)
-    else:
-        return redirect(url_for('login'))
+        username = users.find_one({'username':
+                                   session['user'].lower()
+                                   })['username']
+        author = reviews.find_one({"added_by": session["user"]})
+        add_review_form = AddReviewForm()
+        return render_template(
+            'my_reviews.html', username=username, author=author,
+            form=add_review_form)
+    return redirect(url_for('login'))
 
 
 """
@@ -107,10 +112,11 @@ def browse_reviews():
     # query.
     entries = reviews.find().sort('_id', pymongo.DESCENDING).skip(
         (current_page - 1)*card_per_page).limit(card_per_page)
+    add_review_form = AddReviewForm()
     return render_template(
         'browse_reviews.html', title='All Reviews', entries=entries,
-        total=total, pages=pages,
-        current_page=current_page)
+        total=total, pages=pages, current_page=current_page,
+        form=add_review_form)
 
 
 """
@@ -129,7 +135,7 @@ def register():
     form = RegisterForm()
     if form.validate_on_submit():
         # Check if username already exist in db
-        existing_user = mongo.db.users.find_one(
+        existing_user = users.find_one(
             {"username": request.form["username"].lower()})
         if existing_user:
             flash('Sorry, this username has been taken')
@@ -139,7 +145,7 @@ def register():
                 "username": request.form["username"].lower(),
                 "password": generate_password_hash(request.form["password"])
             }
-            mongo.db.users.insert_one(new_user)
+            users.insert_one(new_user)
 
             # Put the new user into 'session' cookie
             session["user"] = request.form["username"]
@@ -163,7 +169,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         # Check if username exists in db
-        existing_user = mongo.db.users.find_one(
+        existing_user = users.find_one(
             {"username": request.form["username"].lower()})
         if existing_user:
             # Verify hashed password matches user input
