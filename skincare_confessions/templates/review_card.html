@@ -1,42 +1,84 @@
 <!--Review card-->
 <div class="col s-12 md-4 lg-3">
     <div class="card">
-        <h6>{{entry.category_name|capitalize}}</h6>
-        <!-- Checkbox y/n favorite display -->
-        <span><i class="far fa-heart"></i></span>
+        <h5 class="card-title">{{entry.brand_name|capitalize}}</h5>
+        <!-- Checkbox y/n favorite display (only for user in session)-->
+        {% if session.user %}
+            {% if _id in entry.favourited_by %}
+                <div class="fave-content">
+                    <span><i class="fas fa-heart fave"></i></span>
+                </div>
+            {% else %}
+                <div class="fave-content">
+                     <span><i class="far fa-heart not_fave"></i></span>
+                </div>
+            {% endif %}
+        {% else %}
+        <!-- User not in session icon display -->
+            <div class="fave-content">
+                <span><i class="far fa-heart not_fave"></i></span>
+            </div>
+        {% endif %}
         <div class="card-image">
                 <!-- Review image if assigned by user otherwise default placeholder put in place-->
-
-                <img src="" class="" alt="" />
-
-                <img src="" class="" alt="" />
-        </div>
-        <div class="col 8">
-            <p>{{entry.brand_name|capitalize}}</p>
-        </div>
-        <div class="col 4">
-            {% if entry.is_vegan==True %}
-                <i class="fas fa-leaf">Is Vegan</i>
+            {% if entry.upload_img %}
+                <img src="{{entry.upload_img}}" class="review-img" alt="Review image" />
             {% else %}
-                <i class="fas fa-leaf">Is not Vegan</i>
-            {% endif %}
+                <img src="{{url_for('static', filename='img/review-placeholder.png')}}" class="placeholder-img" alt="No image,placeholder" />
+            {% endif %}    
         </div>
-        <div class="col 6">
-            <p>{{entry.price}}</p>
-        </div>
-        <div class="col 6">
-            <p>{{entry.rating}}</p>
-        </div>
-        <div class="col 6">
-            <!-- Posted by -->
-            <p></p>
-        </div>
-        <div class="col 6">
-            <!-- Post date -->
-            <p></p>
-        </div>
-        <div class="col 12">
-            <p>{{entry.tags}}</p>
+        <div class="container">
+            <div class="row">
+                <!-- Category name-->
+                <div class="col 8 card-info">
+                    <p class="mb-0">{{entry.category_name|capitalize}}</p>
+                </div>
+                <!-- Is-vegan booleanfield-->
+                <div class="col 4 vegan-content">
+                    {% if entry.is_vegan %}
+                        <label for="is-vegan">Vegan</label>
+                        <span>
+                            <i class="fas fa-leaf vegan"></i>
+                        </span>
+                    {% else %}
+                    <label for="is-vegan">Not Vegan</label>
+                    <span>
+                        <i class="fas fa-leaf not-vegan"></i>
+                    </span>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                <!-- Price -->
+                <div class="col 6 card-info">
+                    {{ form.price.label(class="form-label")}}
+                    <span>{{entry.price}}</span>
+                </div>
+                <!-- Rating -->
+                <div class="col 6 card-info">
+                    {{ form.rating.label(class="form-label")}}
+                    <span>{{entry.rating}}</span>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Posted by -->
+                <div class="col 12 card-info">Posted by:
+                    <span>{{entry.added_by}}</span>
+                </div>
+            </div> 
+            <!-- Search tags --> 
+            <div class="row">
+                <div class="col 12 card-info">
+                    {{ form.tags.label(class="form-label m-0")}}
+                    <p>{{entry.tags}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Post date -->
+                <div class="col 12 card-info">Created at:
+                    <span></span>
+                </div>
+            </div>
         </div>
     </div>
 </div>
