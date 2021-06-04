@@ -6,6 +6,17 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from bson.decimal128 import Decimal128
 import math
 from flask_pymongo import pymongo
+import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+
+cloudinary.config(
+    cloud_name=os.environ.get('cloud_name'),
+    api_key=os.environ.get('api_key'),
+    api_secret=os.environ.get('api_secret')
+)
 
 reviews = mongo.db.reviews
 categories = mongo.db.categories
@@ -36,7 +47,7 @@ def add_reviews():
     """ Displays Add review form when user is logged in, preventing guest
         users access.
         Logged in user is able to create a review which when submitted gets
-        inserted to reviews collection in database.
+        inserted to reviews collection in database. Users uploaded image files are uploaded & stored in Cloudinary.
         Validation requirements must be meet according to AddReview Flaskform.
         Upon successful submission user is re-directed to their personal
         reviews collection page. If unable to make a successful entry user
@@ -50,11 +61,13 @@ def add_reviews():
         add_review_form = AddReviewForm()
         category_name = categories.find()
         if add_review_form.validate_on_submit():
+            upload_img = request.files['upload_img']
+            uploaded_image = cloudinary.uploader.upload(
+                upload_img, width=580, radius=20)
             is_vegan = True if request.form.get("is_vegan") else False
             price = Decimal128(str((request.form.get('price'))))
             rating = int(request.form.get('rating'))
             brand_name = str(request.form.get('brand_name'))
-            is_fave = True if request.form.get("is_fave") else False
             review = {
                 'category_name': request.form.get('category_name'),
                 'brand_name': brand_name,
@@ -64,7 +77,7 @@ def add_reviews():
                 'rating': rating,
                 'tags': request.form.get('tags'),
                 'added_by': session["user"],
-                'is_fave': is_fave
+                'upload_img': uploaded_image['secure_url']
             }
             reviews.insert_one(review)
             flash('Review successfully added', 'succes')
