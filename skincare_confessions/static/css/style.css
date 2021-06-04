@@ -78,7 +78,7 @@ a[data-toggle="collapse"] {
 }
 
 /* ---------------------------------------------------
-    CONTENT STYLE
+    MUTUAL CONTENT STYLE
 ----------------------------------------------------- */
 .page {
     height: auto;
@@ -124,6 +124,15 @@ input[type="search"] {
     transition: all 0.7s ease-out 0s;
 }
 
+.card-deck {
+    display: grid;
+    grid-template-columns:  repeat(4, 1fr);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
 
 /* ---------------------------------------------------
     SITE LOGO
@@ -428,6 +437,78 @@ input[type="search"] {
     text-shadow: 2px 1px 3px rgb(0 0 0 / 50%);
 }
 
+/* ---------------------------------------------------
+    Review cards page 
+----------------------------------------------------- */
+.card {
+    transition: transform .2s;
+    border-radius: 3px;
+    font-family: 'Vollkorn', Poppins;
+}
+
+.card:hover {
+    transform: translateY(-.3rem) scale(1);
+}
+
+
+i.fas.fa-heart.fave::before{
+    color: #ff00bb;
+    font-size: x-large;
+    z-index: -1;
+}
+
+i.far.fa-heart.not_fave::before{
+    color: #ff00bb;
+    font-size: x-large;
+    z-index: -1;
+}
+
+.fave-content{
+    position: relative;
+    top: -2px;
+    text-align: end;
+    margin-right: 13px;
+}
+
+.fave-switch {
+    position: relative;
+    left: 22px;
+    top: -3px;
+    opacity: 0;
+}
+
+.placeholder-img {
+    width: 80%;
+}
+
+.card-image {
+    display: flex;
+    justify-content: center;
+}
+.review-img{
+    width: 85%;
+}
+
+.card-title {
+    text-align: center;
+    margin:10px 0 0;
+}
+
+.card-info {
+    padding: 5px;
+}
+.vegan-content {
+    align-self: center;
+}
+
+.vegan {
+    color: green;
+    padding-left: 5px;
+}
+
+.not-vegan {
+    padding-left: 5px;
+}
 
 
 /* ---------------------------------------------------
