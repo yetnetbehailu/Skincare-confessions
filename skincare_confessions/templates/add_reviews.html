@@ -70,15 +70,8 @@
                 </div>
                 <!-- Boolean field -->
                 <div class="col s-12 md-4 custom-control custom-switch input-field">
-                    {{ form.is_vegan.label(class="custom-control-label d-block mb-0")}} {% if form.is_vegan.errors %} {{ form.is_vegan(class="custom-control-input custom-switch is-invalid")}}
-                    <div class="invalid-feedback">
-                        {% for error in form.is_vegan.errors %}
-                        <span>
-                            {{error}}
-                        </span>
-                        {% endfor %}
-                    </div>
-                    {% else %} {{ form.is_vegan(class="custom-control-input custom-switch")}} {% endif %}
+                    {{ form.is_vegan.label(class="custom-control-label d-block mb-0")}} 
+                    {{ form.is_vegan(class="custom-control-input custom-switch")}}
                 </div>
                 <!-- Rating -->
                 <div class="col s-12 md-4 input-field">
