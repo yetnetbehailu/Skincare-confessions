@@ -61,9 +61,13 @@ def add_reviews():
         add_review_form = AddReviewForm()
         category_name = categories.find()
         if add_review_form.validate_on_submit():
-            upload_img = request.files['upload_img']
-            uploaded_image = cloudinary.uploader.upload(
-                upload_img, width=580, radius=20)
+            if add_review_form.upload_img.data:
+                upload_img = request.files.get('upload_img')
+                cloud_upload = cloudinary.uploader.upload(
+                    upload_img, width=580, radius=20)
+                uploaded_image = cloud_upload.get('secure_url')
+            else:
+                uploaded_image = request.form.get('upload_img')
             is_vegan = True if request.form.get("is_vegan") else False
             price = Decimal128(str((request.form.get('price'))))
             rating = int(request.form.get('rating'))
@@ -77,7 +81,7 @@ def add_reviews():
                 'rating': rating,
                 'tags': request.form.get('tags'),
                 'added_by': session["user"],
-                'upload_img': uploaded_image['secure_url']
+                'upload_img': uploaded_image
             }
             reviews.insert_one(review)
             flash('Review successfully added', 'succes')
