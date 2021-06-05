@@ -109,6 +109,7 @@
                  <div class="col-12 file-field">
                     {{ form.upload_img(class="form-control-field", id="custom-field")}}
                     {{ form.upload_img.label(class="file-label upload_img") }}
+                </div>
                     {% if form.upload_img.errors %}
                         {% for error in form.upload_img.errors %}
                         <span class="text-danger">
@@ -116,7 +117,6 @@
                         </span>
                         {% endfor %}
                     {% endif %}
-                </div>
             </div>
             <div class="add_form_btns">
                     {{ form.submit(class="add_review_btn")}}
