@@ -99,17 +99,29 @@ def add_reviews():
 """
 
 
-@app.route('/my_reviews', methods=['GET', 'POST'])
+@app.route('/my_reviews')
 def my_reviews():
     # Grab sessions username from db
     if 'user' in session:
         username = users.find_one({'username':
                                    session['user'].lower()
                                    })['username']
-        author = reviews.find_one({"added_by": session["user"]})
         add_review_form = AddReviewForm()
+        # Finds & counts user personal review entries
+        my_total_reviews = reviews.find({
+            "added_by": session["user"]}).count()
+        card_per_page = 12
+        current_page = int(request.args.get('current_page', 1))
+        pages = range(1, int(math.ceil(my_total_reviews / card_per_page)) + 1)
+        # Sorts latest entry first skipping the given number of documents in
+        # the query.
+        author = reviews.find({
+            "added_by": session["user"]}).sort('_id', pymongo.DESCENDING).skip(
+                (current_page - 1)*card_per_page).limit(card_per_page)
         return render_template(
             'my_reviews.html', username=username, author=author,
+            title='My Reviews', my_total_reviews=my_total_reviews,
+            pages=pages, current_page=current_page,
             form=add_review_form)
     return redirect(url_for('login'))
 
