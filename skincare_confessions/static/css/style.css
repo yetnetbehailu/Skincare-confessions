@@ -426,8 +426,61 @@ input[type="search"] {
     justify-content: space-evenly;
     margin-top: 20px;
 }
+
+/* Box around slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* slider */
+.slider {
+  position: relative;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+/* slider ball */
+.ball:before {
+  border-radius: 50%;
+}
+
+.ball:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #22252a;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #759e71;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 2px #8ccc86;
+}
+
+input:checked+.ball:before {
+  transform: translateX(26px);
+  background-color: #265831;
+}
+
+/* flask form checkbox */
+.switch-control{
+  width: 60px;
+  height: 33px;
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+}
 /* ---------------------------------------------------
-    Browse reviews 
+  Browse reviews 
 ----------------------------------------------------- */
 .browse-headtitle {
     text-align: center;
