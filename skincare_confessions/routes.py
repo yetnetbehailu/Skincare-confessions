@@ -95,7 +95,9 @@ def add_reviews():
 """
 #   My Reviews Route
 -------------------
-
+Displays users added reviews on personal page for personal view , 12 review
+cards per page limit.Total amount of personal published reviews is counted for,
+arranged latest to oldest post.
 """
 
 
@@ -135,6 +137,10 @@ def my_reviews():
 
 @app.route('/browse_reviews')
 def browse_reviews():
+    """ Displays added reviews for public view, 12 review cards per page limit.
+    Total amount of published reviews is counted for, arranged latest to oldest
+    post
+    """
     total = reviews.count()
     card_per_page = 12
     current_page = int(request.args.get('current_page', 1))
