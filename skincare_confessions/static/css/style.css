@@ -299,6 +299,7 @@ input[type="search"] {
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: #fff;
+    font-family: 'Vollkorn', Poppins;
 }
 
 
@@ -353,10 +354,20 @@ input[type="search"] {
     box-shadow: none;
 }
 
+.custom-vegan-label {
+    width: 45px;
+}
+
 #rating {
     box-shadow: none;
     list-style: none;
     border-bottom: none;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    opacity: 0;
 }
 #tags {
     margin-bottom: 13px;
@@ -432,7 +443,7 @@ input[type="search"] {
   position: relative;
   display: inline-block;
   width: 60px;
-  height: 34px;
+  height: 30px;
 }
 
 /* slider */
@@ -440,7 +451,7 @@ input[type="search"] {
   position: relative;
   background-color: #ccc;
   transition: .4s;
-  border-radius: 34px;
+  border-radius: 25px;
 }
 /* slider ball */
 .ball:before {
@@ -450,7 +461,7 @@ input[type="search"] {
 .ball:before {
   position: absolute;
   content: "";
-  height: 26px;
+  height: 23px;
   width: 26px;
   left: 4px;
   bottom: 4px;
@@ -478,6 +489,27 @@ input:checked+.ball:before {
   position: absolute;
   opacity: 0;
   z-index: 1;
+}
+
+.star-rating {
+    position: relative;
+    top: -41px;
+    font-size: larger;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 3px;
+}
+
+#rating label {
+    display: none;
+}
+
+.rating-fields {
+    display: table;
+}
+
+.fa-star {
+    color: #cccccc;
 }
 /* ---------------------------------------------------
   Browse reviews 
