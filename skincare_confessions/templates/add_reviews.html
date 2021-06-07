@@ -70,12 +70,14 @@
                 </div>
                 <!-- Boolean field -->
                 <div class="col s-12 md-4 custom-control custom-switch input-field">
-                    {{ form.is_vegan.label(class="custom-control-label d-block mb-0")}} 
-                    {{ form.is_vegan(class="custom-control-input custom-switch")}}
+                    {{ form.is_vegan.label(class="custom-vegan-label d-block mb-0")}}
+                    {{ form.is_vegan(class="custom-control-input switch-control")}}
+                    <span class="slider ball switch"></span>
                 </div>
-                <!-- Rating -->
+                <!-- Star Rating -->
                 <div class="col s-12 md-4 input-field">
                     {{ form.rating.label(class="form-label d-block mb-0")}} 
+                    <div class="rating-fields">
                     {% if form.rating.errors %} 
                     {{form.rating(class=" is-invalid review-input")}}
                     <div class="invalid-feedback">
@@ -86,8 +88,16 @@
                         {% endfor %}
                     </div>
                     {% else %} 
-                    {{ form.rating(class="review-input")}} 
+                    {{ form.rating(class="review-input")}}
+                    <div class="star-rating">
+                        <i class="fas fa-star" aria-hidden="true" id="rating-0"></i>
+                        <i class="fas fa-star" aria-hidden="true" id="rating-1"></i>
+                        <i class="fas fa-star" aria-hidden="true" id="rating-2"></i>
+                        <i class="fas fa-star" aria-hidden="true" id="rating-3"></i>
+                        <i class="fas fa-star" aria-hidden="true" id="rating-4"></i>
+                    </div>
                     {% endif %}
+                    </div>
                 </div>
             </div>
             <!-- Search stringfield -->
