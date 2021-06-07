@@ -10,9 +10,9 @@ $("#is_vegan").on("change", (e) => {
 
 /* Star Rating radiofield*/
 
-$("#rating-0").click(function () {
-    $(".fa-star").css("color", "#cccccc");
-    $("#rating-0").css("color", "#ffd01f");
+$("#rating-0").click(function() {
+    $(".fa-star").css("color", "#ffd01f");
+    $("#rating-1, #rating-2, #rating-3, #rating-4").css("color", "#cccccc");
 });
 $("#rating-1").click(function () {
     $(".fa-star").css("color", "#cccccc");
