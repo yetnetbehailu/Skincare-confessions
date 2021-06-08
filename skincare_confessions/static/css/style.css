@@ -595,7 +595,69 @@ i.far.fa-heart.not_fave::before{
     padding-left: 5px;
 }
 
+.horizontal-line {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    margin: 0;
+}
 
+/* ---------------------------------------------------
+    About Us page
+----------------------------------------------------- */
+.app-introduction {
+    font-family: 'Vollkorn', Poppins;
+    background-color: #e7ffe5;
+}
+
+.subscribe-content {
+    display: flex;
+    justify-content: center;
+    width: 93%;
+    margin: auto;
+}
+
+.about_title {
+    text-align: center;
+    padding-top: 25px;
+}
+
+.about-text {
+    height: 82vw;
+    background-color: white;
+    width: 70vw;
+    margin: auto;
+    box-shadow: 0px 2px 9px 5px #405d3f99;
+}
+
+.subscribe-text {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.email-field {
+    width: 70%;
+    border: 2px solid #7f7f7f;
+}
+
+.subscribe-content input:focus{
+    outline-style: none;
+    box-shadow: 0px 0px 1px 2px #50752e;
+    border: none;
+}
+
+.subscribe-btn {
+    text-align: center;
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+
+.envelope-icon {
+    position: relative;
+    top: 3px;
+    right: 25px;
+}
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
@@ -675,6 +737,23 @@ i.far.fa-heart.not_fave::before{
     .dropdown-toggle::after {
         margin-right: -24px;
     }
+
+    .about-text {
+        height: 40vw;
+        width: 58vw;
+    }
+
+    .subscribe-text {
+        margin-top: 47px;
+    }
+
+    .subscribe-content {
+        margin-top: 4px;
+    }
+
+    .email-field {
+        width: 40%;
+    }
 }
 
 @media (min-width: 1050px){
@@ -692,3 +771,54 @@ i.far.fa-heart.not_fave::before{
         font-size: 1.3rem;
     }
 }
+
+@media (min-width: 375px) and (max-width: 413px) {
+    .subscribe-btn {
+        padding-bottom: 32px;
+        padding-top: 18px;
+    }
+
+    .subscribe-content {
+        padding-top: 15px;
+    }
+
+    .subscribe-text {
+        margin-top: 30px;
+    }
+}
+
+@media (min-width: 414px) and (max-width: 767px) {
+    .subscribe-btn {
+        padding-bottom: 37px;
+        padding-top: 20px;
+    }
+
+    .subscribe-text {
+        margin-top: 40px;
+    }
+
+    .subscribe-content {
+        margin-top: 13px;
+    }
+
+    .about_title {
+        padding-top: 38px;
+        padding-bottom: 10px;
+    }
+}
+
+@media (min-width: 768px){
+    .subscribe-text{
+        margin-top: 45px;
+}
+    .subscribe-btn {
+        padding-bottom: 38px;
+        padding-top: 15px;
+    }
+
+    .subscribe-content {
+        margin-top: 12px;
+        padding-top: 11px;
+    }
+}
+
