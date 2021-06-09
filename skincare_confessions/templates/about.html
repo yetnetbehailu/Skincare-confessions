@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="app-introduction">
+    <h1 class="about_title">Skincare Confessions</h1>
+    <div class="about-text">
+        <p class=""></p>
+        <p></p>
+    </div>
+    <h5 class="subscribe-text">Subscribe to our newsletter</h5>
+    <div class="subscribe-content">
+    {% if form.email.errors %} 
+        <form action="">
+            {{form.email(class='email-field is-invalid', placeholder='Enter Email...')}}
+            <span class="envelope-icon"><i class="fas fa-envelope"></i></span>
+        </form>
+        <div class="invalid-feedback">
+        {% for error in form.email.errors %}
+            <span class="text-danger">
+                {{error}}
+            </span>
+        {% endfor %}
+        </div>
+        {% else %}
+        {{form.email(class='email-field', placeholder='Enter Email...')}}
+        <span class="envelope-icon"><i class="fas fa-envelope"></i></span>
+        {% endif %}
+    </div>
+    <div class="subscribe-btn">
+        {{form.subscribe}}
+    </div>
+{% endblock %}

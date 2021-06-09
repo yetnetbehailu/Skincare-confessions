@@ -2,8 +2,8 @@ from flask_wtf import FlaskForm
 from wtforms import (StringField, PasswordField, SubmitField,
                      TextAreaField, BooleanField,
                      DecimalField, RadioField)
-from wtforms.validators import (DataRequired, Length, EqualTo, Regexp, Optional
-                                )
+from wtforms.validators import (DataRequired, Length, EqualTo, Regexp,
+                                Email)
 from flask_wtf.file import FileField, FileAllowed
 
 
@@ -61,4 +61,8 @@ class AddReviewForm(FlaskForm):
     submit = SubmitField('Add')
     cancel = SubmitField('Cancel')
 
-    is_fave = BooleanField('is_fave')
+
+class EmailForm(FlaskForm):
+    email = StringField(
+        'Enter Email...', validators=[DataRequired(), Email()])
+    subscribe = SubmitField('Sign up!')

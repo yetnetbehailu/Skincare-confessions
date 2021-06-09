@@ -1,6 +1,7 @@
 from flask import flash, render_template, redirect, request, session, url_for
 from skincare_confessions import app, mongo
-from skincare_confessions.forms import RegisterForm, LoginForm, AddReviewForm
+from skincare_confessions.forms import (
+    RegisterForm, LoginForm, AddReviewForm, EmailForm)
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from bson.decimal128 import Decimal128
@@ -21,6 +22,7 @@ cloudinary.config(
 reviews = mongo.db.reviews
 categories = mongo.db.categories
 users = mongo.db.users
+subscribes = mongo.db.subscriptions
 
 """
 #   Home Route
@@ -154,6 +156,26 @@ def browse_reviews():
         'browse_reviews.html', title='All Reviews', entries=entries,
         total=total, pages=pages, current_page=current_page,
         form=add_review_form)
+
+
+"""
+#   About Us
+-------------------
+
+"""
+
+
+@app.route('/about', methods=['GET', 'POST'])
+def about():
+    form = EmailForm()
+    if form.validate_on_submit():
+        email = {
+            'email': request.form.get('email')
+        }
+        subscribes.insert_one({email})
+        return render_template('about.html', title='About Us',
+                               email=email)
+    return render_template('about.html', form=form)
 
 
 """
