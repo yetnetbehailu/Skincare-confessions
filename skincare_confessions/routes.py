@@ -7,6 +7,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from bson.decimal128 import Decimal128
 import math
 from flask_pymongo import pymongo
+from datetime import datetime
 import os
 import cloudinary
 import cloudinary.uploader
@@ -49,7 +50,8 @@ def add_reviews():
     """ Displays Add review form when user is logged in, preventing guest
         users access.
         Logged in user is able to create a review which when submitted gets
-        inserted to reviews collection in database. Users uploaded image files are uploaded & stored in Cloudinary.
+        inserted to reviews collection in database. Users uploaded image files 
+        are uploaded & stored in Cloudinary.
         Validation requirements must be meet according to AddReview Flaskform.
         Upon successful submission user is re-directed to their personal
         reviews collection page. If unable to make a successful entry user
@@ -83,7 +85,8 @@ def add_reviews():
                 'rating': rating,
                 'tags': request.form.get('tags'),
                 'added_by': session["user"],
-                'upload_img': uploaded_image
+                'upload_img': uploaded_image,
+                'created_on': datetime.today().strftime("%d %b, %Y")
             }
             reviews.insert_one(review)
             flash('Review successfully added', 'succes')
