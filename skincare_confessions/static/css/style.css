@@ -127,11 +127,20 @@ input[type="search"] {
 .card-deck {
     display: grid;
     grid-template-columns:  repeat(4, 1fr);
+    grid-gap: 15px;
 }
 
 .pagination {
     display: flex;
     justify-content: center;
+}
+
+.short-discrip {
+    width: 206px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 9px 0 0;
 }
 
 /* ---------------------------------------------------
@@ -602,6 +611,31 @@ i.far.fa-heart.not_fave::before{
     margin: 0;
 }
 
+.entry_date {
+    font-size: 12px;
+    text-align: center;
+    font-family: monospace;
+}
+
+.posted_by {
+    text-align: center;
+    font-family: monospace;
+    font-size: 12px;
+}
+
+.category-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px 0;
+    font-size: 14px;
+}
+
+.category-name {
+    position: relative;
+    top: 5px;
+    font-family: monospace;
+    font-size: 12px;
+}
 /* ---------------------------------------------------
     About Us page
 ----------------------------------------------------- */
