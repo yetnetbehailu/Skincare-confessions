@@ -33,18 +33,21 @@
         </div>
         <div class="container">
             <div class="row">
+                <!-- Rating -->
+                <div class="col 12 rating-info">
+                    {{ form.rating.label(class="rate-label")}}
+                    <!-- Get the rating value and display accurate rating value range -->
+                    {% for rating_num in range(entry.rating|int) %}
+                        <i class="fas fa-star star-rated" aria-hidden="true"></i>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row">
                 <!-- Product review short discription -->
             <div class="col 12 review-preview">
                 <p class="short-discrip">"{{entry.product_review}}"
                 </p>
             </div>
-            </div>
-            <div class="row">
-                <!-- Rating -->
-                <div class="col 12 card-info">
-                    {{ form.rating.label(class="form-label")}}
-                    <span>{{entry.rating}}</span>
-                </div>
             </div>
             <div class="row">
                 <!-- Price -->

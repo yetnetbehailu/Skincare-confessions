@@ -140,7 +140,7 @@ input[type="search"] {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    margin: 9px 0 0;
+    margin: 5px 0 0;
 }
 
 /* ---------------------------------------------------
@@ -635,6 +635,19 @@ i.far.fa-heart.not_fave::before{
     top: 5px;
     font-family: monospace;
     font-size: 12px;
+}
+
+.rate-label {
+    margin-bottom: 0;
+}
+
+.star-rated {
+    color: #ffd01f;
+}
+
+.rating-info {
+    font-size: 15px;
+    margin-top: 5px;
 }
 /* ---------------------------------------------------
     About Us page
