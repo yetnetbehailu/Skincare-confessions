@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Vollkorn:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Vollkorn:wght@500&display=swap');
 
 body {
     background: #fff;
@@ -124,19 +124,16 @@ input[type="search"] {
     transition: all 0.7s ease-out 0s;
 }
 
-.card-deck {
-    display: grid;
-    grid-template-columns:  repeat(4, 1fr);
-    grid-gap: 15px;
-}
 
 .pagination {
     display: flex;
     justify-content: center;
+    margin: 0;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .short-discrip {
-    width: 206px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -591,9 +588,10 @@ i.far.fa-heart.not_fave::before{
 .card-info {
     padding: 5px;
 }
-.vegan-content {
-    align-self: center;
-}
+
+.price-label {
+    margin-bottom: 0;
+} 
 
 .vegan {
     color: green;
@@ -680,7 +678,6 @@ i.far.fa-heart.not_fave::before{
 .subscribe-text {
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 0;
 }
 
 .email-field {
@@ -705,6 +702,127 @@ i.far.fa-heart.not_fave::before{
     top: 3px;
     right: 25px;
 }
+
+.creamImg {
+    width: 8%;
+    position: absolute;
+    left: 3%;
+    top: 24%;
+}
+
+.serumImg {
+    width: 8%;
+    position: absolute;
+    right: 4%;
+    top: 30%;
+}
+
+.mirrorImg {
+    position: relative;
+    width: 10%;
+    bottom: -66%;
+    left: -13%;
+}
+
+.aloeImg {
+    position: relative;
+    width: 18%;
+    bottom: -66%;
+    left: 91%;
+}
+/* ---------------------------------------------------
+    404 fallback Page for invalid url errors
+----------------------------------------------------- */
+.title404 {
+    font-family: 'Vollkorn', Poppins;
+    text-align: center;
+    color: red;
+}
+
+.heading404 {
+    font-size: 3rem;
+}
+
+.errormessg {
+    text-align: center;
+    font-family: 'Poppins';
+    font-weight: 700;
+}
+.errorImg-group {
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    padding-bottom: 16px;
+}
+
+.home_btn {
+    padding-bottom: 15px;
+    text-align: center;
+    font-family: 'Vollkorn', Poppins;
+}
+
+
+.link_home {
+   text-decoration: none;
+   color: white;
+   display: block;
+}
+
+.link_home:hover {
+    text-decoration: none;
+    color: white;
+}
+
+@-webkit-keyframes hvr-pulse {
+    25% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    75% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+}
+
+@keyframes hvr-pulse {
+    25% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    75% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+}
+
+.hvr-pulse {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-animation-name: hvr-pulse;
+    animation-name: hvr-pulse;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.hvr-pulse:hover {
+    background-color: #21a568;
+}
+
+.btn-success {
+    width: 25%;
+}
+
+
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
@@ -836,7 +954,7 @@ i.far.fa-heart.not_fave::before{
 
 @media (min-width: 414px) and (max-width: 767px) {
     .subscribe-btn {
-        padding-bottom: 37px;
+        padding-bottom: 47px;
         padding-top: 20px;
     }
 
@@ -860,7 +978,7 @@ i.far.fa-heart.not_fave::before{
 }
     .subscribe-btn {
         padding-bottom: 38px;
-        padding-top: 15px;
+        padding-top: 25px;
     }
 
     .subscribe-content {
