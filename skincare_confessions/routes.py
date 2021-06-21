@@ -50,7 +50,7 @@ def add_reviews():
     """ Displays Add review form when user is logged in, preventing guest
         users access.
         Logged in user is able to create a review which when submitted gets
-        inserted to reviews collection in database. Users uploaded image files 
+        inserted to reviews collection in database. Users uploaded image files
         are uploaded & stored in Cloudinary.
         Validation requirements must be meet according to AddReview Flaskform.
         Upon successful submission user is re-directed to their personal
@@ -270,3 +270,9 @@ def logout():
     # Deletes user session cookie removes logged in state
     session.pop('user')
     return redirect(url_for('login'))
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    """Handels invalid URL inputs"""
+    return render_template('404.html', title="Page Not Found"), 404
