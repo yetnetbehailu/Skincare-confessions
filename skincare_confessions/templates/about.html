@@ -1,8 +1,13 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% block content %}
 
 <div class="app-introduction">
+    <img class="creamImg" src="{{url_for('static',filename='img/cream.png')}}" alt="cream bottles">
     <h1 class="about_title">Skincare Confessions</h1>
+    <img class="serumImg" src="{{url_for('static',filename='img/serum.png')}}" alt="serum bottle">
     <div class="about-text">
+        <img class="mirrorImg" src="{{url_for('static',filename='img/mirror.png')}}" alt="mirror">
+    <img class="aloeImg" src="{{url_for('static',filename='img/aloevera.png')}}" alt="aloe vera plant">
         <p class=""></p>
         <p></p>
     </div>
@@ -28,4 +33,5 @@
     <div class="subscribe-btn">
         {{form.subscribe}}
     </div>
+</div>
 {% endblock %}
