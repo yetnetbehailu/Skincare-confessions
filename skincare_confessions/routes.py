@@ -1,4 +1,5 @@
-from flask import flash, render_template, redirect, request, session, url_for
+from flask import (
+    flash, render_template, redirect, request, session, url_for, Response)
 from skincare_confessions import app, mongo
 from skincare_confessions.forms import (
     RegisterForm, LoginForm, AddReviewForm, EmailForm)
@@ -86,7 +87,8 @@ def add_reviews():
                 'tags': request.form.get('tags'),
                 'added_by': session["user"],
                 'upload_img': uploaded_image,
-                'created_on': datetime.today().strftime("%d %b, %Y")
+                'created_on': datetime.today().strftime("%d %b, %Y"),
+                'faved_by': []
             }
             reviews.insert_one(review)
             flash('Review successfully added', 'succes')
@@ -159,6 +161,34 @@ def browse_reviews():
         'browse_reviews.html', title='All Reviews', entries=entries,
         total=total, pages=pages, current_page=current_page,
         form=add_review_form)
+
+
+"""
+#  Update favorite functionallity Route
+-------------------
+This route enables signed in users to save/highlight their favorite reviews
+alternativley remove higlight.
+By getting the unique review post id & clicked/unclicked checkbox value from
+the frontend. If the box is checked, adds the user ID to the faved_by list
+array in database otherwise, removes the user ID from the faved_by list.
+Sequentally returning a success response to the frontend.
+"""
+
+
+@app.route("/update_favorites/<review_id>/<is_fave>", methods=["GET", "POST"])
+def update_favorites(review_id, is_fave):
+    'user' in session
+    # get the ID of the user
+    user_id = users.find_one({'username': session['user'].lower()})['_id']
+    if is_fave == "true":
+        # Update/add user id to faved_by field array in reviews collection
+        faved_by = reviews.update({'_id': ObjectId(review_id)},
+                                  {'$addToSet': {'faved_by': user_id}})
+    else:
+        # Update/remove user id from faved_by field in reviews collection
+        remove_faved_by = reviews.update({'_id': ObjectId(review_id)},
+                                         {'$pull': {'faved_by': user_id}})
+    return Response(status=201, mimetype='update_favorites/html')
 
 
 """
