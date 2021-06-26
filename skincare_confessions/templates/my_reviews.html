@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="container-fluid my-reviews">
     <h2 class="user-headtitel">{{username|capitalize }}'s Reviews ({{ my_total_reviews }})</h2>
     <div class="link_btn">
         <button type="button" class="btn-outline redirect_btn"><a href="{{url_for('add_reviews')}}">ADD NEW REVIEW</a></button>
@@ -29,4 +30,22 @@
             {% endfor %}
         </ul> 
     </div>
+</div>
+{% endblock %}
+{% block script %}
+<!--  Ajax call function for favorite functionallity
+Add on change event listener to all checkbox input card forms with class favorite.-->
+<script type=text/javascript>
+    $('.favorite').on("change", function(){
+        /* Get the id value that should be sent to backend server 
+        $(this) referring to the specific class which changed */
+        let review_id = $(this).attr("id");
+        let is_fave =$(this).prop('checked')
+            /* send URL,data of review_id & checkbox checked/unchecked state to server using ajax call post method */
+            $.post(`/update_favorites/${review_id}/${is_fave}`)
+            .done(function(response) {
+               alert('yuss')
+            });
+        });
+</script> 
 {% endblock %}
