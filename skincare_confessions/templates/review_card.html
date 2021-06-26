@@ -1,21 +1,21 @@
 <!--Review card-->
-<div class="col s-12 md-4 lg-3">
+<div class="col-sm-12 col-md-4 col-lg-3">
     <div class="card">
         <h5 class="card-title">{{entry.brand_name|capitalize}}</h5>
          <!-- Category name-->
-         <div class="category-content">
+        <div class="category-content">
             <p class="mb-0 category-name">Category: {{entry.category_name|capitalize}}</p>
-        <!-- Checkbox y/n favorite display (only for user in session)-->
         {% if session.user %}
-            {% if _id in entry.favourited_by %}
-                <div class="fave-content">
-                    <span><i class="fas fa-heart fave"></i></span>
-                </div>
-            {% else %}
-                <div class="fave-content">
-                     <span><i class="far fa-heart not_fave"></i></span>
-                </div>
-            {% endif %}
+            <div class="fave-content">
+                <form action="{{url_for('update_favorites',review_id=review_id,is_fave=is_fave)}}" method="POST">
+                    <input type="checkbox" id="{{ entry._id }}" class="favorite">
+                    {% if user_id in entry.faved_by %}
+                        <span><i class="fas fa-heart fave"></i></span>
+                    {% else %}
+                        <span><i class="far fa-heart not_fave"></i></span>
+                    {% endif %}
+                </form>
+            </div>    
         {% else %}
         <!-- User not in session icon display -->
             <div class="fave-content">
@@ -52,11 +52,11 @@
             <div class="row">
                 <!-- Price -->
                 <div class="col 6 card-info">
-                    {{ form.price.label(class="form-label")}}
+                    {{ form.price.label(class="price-label")}}
                     <span>{{entry.price}}</span>
                 </div>
                 <!-- Is-vegan booleanfield-->
-                <div class="col 6 vegan-content">
+                <div class="col 6 card-info">
                     {% if entry.is_vegan %}
                         <label for="is-vegan">Vegan</label>
                         <span>
