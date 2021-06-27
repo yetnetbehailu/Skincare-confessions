@@ -282,6 +282,10 @@ input[type="search"] {
     text-align: center;
 }
 
+.my-reviews {
+    background-color: #e7ffe5;
+}
+
 
 /* ---------------------------------------------------
     Add_reviews Page 
@@ -528,6 +532,9 @@ input:checked+.ball:before {
     text-shadow: 2px 1px 3px rgb(0 0 0 / 50%);
 }
 
+.browse-page {
+    background-color: #e7ffe5;
+}
 /* ---------------------------------------------------
     Review cards page 
 ----------------------------------------------------- */
