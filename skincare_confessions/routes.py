@@ -115,6 +115,7 @@ def my_reviews():
         username = users.find_one({'username':
                                    session['user'].lower()
                                    })['username']
+        user_id = users.find_one({'username': session['user'].lower()})['_id']
         add_review_form = AddReviewForm()
         # Finds & counts user personal review entries
         my_total_reviews = reviews.find({
@@ -131,7 +132,7 @@ def my_reviews():
             'my_reviews.html', username=username, author=author,
             title='My Reviews', my_total_reviews=my_total_reviews,
             pages=pages, current_page=current_page,
-            form=add_review_form)
+            form=add_review_form, user_id=user_id)
     return redirect(url_for('login'))
 
 
@@ -157,10 +158,17 @@ def browse_reviews():
     entries = reviews.find().sort('_id', pymongo.DESCENDING).skip(
         (current_page - 1)*card_per_page).limit(card_per_page)
     add_review_form = AddReviewForm()
-    return render_template(
-        'browse_reviews.html', title='All Reviews', entries=entries,
-        total=total, pages=pages, current_page=current_page,
-        form=add_review_form)
+    if 'user' in session:
+        user_id = users.find_one({'username': session['user'].lower()})['_id']
+        return render_template(
+            'browse_reviews.html', title='All Reviews', entries=entries,
+            total=total, pages=pages, current_page=current_page,
+            form=add_review_form, user_id=user_id)
+    else:
+        return render_template(
+            'browse_reviews.html', title='All Reviews', entries=entries,
+            total=total, pages=pages, current_page=current_page,
+            form=add_review_form)
 
 
 """
@@ -210,7 +218,7 @@ def about():
                                email=email)
     return render_template('about.html', form=form)
 
-
+    
 """
 # Register Route
 -------------------
