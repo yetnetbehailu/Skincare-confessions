@@ -542,16 +542,27 @@ input:checked+.ball:before {
 }
 
 
-i.fas.fa-heart.fave::before{
+.not_fave{
     color: #ff00bb;
     font-size: x-large;
     z-index: -1;
 }
 
-i.far.fa-heart.not_fave::before{
+.heart-icon::after {
+    content:"\f004";
+    font-family: "Font Awesome 5 Free"; 
+    color: #a8a8a8;
+    font-size: x-large;
+    z-index: -1;
+    font-weight: 900;
+}
+.favorite:checked ~ .heart-icon::after {
+    content:"\f004";
+    font-family: "Font Awesome 5 Free"; 
     color: #ff00bb;
     font-size: x-large;
     z-index: -1;
+    font-weight: 900;
 }
 
 .fave-content{

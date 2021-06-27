@@ -43,9 +43,7 @@ Add on change event listener to all checkbox input card forms with class favorit
         let is_fave =$(this).prop('checked')
             /* send URL,data of review_id & checkbox checked/unchecked state to server using ajax call post method */
             $.post(`/update_favorites/${review_id}/${is_fave}`)
-            .done(function(response) {
-               alert('yuss')
-            });
+            .done();
         });
 </script> 
 {% endblock %}

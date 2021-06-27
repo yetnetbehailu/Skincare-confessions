@@ -8,12 +8,13 @@
         {% if session.user %}
             <div class="fave-content">
                 <form action="{{url_for('update_favorites',review_id=review_id,is_fave=is_fave)}}" method="POST">
-                    <input type="checkbox" id="{{ entry._id }}" class="favorite">
-                    {% if user_id in entry.faved_by %}
-                        <span><i class="fas fa-heart fave"></i></span>
-                    {% else %}
-                        <span><i class="far fa-heart not_fave"></i></span>
-                    {% endif %}
+                {% if user_id in entry.faved_by %}
+                <input type="checkbox" id="{{ entry._id }}" class="favorite" {{'checked'}}>
+                <span class="heart-icon"></span>
+                {% else %}
+                <input type="checkbox" id="{{ entry._id }}" class="favorite" >
+                <span class="heart-icon"></span>
+                {% endif %}
                 </form>
             </div>    
         {% else %}
