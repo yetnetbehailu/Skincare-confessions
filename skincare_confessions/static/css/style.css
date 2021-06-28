@@ -138,6 +138,8 @@ input[type="search"] {
     white-space: nowrap;
     text-overflow: ellipsis;
     margin: 5px 0 0;
+    background-color: #dcc6ffc7;
+    border-radius: 2px;
 }
 
 /* ---------------------------------------------------
@@ -548,6 +550,15 @@ input:checked+.ball:before {
     transform: translateY(-.3rem) scale(1);
 }
 
+input[type='checkbox'].favorite{
+    display: inline-block;
+    width: 26px;
+    height: 20px;
+    position: relative;
+    left: 28px;
+    opacity: 0;
+    z-index: 1;
+}
 
 .not_fave{
     color: #ff00bb;
