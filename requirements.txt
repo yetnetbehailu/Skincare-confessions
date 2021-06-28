@@ -1,6 +1,7 @@
 click==7.1.2
 cloudinary==1.25.0
 dnspython==2.1.0
+email-validator==1.1.2
 Flask==1.1.2
 Flask-PyMongo==2.3.0
 Flask-WTF==0.14.3
