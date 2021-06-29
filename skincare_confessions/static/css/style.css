@@ -719,8 +719,7 @@ input[type='checkbox'].favorite{
 
 .subscribe-content input:focus{
     outline-style: none;
-    box-shadow: 0px 0px 1px 2px #50752e;
-    border: none;
+    border:2px solid #50752e;
 }
 
 .subscribe-btn {
@@ -731,7 +730,7 @@ input[type='checkbox'].favorite{
 
 .envelope-icon {
     position: relative;
-    top: 3px;
+    top: 5px;
     right: 25px;
 }
 
