@@ -853,6 +853,27 @@ input[type='checkbox'].favorite{
     width: 25%;
 }
 
+/* ---------------------------------------------------
+   HOME PAGE
+----------------------------------------------------- */
+.slogan {
+    animation: moving-slogan 12s infinite linear;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: 'Poppins';
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+@keyframes moving-slogan {
+    from {
+        text-indent: -70%;
+    }
+
+    to {
+        text-indent: 100%;
+    }
+}
 
 /* ---------------------------------------------------
     MEDIAQUERIES
@@ -903,6 +924,16 @@ input[type='checkbox'].favorite{
     .email-field {
         width: 46%;
     }
+
+    @keyframes moving-slogan {
+        from {
+            text-indent: -30%;
+        }
+    
+        to {
+            text-indent: 100%;
+        }
+    } 
 }
 
 @media (min-width: 992px) {
