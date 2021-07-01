@@ -10,6 +10,8 @@ body {
     background: #fff;
     border: none;
     box-shadow: 1px 2px 3px rgb(120 146 106);
+    position: fixed;
+    z-index: 1;
 }
 
 .header-title {
@@ -861,7 +863,7 @@ input[type='checkbox'].favorite{
     white-space: nowrap;
     overflow: hidden;
     font-family: 'Poppins';
-    padding-top: 6px;
+    padding-top: 4.2rem;
     padding-bottom: 6px;
 }
 
@@ -875,6 +877,14 @@ input[type='checkbox'].favorite{
     }
 }
 
+.home-title {
+    font-family: 'Vollkorn';
+    text-align: center;
+}
+
+.hero-gif {
+    width: 100%;
+}
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
