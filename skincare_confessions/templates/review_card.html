@@ -1,10 +1,10 @@
 <!--Review card-->
-<div class="col-sm-12 col-md-4 col-lg-3">
+<div class="col-sm-12 col-md-4 col-lg-3 d-grid mt-3 mb-2">
     <div class="card">
         <h5 class="card-title">{{entry.brand_name|capitalize}}</h5>
          <!-- Category name-->
         <div class="category-content">
-            <p class="mb-0 category-name">Category: {{entry.category_name|capitalize}}</p>
+            <p class="category-name">Category: {{entry.category_name|capitalize}}</p>
         {% if session.user %}
             <div class="fave-content">
                 <form action="{{url_for('update_favorites',review_id=review_id,is_fave=is_fave)}}" method="POST">
@@ -45,19 +45,19 @@
             </div>
             <div class="row">
                 <!-- Product review short discription -->
-            <div class="col 12 review-preview">
-                <p class="short-discrip">"{{entry.product_review}}"
-                </p>
-            </div>
+                <div class="col-12 review-preview">
+                    <p class="short-discrip">"{{entry.product_review}}"
+                    </p>
+                </div>
             </div>
             <div class="row">
                 <!-- Price -->
-                <div class="col 6 card-info">
+                <div class="col-6 card-info">
                     {{ form.price.label(class="price-label")}}
                     <span>{{entry.price}}</span>
                 </div>
                 <!-- Is-vegan booleanfield-->
-                <div class="col 6 card-info">
+                <div class="col-6 card-info is-vegan">
                     {% if entry.is_vegan %}
                         <label for="is-vegan">Vegan</label>
                         <span>
@@ -73,21 +73,21 @@
             </div>
             <!-- Search tags --> 
             <div class="row">
-                <div class="col 12 card-info">
+                <div class="col-12 card-info">
                     {{ form.tags.label(class="form-label m-0")}}
                     <p class="m-0">{{entry.tags}}</p>
                 </div>
             </div>
             <div class="row">
                 <!-- Posted by -->
-                <div class="col 12 card-info posted_by">Posted by:
+                <div class="col-12 posted_by">Posted by:
                     <span>{{entry.added_by}}</span>
                 </div>
             </div> 
             <hr class="horizontal-line">
             <div class="row">
                 <!-- Post date -->
-                <div class="col 12 entry_date card-info">Created on:
+                <div class="col-12 entry_date">Created on:
                     <span>{{entry.created_on}}</span>
                 </div>
             </div>

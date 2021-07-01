@@ -531,8 +531,7 @@ input:checked+.ball:before {
 .browse-headtitle {
     text-align: center;
     font-family: 'Vollkorn', Poppins;
-    text-align: center;
-    padding-top: 5px;
+    padding-top: 5rem;
     text-shadow: 2px 1px 3px rgb(0 0 0 / 50%);
 }
 
@@ -617,12 +616,17 @@ input[type='checkbox'].favorite{
 }
 
 .card-info {
-    padding: 5px;
+    padding-top: 5px;
 }
 
 .price-label {
     margin-bottom: 0;
 } 
+
+.is-vegan {
+    padding-left: 0;
+    padding-right: 0;
+}
 
 .vegan {
     color: green;
@@ -644,12 +648,14 @@ input[type='checkbox'].favorite{
     font-size: 12px;
     text-align: center;
     font-family: monospace;
+    padding: 5px;
 }
 
 .posted_by {
     text-align: center;
     font-family: monospace;
     font-size: 12px;
+    padding: 5px;
 }
 
 .category-content {
@@ -664,6 +670,7 @@ input[type='checkbox'].favorite{
     top: 5px;
     font-family: monospace;
     font-size: 12px;
+    left: 23px;
 }
 
 .rate-label {
@@ -943,7 +950,12 @@ input[type='checkbox'].favorite{
         to {
             text-indent: 100%;
         }
-    } 
+    }
+    
+    .search-form {
+        width: 60%;
+        margin: auto;
+    }
 }
 
 @media (min-width: 992px) {
