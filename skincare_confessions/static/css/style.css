@@ -314,6 +314,7 @@ input[type="search"] {
     padding-bottom: 20px;
     background-color: #fff;
     font-family: 'Vollkorn', Poppins;
+    width: 85%;
 }
 
 
@@ -360,12 +361,17 @@ input[type="search"] {
     padding-bottom: 0;
 }
 
+.input-group {
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
 #price {
     width: 8.5rem;
 }
 
-#is_vegan {
-    box-shadow: none;
+.price-field {
+   width: auto;
 }
 
 .custom-vegan-label {
@@ -505,6 +511,11 @@ input:checked+.ball:before {
   z-index: 1;
 }
 
+.custom-switch {
+    padding-left: 10%;
+}
+
+/* flask form radiofield */
 .star-rating {
     position: relative;
     top: -41px;
@@ -520,6 +531,11 @@ input:checked+.ball:before {
 
 .rating-fields {
     display: table;
+}
+
+.rating-content {
+    height: 42px;
+    width: auto;
 }
 
 .fa-star {
@@ -951,7 +967,7 @@ input[type='checkbox'].favorite{
             text-indent: 100%;
         }
     }
-    
+
     .search-form {
         width: 60%;
         margin: auto;

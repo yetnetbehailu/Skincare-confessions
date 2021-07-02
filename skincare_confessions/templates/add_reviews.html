@@ -53,57 +53,57 @@
                         {{ form.product_review(class="form-control", placeholder="Write few sentences about your product")}} 
                     {% endif %}
                 </div>
-            </div>    
-                 <!-- Price decimalField -->
-            <div class="row">    
-                 <div class="col s-12 md-4 input-field">
-                    {{ form.price.label(class="form-label d-block mb-0")}} {% if form.price.errors %} 
-                    {{ form.price(class="form-control is-invalid review-input", placeholder="Purchase cost")}}
-                    <div class="invalid-feedback">
-                        {% for error in form.price.errors %}
-                        <span>
-                            {{error}}
-                        </span>
-                        {% endfor %}
-                    </div>
-                    {% else %} {{ form.price(class="form-control review-input", placeholder="Purchase cost")}} {% endif %}
+            </div> 
+            <div class="row input-group">  
+            <!-- Price decimalField -->
+            <div class="col-4 price-field">
+                {{ form.price.label(class="form-label d-block mb-0")}} {% if form.price.errors %} 
+                {{ form.price(class="form-control is-invalid review-input", placeholder="Purchase cost")}}
+                <div class="invalid-feedback">
+                    {% for error in form.price.errors %}
+                    <span>
+                        {{error}}
+                    </span>
+                    {% endfor %}
                 </div>
+                {% else %} {{ form.price(class="form-control review-input", placeholder="Purchase cost")}} {% endif %}
+            </div>
                 <!-- Boolean field -->
-                <div class="col s-12 md-4 custom-control custom-switch input-field">
+                <div class="col-4 custom-switch">
                     {{ form.is_vegan.label(class="custom-vegan-label d-block mb-0")}}
                     {{ form.is_vegan(class="custom-control-input switch-control")}}
                     <span class="slider ball switch"></span>
                 </div>
                 <!-- Star Rating -->
-                <div class="col s-12 md-4 input-field">
-                    {{ form.rating.label(class="form-label d-block mb-0")}} 
-                    <div class="rating-fields">
-                    {% if form.rating.errors %} 
-                    {{form.rating(class=" is-invalid review-input")}}
-                    <div class="invalid-feedback">
-                        {% for error in form.rating.errors %}
-                        <span>
-                            {{error}}
-                        </span>
-                        {% endfor %}
-                    </div>
-                    {% else %} 
-                    {{ form.rating(class="review-input")}}
-                    <div class="star-rating">
-                        <i class="fas fa-star" aria-hidden="true" id="rating-0"></i>
-                        <i class="fas fa-star" aria-hidden="true" id="rating-1"></i>
-                        <i class="fas fa-star" aria-hidden="true" id="rating-2"></i>
-                        <i class="fas fa-star" aria-hidden="true" id="rating-3"></i>
-                        <i class="fas fa-star" aria-hidden="true" id="rating-4"></i>
-                    </div>
-                    {% endif %}
-                    </div>
+            <div class="col-4 rating-content">
+                {{ form.rating.label(class="rating-label")}} 
+                <div class="rating-fields">
+                {% if form.rating.errors %} 
+                {{form.rating(class=" is-invalid review-input")}}
+                <div class="invalid-feedback">
+                    {% for error in form.rating.errors %}
+                    <span>
+                        {{error}}
+                    </span>
+                    {% endfor %}
                 </div>
+                {% else %} 
+                {{ form.rating(class="review-input")}}
+                <div class="star-rating">
+                    <i class="fas fa-star" aria-hidden="true" id="rating-0"></i>
+                    <i class="fas fa-star" aria-hidden="true" id="rating-1"></i>
+                    <i class="fas fa-star" aria-hidden="true" id="rating-2"></i>
+                    <i class="fas fa-star" aria-hidden="true" id="rating-3"></i>
+                    <i class="fas fa-star" aria-hidden="true" id="rating-4"></i>
+                </div>
+                {% endif %}
+                </div>
+            </div>   
             </div>
             <!-- Search stringfield -->
             <div class="row">
                 <div class="col-12 input-field">
-                    {{ form.tags.label(class="form-label d-block mb-0")}} {% if form.tags.errors %} {{ form.tags(class="form-control is-invalid", placeholder="Search tags")}}
+                    {{ form.tags.label(class="form-label d-block mb-0")}} {% if form.tags.errors %} {{ form.tags(class="form-control is-invalid", placeholder="Tags")}}
                     <div class="invalid-feedback">
                         {% for error in form.tags.errors %}
                         <span>
@@ -111,7 +111,7 @@
                         </span>
                         {% endfor %}
                     </div>
-                    {% else %} {{ form.tags(class="form-control", placeholder="Search tags")}} {% endif %}
+                    {% else %} {{ form.tags(class="form-control", placeholder="Tags")}} {% endif %}
                 </div>
             </div>
             <!-- Upload image filefield -->
