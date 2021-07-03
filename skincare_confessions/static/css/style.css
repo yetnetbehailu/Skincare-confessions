@@ -673,7 +673,8 @@ input[type='checkbox'].favorite{
 }
 
 .placeholder-img {
-    width: 80%;
+    width: 90.4%;
+    border-radius: 5px;
 }
 
 .card-image {
