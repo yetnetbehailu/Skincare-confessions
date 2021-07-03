@@ -312,7 +312,7 @@ input[type="search"] {
 .user-headtitel {
     font-family: 'Vollkorn', Poppins;
     text-align: center;
-    padding-top: 5px;
+    padding-top: 5rem;
     text-shadow: 2px 1px 3px rgb(0 0 0 / 50%);
     
 }
@@ -770,7 +770,7 @@ input[type='checkbox'].favorite{
 
 .about_title {
     text-align: center;
-    padding-top: 25px;
+    padding-top: 5rem;
 }
 
 .about-text {
@@ -887,6 +887,10 @@ input[type='checkbox'].favorite{
 
 .btn-success {
     width: 25%;
+}
+
+.top-stick-figures {
+    padding-top: 4rem;
 }
 
 /* ---------------------------------------------------
