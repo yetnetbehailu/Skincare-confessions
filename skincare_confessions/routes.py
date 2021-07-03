@@ -69,7 +69,7 @@ def add_reviews():
             if add_review_form.upload_img.data:
                 upload_img = request.files.get('upload_img')
                 cloud_upload = cloudinary.uploader.upload(
-                    upload_img, width=580, radius=20)
+                    upload_img, width=580, radius=20, height=580)
                 uploaded_image = cloud_upload.get('secure_url')
             else:
                 uploaded_image = request.form.get('upload_img')
@@ -190,12 +190,12 @@ def update_favorites(review_id, is_fave):
     user_id = users.find_one({'username': session['user'].lower()})['_id']
     if is_fave == "true":
         # Update/add user id to faved_by field array in reviews collection
-        faved_by = reviews.update({'_id': ObjectId(review_id)},
-                                  {'$addToSet': {'faved_by': user_id}})
+        reviews.update({'_id': ObjectId(review_id)},
+                       {'$addToSet': {'faved_by': user_id}})
     else:
         # Update/remove user id from faved_by field in reviews collection
-        remove_faved_by = reviews.update({'_id': ObjectId(review_id)},
-                                         {'$pull': {'faved_by': user_id}})
+        reviews.update({'_id': ObjectId(review_id)},
+                       {'$pull': {'faved_by': user_id}})
     return Response(status=201, mimetype='update_favorites/html')
 
 
@@ -218,7 +218,7 @@ def about():
                                email=email)
     return render_template('about.html', form=form)
 
-    
+
 """
 # Register Route
 -------------------
