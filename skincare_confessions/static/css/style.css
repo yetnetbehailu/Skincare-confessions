@@ -144,6 +144,47 @@ input[type="search"] {
     border-radius: 2px;
 }
 
+@-webkit-keyframes hvr-pulse {
+    25% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    75% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+}
+
+@keyframes hvr-pulse {
+    25% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    75% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+}
+
+.hvr-pulse:hover, .hvr-pulse:focus {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-animation-name: hvr-pulse;
+    animation-name: hvr-pulse;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
 /* ---------------------------------------------------
     SITE LOGO
 ----------------------------------------------------- */
@@ -438,7 +479,13 @@ input[type="search"] {
   }
 
 .add_review_btn {
-    box-shadow: 0px 1px 5px rgb(0 0 0 / 60%);
+    padding: 3px 10px;
+    border: none;
+    background-color: #759e71;
+}
+
+.add_review_btn.hvr-pulse:hover, .hvr-pulse:focus {
+    box-shadow: 0 0 2px 2px #80bb7b;
 }
 
 #submit:focus{
@@ -448,13 +495,13 @@ input[type="search"] {
 }
 
 .cancel_btn {
-    box-shadow: 0px 1px 5px rgb(0 0 0 / 60%);
+    padding: 3px 10px;
+    border: none;
+    background-color: #e85959;
 }
 
-#cancel:focus {
-   box-shadow: 0px 1px 5px rgb(0 0 0 / 60%);
-    list-style: none;
-    border: none;
+.cancel_btn.hvr-pulse:hover, .hvr-pulse:focus {
+    box-shadow: 0 0 2px 2px #bf4545;
 }
 
 .add_form_btns {
@@ -834,48 +881,7 @@ input[type='checkbox'].favorite{
     color: white;
 }
 
-@-webkit-keyframes hvr-pulse {
-    25% {
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-    }
-
-    75% {
-        -webkit-transform: scale(0.9);
-        transform: scale(0.9);
-    }
-}
-
-@keyframes hvr-pulse {
-    25% {
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-    }
-
-    75% {
-        -webkit-transform: scale(0.9);
-        transform: scale(0.9);
-    }
-}
-
-.hvr-pulse {
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    -webkit-animation-name: hvr-pulse;
-    animation-name: hvr-pulse;
-    -webkit-animation-duration: 1.5s;
-    animation-duration: 1.5s;
-    -webkit-animation-timing-function: linear;
-    animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-}
-
-.hvr-pulse:hover {
+.btn-success.hvr-pulse:hover {
     background-color: #21a568;
 }
 
