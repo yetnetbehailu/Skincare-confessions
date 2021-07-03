@@ -2,7 +2,7 @@
 {% block content %}
 <div class="add-review-bg">
     <h2 class="user-headtitel mb-0">{{username|capitalize }}'s</h2>
-    <h3 class="review_slogan">Skincare Confessions</h3>
+    <h3 class="site-name">Skincare Confessions</h3>
     <form action="" method="POST" enctype="multipart/form-data">
         {{form.hidden_tag()}}
         <div class="container review-content">
@@ -117,8 +117,7 @@
             <!-- Upload image filefield -->
             <div class="row">
                  <div class="col-12 file-field">
-                    {{ form.upload_img(class="form-control-field", id="custom-field")}}
-                    {{ form.upload_img.label(class="file-label upload_img") }}
+                    {{ form.upload_img(class="file-control-field", id="custom-field")}}
                 </div>
                     {% if form.upload_img.errors %}
                         {% for error in form.upload_img.errors %}

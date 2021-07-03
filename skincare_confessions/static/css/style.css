@@ -300,7 +300,7 @@ input[type="search"] {
     background-color: #e7ffe5;
 }
 
-.review_slogan {
+.site-name {
     text-shadow: 1px 1px 4px rgb(0 0 0 / 50%);
     text-align: center;
     font-family: 'Vollkorn', Poppins;
@@ -410,27 +410,31 @@ input[type="search"] {
     padding: 0;
 }
 
-.file-label {
-    background-color: #afafaf;
-    padding: 3px;
-    border-left: 1px solid grey;
-}
-
-#upload_img {
-    opacity: 0;
-    z-index: 1;
-    width: 57%;
-}
-
 #custom-field {
-    width: 57%;
+    width: 100%;
 }
 
 #custom-field:focus {
-    box-shadow: none;
-    list-style: none;
+    box-shadow: 0px 0px 3px 2px rgb(152 154 252);
     border-bottom: none;
 }
+
+#custom-field::-webkit-file-upload-button {
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    width: 10px;
+  }
+  
+#custom-field::before {
+    content: 'Upload Image';
+    display: inline-block;
+    padding: 5px 8px;
+    cursor: pointer;
+    background: #989bff;
+    border-radius: 2px;
+    font-family: 'Vollkorn';
+  }
 
 .add_review_btn {
     box-shadow: 0px 1px 5px rgb(0 0 0 / 60%);
