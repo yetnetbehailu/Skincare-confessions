@@ -46,7 +46,7 @@ body {
 }
 
 .sidebar-header {
-    padding: 15px;
+    padding: 5px;
     background: #759e71;
     color: #fff;
 }
@@ -192,7 +192,13 @@ input[type="search"] {
 .small-logo {
     height: 2rem;
     border-radius: 5px;
-    margin: 5px;
+    margin: 0px 3px;
+}
+
+.sidebar-logo {
+    height: 3rem;
+    border-radius: 5px;
+    margin: 0px 3px;
 }
 
 /* ---------------------------------------------------
@@ -999,7 +1005,7 @@ input[type='checkbox'].favorite{
     }
 
     .small-logo{
-        height: 2rem;
+        height: 2.5rem;
     }
 
     h6 {

@@ -24,7 +24,7 @@
                             <button type="button" id="sidebarCollapse" class="btn burgerBtn"> 
                                 <i class="fas fa-align-justify"></i>
                             </button>
-                            <h6 class="header-title ">Skincare Confessions<img class="small-logo" src="static/img/mobile-logo.jpg" alt="Skincare confessions logo"></h6> 
+                            <h6 class="header-title ">Skincare<img class="small-logo" src="{{url_for('static', filename='img/confessions.png')}}" alt="Skincare confessions logo"></h6> 
                       
                         <ul class="top-menu">
                             <li class="active">
@@ -60,7 +60,7 @@
             <!-- Sidebar slide in -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3>SKINCARE CONFESSIONS <i class="fas fa-leaf"></i></h3>
+                    <h3>SKINCARE<img class="sidebar-logo" src="{{url_for('static', filename='img/confessions.png')}}" alt="Skincare confessions logo"></h3>
                 </div>
                 <ul class="components">
                     <li class="active">
@@ -120,11 +120,11 @@
         </ul>
         </div>
     </footer>        
-        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-        <script src="{{url_for('static', filename='js/script.js')}}"></script>
-        {% block script %} 
-        {% endblock %}
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
+    {% block script %}
+    {% endblock %}
     </body>
 </html>
