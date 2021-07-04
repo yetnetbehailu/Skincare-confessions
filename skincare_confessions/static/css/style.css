@@ -803,13 +803,20 @@ input[type='checkbox'].favorite{
 
 .subscribe-content input:focus{
     outline-style: none;
-    border:2px solid #50752e;
+    box-shadow: 0 0 2px 2px #ffd100;
+    border: none;
 }
 
-.subscribe-btn {
+.subscribe {
     text-align: center;
     padding-bottom: 15px;
     padding-top: 10px;
+}
+
+.subscribe-btn {
+    background-color: #e2df5a;
+    box-shadow: 0 0 2px 2px #ffd100;
+    border: none;
 }
 
 .envelope-icon {
@@ -966,7 +973,7 @@ input[type='checkbox'].favorite{
     .subscribe-text{
         margin-top: 45px;
 }
-    .subscribe-btn {
+    .subscribe {
         padding-bottom: 26%;
         padding-top: 25px;
     }
@@ -1061,7 +1068,7 @@ input[type='checkbox'].favorite{
         width: 40%;
     }
 
-    .subscribe-btn {
+    .subscribe {
         padding-bottom: 41.5px;
     }
 }
@@ -1080,10 +1087,14 @@ input[type='checkbox'].favorite{
     h6 {
         font-size: 1.3rem;
     }
+
+    .about-text {
+        height: 100%;
+    }
 }
 
 @media (min-width: 375px) and (max-width: 413px) {
-    .subscribe-btn {
+    .subscribe {
         padding-bottom: 32px;
         padding-top: 20px;
     }
@@ -1098,13 +1109,13 @@ input[type='checkbox'].favorite{
 }
 
 @media (min-height: 812px) {
-    .subscribe-btn {
+    .subscribe {
         padding-bottom: 29.5%;
     }
 }
 
 @media (min-width: 414px) and (max-width: 767px) {
-    .subscribe-btn {
+    .subscribe {
         padding-bottom: 47px;
         padding-top: 20px;
     }
@@ -1124,7 +1135,7 @@ input[type='checkbox'].favorite{
 }
 
 @media (min-height:846px) {
-    .subscribe-btn {
+    .subscribe {
         padding-bottom: 32%;
     }
 }
