@@ -28,18 +28,13 @@ body {
     SIDEBAR
 ----------------------------------------------------- */
 
-.wrapper {
-    display: flex;
-    width: 100%;
-}
-
 #sidebar {
     width: 250px;
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
-    z-index: 2;
+    z-index: 3;
     background: #fff;
     transition:  0.3s;
     font-family: 'Vollkorn', Poppins;
@@ -77,6 +72,29 @@ a[data-toggle="collapse"] {
     top: 50%;
     right: 20px;
     transform: translateY(-50%);
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    /* Appears below sidebar but above page content */
+    z-index: 2;
+    opacity: 0;
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+#dismiss-btn {
+    position: absolute;
+    font-size: larger;
+    top: 38px;
+    right: 10px;
 }
 
 /* ---------------------------------------------------
@@ -1069,6 +1087,10 @@ input[type='checkbox'].favorite{
 
     .subscribe {
         padding-bottom: 41.5px;
+    }
+
+    .overlay.active{
+        display: none;
     }
 }
 

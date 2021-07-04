@@ -15,7 +15,7 @@
         <title>Skincare Confessions</title>
     </head>
     <body>
-        <div class="wrapper">
+        <div class="overlay"></div>
             <!-- Bootstrap sidebar- modified https://bootstrapious.com/tutorial/sidebar/index2.html -->
             <!-- Topnav displayed -->
                 <nav id="topnav" class="navbar bg-white">
@@ -60,7 +60,10 @@
             <!-- Sidebar slide in -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3>SKINCARE<img class="sidebar-logo" src="{{url_for('static', filename='img/confessions.png')}}" alt="Skincare confessions logo"></h3>
+                    <span id="dismiss-btn">
+                        &#10008;
+                    </span>
+                    <h4>SKINCARE<img class="sidebar-logo" src="{{url_for('static', filename='img/confessions.png')}}" alt="Skincare confessions logo"></h4>
                 </div>
                 <ul class="components">
                     <li class="active">
@@ -92,7 +95,6 @@
                     {% endif %}
                 </ul>
             </nav>
-        </div>
         <!-- Page Content  -->
         <div class="page">
             {% with messages = get_flashed_messages(with_categories=true) %}
