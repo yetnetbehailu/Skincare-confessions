@@ -291,6 +291,9 @@ footer {
     justify-content: center;
     font-family: 'Vollkorn', Poppins;
     margin-bottom: 2rem;
+    height: 100%;
+    margin-top: 3rem;
+    padding-top: 2rem;
 }
 
 .form-control-lg { 
@@ -327,6 +330,9 @@ footer {
     justify-content: center;
     font-family: 'Vollkorn', Poppins;
     margin-bottom: 2rem;
+    height: 100%;
+    margin-top: 3rem;
+    padding-top: 2rem;
 }
 
 .invalid-feedback {
@@ -365,6 +371,7 @@ footer {
 
 .my-reviews {
     background-color: #e7ffe5;
+    height: 100%;
 }
 
 
@@ -375,6 +382,7 @@ footer {
     padding-bottom: 2rem;
     padding-top: 15px;
     background-color: #e7ffe5;
+    height: 100%;
 }
 
 .site-name {
@@ -641,6 +649,7 @@ input:checked+.ball:before {
 
 .browse-page {
     background-color: #e7ffe5;
+    height: 100%;
 }
 /* ---------------------------------------------------
     Review cards page 
@@ -796,6 +805,7 @@ input[type='checkbox'].favorite{
 .app-introduction {
     font-family: 'Vollkorn', Poppins;
     background-color: #e7ffe5;
+    height: 100%;
 }
 
 .subscribe-content {
@@ -803,6 +813,7 @@ input[type='checkbox'].favorite{
     justify-content: center;
     width: 93%;
     margin: auto;
+    padding-top: 8px;
 }
 
 .about_title {
@@ -838,8 +849,8 @@ input[type='checkbox'].favorite{
 
 .subscribe {
     text-align: center;
-    padding-bottom: 15px;
-    padding-top: 10px;
+    padding-top: 17px;
+    padding-bottom: 21px;
 }
 
 .subscribe-btn {
@@ -966,6 +977,10 @@ input[type='checkbox'].favorite{
 .hero-gif {
     width: 100%;
 }
+
+.home-content {
+    height: 100%;
+}
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
@@ -1002,14 +1017,9 @@ input[type='checkbox'].favorite{
     .subscribe-text{
         margin-top: 45px;
 }
-    .subscribe {
-        padding-bottom: 26%;
-        padding-top: 25px;
-    }
 
     .subscribe-content {
         margin-top: 12px;
-        padding-top: 11px;
     }
 
     .email-field {
@@ -1097,10 +1107,6 @@ input[type='checkbox'].favorite{
         width: 40%;
     }
 
-    .subscribe {
-        padding-bottom: 41.5px;
-    }
-
     .overlay.active{
         display: none;
     }
@@ -1122,19 +1128,11 @@ input[type='checkbox'].favorite{
     }
 
     .about-text {
-        height: 100%;
+        margin-top: 2rem;
     }
 }
 
 @media (min-width: 375px) and (max-width: 413px) {
-    .subscribe {
-        padding-bottom: 32px;
-        padding-top: 20px;
-    }
-
-    .subscribe-content {
-        padding-top: 15px;
-    }
 
     .subscribe-text {
         margin-top: 30px;
@@ -1142,33 +1140,20 @@ input[type='checkbox'].favorite{
 }
 
 @media (min-height: 812px) {
-    .subscribe {
-        padding-bottom: 29.5%;
+    .about_title {
+        padding-top: 7rem;
     }
 }
 
 @media (min-width: 414px) and (max-width: 767px) {
-    .subscribe {
-        padding-bottom: 47px;
-        padding-top: 20px;
-    }
 
     .subscribe-text {
         margin-top: 40px;
     }
 
-    .subscribe-content {
-        margin-top: 13px;
-    }
-
     .about_title {
         padding-bottom: 10px;
-    }
-}
-
-@media (min-height:846px) {
-    .subscribe {
-        padding-bottom: 32%;
+        padding-top: 7rem;
     }
 }
 

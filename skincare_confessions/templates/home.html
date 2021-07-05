@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="slogan">
-    "A joy shared is a joy doubled"
+<div class="home-content">
+  <div class="slogan">
+      "A joy shared is a joy doubled"
+  </div>
+  <div class="">
+    <img  class="hero-gif" src="{{url_for('static', filename='img/skincare-gif.gif')}}" alt="Skincare products gif">
+  </div>
+    <h1 class="home-title">Discover more reviews</h1>
 </div>
-<div class="">
-  <img  class="hero-gif" src="{{url_for('static', filename='img/skincare-gif.gif')}}" alt="Skincare products gif">
-</div>
-  <h1 class="home-title">Discover more reviews</h1>
-   
 {% endblock %}
