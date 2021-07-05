@@ -1,29 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Vollkorn:wght@500&display=swap');
 
-body {
-    background: #fff;
-    font-family: 'Poppins', sans-serif;
-}
-
-.navbar {
-    width: 100vw;
-    background: #fff;
-    border: none;
-    box-shadow: 1px 2px 3px rgb(120 146 106);
-    position: fixed;
-    z-index: 1;
-}
-
-.header-title {
-    margin: auto;
-    color: #648260;
-    font-family: 'Vollkorn', Poppins;
-}
-
-.burgerBtn {
-    background-color: #759e71;
-}
-
 /* ---------------------------------------------------
     SIDEBAR
 ----------------------------------------------------- */
@@ -41,7 +17,7 @@ body {
 }
 
 .sidebar-header {
-    padding: 5px;
+    padding: 5px 0px 5px 5px;
     background: #759e71;
     color: #fff;
 }
@@ -95,6 +71,7 @@ a[data-toggle="collapse"] {
     font-size: larger;
     top: 38px;
     right: 10px;
+    cursor: pointer;
 }
 
 /* ---------------------------------------------------
@@ -102,6 +79,7 @@ a[data-toggle="collapse"] {
 ----------------------------------------------------- */
 .page {
     height: auto;
+    flex: 1 0 auto;
 }
 
 .upload-img{
@@ -203,6 +181,37 @@ input[type="search"] {
     animation-iteration-count: infinite;
 }
 
+html {
+    height: 100%;
+}
+
+body {
+    background: #fff;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    width: 100vw;
+    background: #fff;
+    border: none;
+    box-shadow: 1px 2px 3px rgb(120 146 106);
+    position: fixed;
+    z-index: 1;
+}
+
+.header-title {
+    margin: auto;
+    color: #648260;
+    font-family: 'Vollkorn', Poppins;
+}
+
+.burgerBtn {
+    background-color: #759e71;
+}
+
 /* ---------------------------------------------------
     SITE LOGO
 ----------------------------------------------------- */
@@ -271,6 +280,9 @@ input[type="search"] {
   
 }
 
+footer {
+    flex-shrink: 0;
+}
 /* ---------------------------------------------------
     Register - Login pages styling
 ----------------------------------------------------- */
@@ -1150,7 +1162,6 @@ input[type='checkbox'].favorite{
     }
 
     .about_title {
-        padding-top: 38px;
         padding-bottom: 10px;
     }
 }
