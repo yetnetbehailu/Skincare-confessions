@@ -41,7 +41,7 @@
                 <div class="input-field col-12">
                     {{ form.product_review.label(class="form-label d-block mb-0")}} 
                     {% if form.product_review.errors %} 
-                        {{ form.product_review(class="form-control is-invalid review-input", placeholder="Write few sentences about your product")}}
+                        {{ form.product_review(class="form-control is-invalid product-descrip", placeholder="Write few sentences about your product")}}
                     <div class="invalid-feedback">
                         {% for error in form.product_review.errors %}
                         <span>
@@ -50,7 +50,7 @@
                         {% endfor %}
                     </div>
                     {% else %} 
-                        {{ form.product_review(class="form-control", placeholder="Write few sentences about your product")}} 
+                        {{ form.product_review(class="form-control product-descrip", placeholder="Write few sentences about your product")}} 
                     {% endif %}
                 </div>
             </div> 
@@ -77,18 +77,18 @@
                 <!-- Star Rating -->
             <div class="col-4 rating-content">
                 {{ form.rating.label(class="rating-label")}} 
-                <div class="rating-fields">
                 {% if form.rating.errors %} 
-                {{form.rating(class=" is-invalid review-input")}}
-                <div class="invalid-feedback">
-                    {% for error in form.rating.errors %}
-                    <span>
-                        {{error}}
-                    </span>
-                    {% endfor %}
-                </div>
-                {% else %} 
-                {{ form.rating(class="review-input")}}
+                    {{form.rating(class="form-control is-invalid m-0")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.rating.errors %}
+                        <span>
+                            {{error}}
+                        </span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.rating}}
+                {% endif %}
                 <div class="star-rating">
                     <i class="fas fa-star" aria-hidden="true" id="rating-0"></i>
                     <i class="fas fa-star" aria-hidden="true" id="rating-1"></i>
@@ -96,14 +96,14 @@
                     <i class="fas fa-star" aria-hidden="true" id="rating-3"></i>
                     <i class="fas fa-star" aria-hidden="true" id="rating-4"></i>
                 </div>
-                {% endif %}
-                </div>
             </div>   
             </div>
-            <!-- Search stringfield -->
+            <!-- Search tags stringfield -->
             <div class="row">
                 <div class="col-12 input-field">
-                    {{ form.tags.label(class="form-label d-block mb-0")}} {% if form.tags.errors %} {{ form.tags(class="form-control is-invalid", placeholder="Tags")}}
+                    {{ form.tags.label(class="form-label d-block mb-0 mt-1")}} 
+                    {% if form.tags.errors %} 
+                    {{ form.tags(class="form-control is-invalid tag-input", placeholder="Press enter after typing")}}
                     <div class="invalid-feedback">
                         {% for error in form.tags.errors %}
                         <span>
@@ -111,7 +111,9 @@
                         </span>
                         {% endfor %}
                     </div>
-                    {% else %} {{ form.tags(class="form-control", placeholder="Tags")}} {% endif %}
+                    {% else %}
+                    {{ form.tags(class="form-control tag-input", placeholder="Press enter after typing")}}
+                    {% endif %}
                 </div>
             </div>
             <!-- Upload image filefield -->
