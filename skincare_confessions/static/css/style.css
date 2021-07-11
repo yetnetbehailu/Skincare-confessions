@@ -481,17 +481,40 @@ footer {
     opacity: 0;
 }
 
-.tag-input {
+/* Tag field  */
+.tagField{
     border: 2px solid #7f7f7f;
-    margin-bottom: 13px;
+    margin-bottom: 3px;
     border-radius: 4px;
     padding: 5px;
     overflow-x: scroll;
 }
 
-#tags:focus {
+#tag-input:focus {
     border: #3481d4 1px solid;
     box-shadow: 0px 0px 3px 1px #3481d4;
+}
+
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.tag-container .tag {
+    height: 30px;
+    margin: 2px;
+    padding: 5px 6px;
+    border-radius: 3px;
+    background: #85bdf9;
+    display: flex;
+    color: #000;
+}
+
+.tag i {
+    font-size: small;
+    margin-left: 5px;
+    color: #000;
 }
 
 /* Upload img file field */
@@ -499,7 +522,7 @@ footer {
     width: 98%;
     display: flex;
     justify-content: space-between;
-    margin: 5px auto 0;
+    margin: 13px auto 0;
     border-radius: 4px;
     border: 2px solid #7f7f7f;
     padding: 0;
