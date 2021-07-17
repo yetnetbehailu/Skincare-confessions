@@ -6,35 +6,39 @@
     <h1 class="about_title">Skincare Confessions</h1>
     <img class="serumImg" src="{{url_for('static',filename='img/serum.png')}}" alt="serum bottle">
     <div class="about-text">
-        <p class="intro-1"> Your No.1 resource for finding consumer reviews on beauty and skincare products. See what shoppers from all around the world has to say about their favorite and recent purchases, whether it's good, bad or ugly. On this site we provide a platform where consumers can easily find the items they are interested in, read what others have said about them and share their own personal experiences.
+        <p class="intro-1">
+            Your No.1 resource for finding consumer reviews on beauty and skincare products. See what shoppers from all around the world has to say about their favorite and recent purchases, whether it's good, bad or ugly. On this site we
+            provide a platform where consumers can easily find the items they are interested in, read what others have said about them and share their own personal experiences.
         </p>
-        <p class="intro-2">We believe consumers change and shape products and therefore are the driving force behind innovation. In addition to the obvious value provided to the consumer, our user experiences give much valuable insight that could help businesses improve the experiences they offer.</p>
-        <p class="intro-3">By offering a platform for people to exchange information and voice their opinions on beauty & skincare supply, we belive our users are equiped to make better informed shopping descisions.
+        <p class="intro-2">
+            We believe consumers change and shape products and therefore are the driving force behind innovation. In addition to the obvious value provided to the consumer, our user experiences give much valuable insight that could help
+            businesses improve the experiences they offer.
         </p>
+        <p class="intro-3">By offering a platform for people to exchange information and voice their opinions on beauty & skincare supply, we belive our users are equiped to make better informed shopping descisions.</p>
     </div>
     <img class="mirrorImg" src="{{url_for('static',filename='img/mirror.png')}}" alt="mirror">
     <img class="aloeImg" src="{{url_for('static',filename='img/aloevera.png')}}" alt="aloe vera plant">
     <h5 class="subscribe-text">Subscribe to our newsletter</h5>
     <div class="subscribe-content">
-    {% if form.email.errors %} 
-        <form action="{{url_for('about')}}" method="POST">
-            {{form.email(class='email-field is-invalid', placeholder='Enter Email...')}}
-            <span class="envelope-icon"><i class="fas fa-envelope"></i></span>
+        <form action="{{url_for('about')}}" method="POST" class="subscribe-form">
+            {{ form.csrf_token }}
+            <i class="fas fa-envelope"></i>
+            {% if form.email.errors %}
+                {{form.email(class='form-control email-field is-invalid', placeholder='Enter Email...')}} 
+            <div class="invalid-feedback mt-1">
+                {% for error in form.email.errors %}
+                <span class="text-danger">
+                    {{error}}
+                </span>
+                {% endfor %}
+            </div>
+            {% else %}
+                {{form.email(class='form-control email-field', placeholder='Enter Email...')}}
+            {% endif %}
+            <div class="subscribe">
+                {{form.subscribe(class='subscribe-btn')}}
+            </div>
         </form>
-        <div class="invalid-feedback">
-        {% for error in form.email.errors %}
-            <span class="text-danger">
-                {{error}}
-            </span>
-        {% endfor %}
-        </div>
-        {% else %}
-        {{form.email(class='email-field', placeholder='Enter Email...')}}
-        <span class="envelope-icon"><i class="fas fa-envelope"></i></span>
-        {% endif %}
-    </div>
-    <div class="subscribe">
-        {{form.subscribe(class='subscribe-btn')}}
     </div>
 </div>
 {% endblock %}
