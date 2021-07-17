@@ -74,19 +74,19 @@ function addTags() {
     });
 }
 
-// Keydown event
-input.addEventListener("keydown", (e) => {
-    // keycode for 'enter' pressed
-    if (e.keyCode == 13) {
-        // prevent form submit
+//Tagbtn click event
+document.getElementById("tagbtn").addEventListener("click", (e) => {
+    /*input value gets split with comma sign,tag created gets pushed into array var */
+    if (e.target.id == "tagbtn") {
         e.preventDefault();
-        //input value gets split with comma sign,tag created gets pushed into array var
-        e.target.value.split(",").forEach((tag) => {
+        input.value.split(",").forEach((tag) => {
             tags.push(tag);
         });
 
         addTags();
         input.value = "";
+        let hiddenField = document.getElementById("hiddenInput");
+        hiddenField.value = tags;
     }
 });
 //click event listening for specified tagName being pressed
@@ -98,4 +98,10 @@ document.addEventListener("click", (e) => {
         tags = [...tags.slice(0, index), ...tags.slice(index + 1)];
         addTags();
     }
+});
+
+const reviewForm = document.getElementById("reviewForm");
+reviewForm.addEventListener("submit", (e) => {
+    //If a form control (e.g. submit button) has name or id of submit this method will mask the form's submit event, and instead submit given form.
+    HTMLFormElement.prototype.submit.call(reviewForm);
 });
