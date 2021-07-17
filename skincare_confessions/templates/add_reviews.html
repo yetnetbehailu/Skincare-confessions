@@ -3,7 +3,7 @@
 <div class="add-review-bg">
     <h2 class="user-headtitel mb-0">{{username|capitalize }}'s</h2>
     <h3 class="site-name">Skincare Confessions</h3>
-    <form action="{{url_for('add_reviews')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{url_for('add_reviews')}}" method="POST" enctype="multipart/form-data" id="reviewForm">
         {{form.hidden_tag()}}
         <div class="container review-content">
             <!-- skincare category dropdown menu -->
@@ -98,13 +98,16 @@
                 </div>
             </div>   
             </div>
-            <!-- Search tags stringfield -->
+            <!-- Tags stringfield -->
             <div class="row">
                 <div class="col-12">
                     {{ form.tags.label(class="form-label d-block mb-0 mt-1")}} 
                     <div class="tag-container">
+                        <input type="text" id="tag-input" class="tagField" placeholder="Press done after typing">
+                        <button type="submit" id="tagbtn">Done</button>
+                        <small class="text-muted col-12">Separate your tag words using comma sign</small>
                     {% if form.tags.errors %} 
-                    {{ form.tags(class="form-control is-invalid tagField", id='tag-input', placeholder="Press enter after typing")}}
+                    {{ form.tags(class="form-control is-invalid", id="hiddenInput", type="hidden", value="")}}
                         <div class="invalid-feedback">
                             {% for error in form.tags.errors %}
                             <span>
@@ -113,7 +116,7 @@
                             {% endfor %}
                         </div>
                     {% else %}
-                    {{ form.tags(class="form-control tagField", id='tag-input', placeholder="Press enter after typing")}}
+                    {{ form.tags(class="form-control", id="hiddenInput", type="hidden", value="")}}
                     {% endif %}
                     </div>
                 </div>
