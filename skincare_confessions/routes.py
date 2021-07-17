@@ -77,6 +77,7 @@ def add_reviews():
             price = Decimal128(str((request.form.get('price'))))
             rating = int(request.form.get('rating'))
             brand_name = str(request.form.get('brand_name'))
+            tags = request.form.get('tags').split(",")
             review = {
                 'category_name': request.form.get('category_name'),
                 'brand_name': brand_name,
@@ -84,7 +85,7 @@ def add_reviews():
                 'price': price,
                 'is_vegan': is_vegan,
                 'rating': rating,
-                'tags': request.form.get('tags'),
+                'tags': tags,
                 'added_by': session["user"],
                 'upload_img': uploaded_image,
                 'created_on': datetime.today().strftime("%d %b, %Y"),
