@@ -71,11 +71,13 @@
                     {% endif %}
                 </div>
             </div>
-            <!-- Search tags --> 
+            <!-- Tags --> 
             <div class="row">
                 <div class="col-12 card-info">
                     {{ form.tags.label(class="form-label m-0")}}
-                    <p class="m-0">{{entry.tags}}</p>
+                    {% for tag in entry.tags %}
+                    <span class="card-tag">{{tag}}</span>
+                    {% endfor %}
                 </div>
             </div>
             <div class="row">
