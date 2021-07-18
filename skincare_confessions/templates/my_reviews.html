@@ -3,10 +3,10 @@
 <div class="container-fluid my-reviews">
     <h2 class="user-headtitel">{{username|capitalize }}'s Reviews ({{ my_total_reviews }})</h2>
     <div class="link_btn">
-        <button type="button" class="btn-outline redirect_btn"><a href="{{url_for('add_reviews')}}">ADD NEW REVIEW</a></button>
+        <button type="button" class="redirect_btn hvr-grow"><a class="add-review-link" href="{{url_for('add_reviews')}}">ADD NEW REVIEW</a></button>
     </div>
     <div class="search-bar">
-        <form action="" method="GET">
+        <form action="{{url_for('my_reviews')}}" method="GET">
             <input type="search" name="browse" id="browse" placeholder="&#128269;  Search reviews...">
         </form>
     </div>
@@ -21,10 +21,10 @@
         <ul class="pagination">
             {% for page in pages %} 
                 {% if page == current_page %}
-                    <li class="active"><a>{{ page }}</a></li>
+                    <li class="active"><a class="pagination-links current-page">{{ page }}</a></li>
                 {% else %}
                     <li class="optional-page">
-                    <a href="{{ url_for('my_reviews', current_page=page) }}">{{ page }}</a>
+                    <a class="pagination-links" href="{{ url_for('my_reviews', current_page=page) }}">{{ page }}</a>
                 </li>
                 {% endif %} 
             {% endfor %}

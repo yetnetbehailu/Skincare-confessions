@@ -213,6 +213,22 @@ body {
     background-color: #759e71;
 }
 
+.pagination-links {
+    color: #000;
+    background: #f9f530;
+    padding: 0px 7px 0px;
+    margin: 2px;
+    text-decoration: none;
+}
+
+.pagination-links:hover {
+    color: #000;
+}
+
+.current-page {
+    border: 2px solid #ffd100;
+    cursor: pointer;
+}
 /* ---------------------------------------------------
     SITE LOGO
 ----------------------------------------------------- */
@@ -232,6 +248,7 @@ body {
 /* ---------------------------------------------------
     Hover Effects
 ----------------------------------------------------- */
+/* Expand */
 .hvr-expand {
     transition-duration: 0.3s;
     transition-property: transform;
@@ -243,7 +260,23 @@ body {
     transform: scale(1.1);
 }
 
+/* Grow */
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
 
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.1);
+}
 /* ---------------------------------------------------
     Footer Content
 ----------------------------------------------------- */
@@ -363,7 +396,18 @@ footer {
 .redirect_btn {
     width: 30%;
     border-style: none;
-    box-shadow: 0px 1px 5px 1px;
+    border-radius: 4px;
+    background: #f9f529;
+    border: 3px solid #ffd100;
+}
+
+.add-review-link {
+    text-decoration: none;
+    color: #000;
+}
+
+.add-review-link:hover {
+    color: #000;
 }
 
 .link_btn {
@@ -375,6 +419,23 @@ footer {
     height: 100%;
 }
 
+/* Grow */
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.1);
+}
 
 /* ---------------------------------------------------
     Add_reviews Page 

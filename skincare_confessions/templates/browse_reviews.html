@@ -4,7 +4,7 @@
         <h2 class="browse-headtitle">All reviews ({{ total }})</h2>
         <!--Search-->
         <div class="search-bar">
-            <form action="" method="GET">
+            <form action="{{url_for('browse_reviews')}}" method="GET" class="search-form">
                 <input type="search" name="browse" id="browse" placeholder="&#128269;  Search reviews...">
             </form>
         </div>
@@ -19,10 +19,10 @@
             <ul class="pagination">
                     {% for page in pages %} 
                     {% if page == current_page %}
-                    <li class="active"><a>{{ page }}</a></li>
+                    <li class="active"><a class="pagination-links current-page">{{ page }}</a></li>
                     {% else %}
                     <li class="optional-page">
-                    <a href="{{ url_for('browse_reviews', current_page=page) }}">{{ page }}</a>
+                    <a class="pagination-links" href="{{ url_for('browse_reviews', current_page=page) }}">{{ page }}</a>
                     </li>
                     {% endif %} 
                 {% endfor %}
