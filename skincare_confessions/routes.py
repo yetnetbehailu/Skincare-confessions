@@ -211,12 +211,18 @@ def update_favorites(review_id, is_fave):
 def about():
     form = EmailForm()
     if form.validate_on_submit():
-        email = {
-            'email': request.form.get('email')
-        }
-        subscribes.insert_one(email)
-        return render_template('about.html', title='About Us',
-                               form=form)
+        # Check if email already exist in db
+        existing_email = subscribes.find_one(
+            {"email": request.form["email"].lower()})
+        if existing_email:
+            flash('This email already been registered', 'danger')
+        else:
+            email = {
+                'email': request.form.get('email')
+            }
+            subscribes.insert_one(email)
+            return render_template('about.html', title='About Us',
+                                   form=form)
     return render_template('about.html', form=form)
 
 
