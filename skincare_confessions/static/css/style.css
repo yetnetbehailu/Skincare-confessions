@@ -860,7 +860,6 @@ input[type='checkbox'].favorite{
     justify-content: center;
     width: 93%;
     margin: auto;
-    padding-top: 8px;
 }
 
 .about_title {
@@ -881,12 +880,13 @@ input[type='checkbox'].favorite{
 .subscribe-text {
     text-align: center;
     margin-top: 20px;
+    margin-bottom: 0;
 }
 
 .email-field {
-    width: 70%;
     border: 2px solid #7f7f7f;
     border-radius: 4px;
+    padding-right: 14%;
 }
 
 .subscribe-content input:focus{
@@ -906,11 +906,14 @@ input[type='checkbox'].favorite{
     border: none;
 }
 
-.envelope-icon {
+.fa-envelope {
     position: relative;
-    top: 11px;
-    right: 25px;
-    height: 100%;
+    left: 86%;
+    top: 27%;
+}
+
+.subscribe-form {
+    width: 70%;
 }
 
 .creamImg {
@@ -1066,12 +1069,8 @@ input[type='checkbox'].favorite{
         margin-top: 45px;
 }
 
-    .subscribe-content {
-        margin-top: 12px;
-    }
-
-    .email-field {
-        width: 46%;
+    .subscribe-form {
+        width: 55%;
     }
 
     @keyframes moving-slogan {
@@ -1147,12 +1146,8 @@ input[type='checkbox'].favorite{
         margin-top: 47px;
     }
 
-    .subscribe-content {
-        margin-top: 4px;
-    }
-
-    .email-field {
-        width: 40%;
+    .subscribe-form {
+       width: 40%;
     }
 
     .overlay.active{
