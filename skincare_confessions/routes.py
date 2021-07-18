@@ -214,9 +214,9 @@ def about():
         email = {
             'email': request.form.get('email')
         }
-        subscribes.insert_one({email})
+        subscribes.insert_one(email)
         return render_template('about.html', title='About Us',
-                               email=email)
+                               form=form)
     return render_template('about.html', form=form)
 
 
