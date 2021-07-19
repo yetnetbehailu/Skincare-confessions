@@ -18,7 +18,7 @@
                     </div>
                 {% else %}
                 <i class="fas fa-user"></i>
-                {{ form.username(class="form-control-lg is", placeholder="Enter username")}}
+                {{ form.username(class="form-control-lg", placeholder="Enter username")}}
                 {% endif %}
             </div>
             <!-- Password input  -->
@@ -41,7 +41,7 @@
             </div>
             <!-- Login Button  -->
             <div class="submitBtn">
-                {{ form.submit(class=" btn-outline w-100")}}
+                {{ form.submit(class="loginbtn")}}
             </div>
             <!-- Link redirect to Register page -->
             <div class="redirect-link pt-2">
