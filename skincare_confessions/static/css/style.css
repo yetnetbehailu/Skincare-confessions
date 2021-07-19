@@ -229,6 +229,21 @@ body {
     border: 2px solid #ffd100;
     cursor: pointer;
 }
+
+.single-review-link {
+    text-decoration: none;
+    color: #000;
+}
+
+.single-review-link:hover {
+    color: #000;
+}
+
+.alert {
+    position: fixed;
+    width: 100%;
+    margin-top: 3rem;
+}
 /* ---------------------------------------------------
     SITE LOGO
 ----------------------------------------------------- */
