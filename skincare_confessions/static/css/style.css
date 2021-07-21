@@ -205,7 +205,7 @@ body {
 
 .header-title {
     margin: auto;
-    color: #648260;
+    color: #4d7955;
     font-family: 'Vollkorn', Poppins;
 }
 
@@ -260,6 +260,9 @@ body {
     margin: 0px 3px;
 }
 
+.site-logo {
+    height: 64px;
+}
 /* ---------------------------------------------------
     Hover Effects
 ----------------------------------------------------- */
@@ -1120,6 +1123,112 @@ input[type='checkbox'].favorite{
 .home-content {
     height: 100%;
 }
+
+/* ---------------------------------------------------
+    Individual detailed view of review posts
+----------------------------------------------------- */
+
+.individual_view {
+    height: 100%;
+    padding-top: 6rem;
+}
+
+.head-title {
+    font-family:'Vollkorn', Poppins;
+    text-align: center;
+    color: #4d7955;
+    margin-bottom: 2rem;
+}
+
+.intro {
+    background: #ffc7d0c7;
+    border-radius: 3px;
+    height: 265px;
+    margin-bottom: 25px;
+    overflow: auto;
+}
+
+.category {
+    font-family: monospace;
+    text-align: center;
+}
+
+.single_brand {
+    font-family: 'Vollkorn', Poppins;
+    text-align: center;
+    margin: 20px 0 0;
+}
+
+.content-creator {
+    text-align: center;
+    font-family: 'Vollkorn', Poppins;
+    font-size: large;
+    margin-bottom: 3px;
+}
+
+.datestamp {
+    font-family:'Vollkorn', Poppins;
+    text-align: center;
+}
+
+.disclaimer {
+    text-align: center;
+    font-family: 'Vollkorn', Poppins;
+}
+
+.single_img {
+    text-align: center;
+}
+
+.frame {
+    box-shadow: 1px 3px 5px 0px #000000b3;
+    border-radius: 15px;
+    width: 85%;
+}
+
+.manage-btns {
+    margin: 10px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.edit-btn {
+    padding: 1px 7px;
+    border: 2px solid #80bb7b;
+    background-color: #759e71;
+}
+
+.delete-btn {
+    padding: 1px 7px;
+    border:  2px solid #bf4545;
+    background-color: #e85959;
+}
+
+.content-remarks {
+    border: #3481d4 1px solid;
+    box-shadow: 0px 0px 3px 1px #3481d4;
+    margin-bottom: 25px;
+    background: #79c1ff5c;
+    text-align: center;
+    padding: 5px;
+}
+
+.review-discrip {
+    background-color: #dcc6ffc7;
+    border-radius: 2px;
+    border: #b483ff 2px solid;
+    overflow: auto;
+    padding: 5px 15px;
+}
+
+.hr-line {
+    margin: 0px 0px 10px 0px;
+    border-radius: 1px;
+    color: #3481d49e;
+    opacity: 1;
+}
+
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
@@ -1240,6 +1349,14 @@ input[type='checkbox'].favorite{
 
     .overlay.active{
         display: none;
+    }
+
+    .frame {
+        width: 70%;
+    }
+    
+    .intro {
+        margin-top: 2%;
     }
 }
 
