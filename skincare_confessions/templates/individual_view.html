@@ -1,0 +1,71 @@
+{% extends 'base.html' %} 
+{% block content %}
+<div class="individual_view">
+    <div class="container">
+        <h1 class="head-title">SKINCARE<img class="site-logo" src="{{url_for('static', filename='img/confessions.png')}}" alt="Skincare confessions logo" /></h1>
+        <div class="row">
+            <div class="col-md-6 intro">
+                <h2 class="single_brand">{{individual_review.brand_name|capitalize}}</h2>
+                <p class="category">Category: {{individual_review.category_name|capitalize}}</p>
+                <p class="content-creator">Review written by {{individual_review.added_by|capitalize}}</p>
+                <p class="datestamp">Created on: {{individual_review.created_on}}</p>
+                <p class="disclaimer">
+                    <small>"Disclaimer the views expressed in the post belong to the content creator and not the organization, its affiliates, or employees!"</small>
+                </p>
+            </div>
+            <div class="col-md-5 offset-md-1 single_img">
+                {% if individual_review.upload_img %}
+                <img src="{{individual_review.upload_img}}" class="review-img frame" alt="Review image" />
+                {% else %}
+                <img src="{{url_for('static', filename='img/review-placeholder.png')}}" class="placeholder-img frame" alt="No image,placeholder" />
+                {% endif %} 
+                {% if session.user|lower==individual_review.added_by %}
+                <div class="manage-btns">
+                    <button type="submit" class="edit-btn hvr-grow">Edit</button>
+                    <button type="submit" class="delete-btn hvr-grow">Delete</button>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 content-remarks">
+                Remarks
+                <hr class="hr-line" />
+                <p class="mb-1">Price <span>{{individual_review.price}}</span></p>
+                {% if individual_review.is_vegan %}
+                <p class="mb-1">
+                    Vegan
+                    <span>
+                        <i class="fas fa-leaf vegan"></i>
+                    </span>
+                </p>
+                {% else %}
+                <p class="mb-1">
+                    Not Vegan
+                    <span>
+                        <i class="fas fa-leaf not-vegan"></i>
+                    </span>
+                </p>
+                {% endif %}
+                <p class="mb-2">
+                    Rating 
+                    {% for rating_num in range(individual_review.rating|int) %}
+                    <i class="fas fa-star star-rated" aria-hidden="true"></i>
+                    {% endfor %}
+                </p>
+                <p>
+                    Tag 
+                    {% for tag in individual_review.tags %}
+                    <span class="card-tag">{{tag}}</span>
+                    {% endfor %}
+                </p>
+            </div>
+            <div class="col-md-8 offset-md-1 review-discrip">
+                >Product review
+                <hr class="mb-2 mt-0" />
+                <p class="">"{{individual_review.product_review}}"</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
