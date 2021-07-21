@@ -138,6 +138,7 @@ input[type="search"] {
     background-color: #dcc6ffc7;
     border-radius: 2px;
     border: #b483ff 1px solid;
+    height: 50px;
 }
 
 @-webkit-keyframes hvr-pulse {
@@ -1191,6 +1192,12 @@ input[type='checkbox'].favorite{
     padding: 1px 7px;
     border: 2px solid #80bb7b;
     background-color: #759e71;
+    text-decoration:none;
+    color: #000;
+}
+
+.edit-btn:hover {
+    color: #000;
 }
 
 .delete-btn {
@@ -1226,6 +1233,15 @@ input[type='checkbox'].favorite{
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
+@media (max-width: 320px) {
+    .alert-dismissible .btn-close {
+        padding: 10% 4% 2% 0%;
+    }
+    .alert {
+        padding: 16px 27px 16px 5px;
+    }
+}
+
 @media (max-width: 768px) {
     .redirect_btn {
         font-size: x-small;
