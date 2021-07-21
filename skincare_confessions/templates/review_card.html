@@ -1,6 +1,7 @@
 <!--Review card-->
 <div class="col-sm-12 col-md-4 col-lg-3 d-grid mt-3 mb-2">
     <div class="card">
+    <a class="single-review-link" href="{{url_for('individual_view', review_id=entry._id)}}">
         <h5 class="card-title">{{entry.brand_name|capitalize}}</h5>
          <!-- Category name-->
         <div class="category-content">
@@ -95,4 +96,5 @@
             </div>
         </div>
     </div>
+    </a>    
 </div>
