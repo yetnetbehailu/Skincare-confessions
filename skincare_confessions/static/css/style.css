@@ -115,7 +115,6 @@ input[type="search"]:focus {
     background:#e2e2e2;
     padding:5px 55px 5px;  
     margin:0 30px 0;
-    outline: none;
 }
 
 input[type="search"] {
@@ -358,7 +357,6 @@ footer {
 }  
 
 .form-group input:focus {
-    outline-style: none;
     box-shadow: 0 3px 0 rgb(120 146 106);
     border-bottom: none;
     background-color: #dbffc9;
@@ -511,7 +509,6 @@ footer {
 }
 
 #category_name:focus {
-    outline-style: none;
     box-shadow: 0px 0px 3px 2px rgb(120 146 106);
     border: none;
 }
@@ -525,7 +522,6 @@ footer {
     border: none;
     box-shadow: 0px 0px 3px 2px rgb(200 152 252);
     background-color: #eddcff;
-    outline-style: none;
 }
 
 .review-input {
@@ -584,7 +580,6 @@ footer {
 }
 
 #tag-input:focus {
-    outline: none;
     border: #3481d4 1px solid;
     box-shadow: 0px 0px 3px 1px #3481d4;
 }
@@ -643,7 +638,6 @@ footer {
 
 #custom-field:focus {
     box-shadow: 0px 0px 4px 1px #828282;
-    outline: none;
 }
 
 #custom-field::-webkit-file-upload-button {
