@@ -86,7 +86,7 @@ def add_reviews():
                 'is_vegan': is_vegan,
                 'rating': rating,
                 'tags': tags,
-                'added_by': session["user"],
+                'added_by': session["user"].lower(),
                 'upload_img': uploaded_image,
                 'created_on': datetime.today().strftime("%d %b, %Y"),
                 'faved_by': []
@@ -120,14 +120,15 @@ def my_reviews():
         add_review_form = AddReviewForm()
         # Finds & counts user personal review entries
         my_total_reviews = reviews.find({
-            "added_by": session["user"]}).count()
+            "added_by": session["user"].lower()}).count()
         card_per_page = 12
         current_page = int(request.args.get('current_page', 1))
         pages = range(1, int(math.ceil(my_total_reviews / card_per_page)) + 1)
         # Sorts latest entry first skipping the given number of documents in
         # the query.
         author = reviews.find({
-            "added_by": session["user"]}).sort('_id', pymongo.DESCENDING).skip(
+            "added_by": session["user"].lower()}).sort(
+                '_id', pymongo.DESCENDING).skip(
                 (current_page - 1)*card_per_page).limit(card_per_page)
         return render_template(
             'my_reviews.html', username=username, author=author,
@@ -201,6 +202,30 @@ def update_favorites(review_id, is_fave):
 
 
 """
+#   Single review page
+-------------------
+ To display an individual review
+"""
+
+
+@app.route("/individual_view/<review_id>", methods=["GET"])
+def individual_view(review_id):
+    """ Signed in user with an added post is able to update and delete
+    personal entries. """
+    # Find specific review by Id
+    individual_review = reviews.find_one({'_id': ObjectId(review_id)})
+    if 'user' in session:
+        users.find_one({'username': session['user'].lower()})
+        ['username']
+        return render_template(
+            'individual_view.html', title='Individual review',
+            individual_review=individual_review)
+    return render_template(
+        'individual_view.html', title='Individual review',
+        individual_review=individual_review)
+
+
+"""
 #   About Us
 -------------------
 
@@ -245,7 +270,7 @@ def register():
         existing_user = users.find_one(
             {"username": request.form["username"].lower()})
         if existing_user:
-            flash('Sorry, this username has been taken')
+            flash('Sorry, this username has been taken', 'danger')
             return redirect(url_for("register"))
         else:
             new_user = {
