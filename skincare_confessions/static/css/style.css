@@ -507,6 +507,7 @@ footer {
     margin-bottom: 13px;
     border: 3px dashed;
     color: #7f7f7f;
+    padding: 5px;
 }
 
 #category_name:focus {
@@ -1221,6 +1222,7 @@ input[type='checkbox'].favorite{
     border: #b483ff 2px solid;
     overflow: auto;
     padding: 5px 15px;
+    margin-bottom: 25px;
 }
 
 .hr-line {
