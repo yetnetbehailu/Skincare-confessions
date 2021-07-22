@@ -226,7 +226,7 @@ def individual_view(review_id):
 
 
 """
-#  Edit Review
+#  Edit Review part.1
 -------------------
     Displays page that manages user updates, presented with pre-populated
     fields. The user is only enabled to update their own review entries,
@@ -251,6 +251,7 @@ def edit_review(review_id):
         add_review_form.is_vegan.data = individual_review["is_vegan"]
         add_review_form.rating.data = individual_review["rating"]
         add_review_form.tags.data = ' '.join(individual_review["tags"])
+        add_review_form.upload_img.data = individual_review["upload_img"]
         return render_template(
             'edit_review.html', title='Edit review',
             individual_review=individual_review, form=add_review_form,
@@ -258,6 +259,63 @@ def edit_review(review_id):
     else:
         # Otherwise render error page
         return render_template('404.html', title="Page Not Found")
+
+
+"""
+#  Update Review part.2
+-------------------
+    Updates user new form inputs on the edit page at the time of submission and
+    sends updated data back to server. The user is only enabled to update their
+    own review entries.
+"""
+
+
+@app.route("/update_review/<review_id>", methods=["POST"])
+def update_review(review_id):
+    """ Updates user input on edit_review page (form fields), then collects and
+    sends the new updated data to database """
+    # Find the specific review to edit by Id
+    individual_review = reviews.find_one({'_id': ObjectId(review_id)})
+    add_review_form = AddReviewForm()
+    category_name = categories.find()
+    # If validation passes
+    if add_review_form.validate_on_submit():
+        # If user uploads img file retrive the data & upload to cloudinary
+        if add_review_form.upload_img.data:
+            upload_img = request.files.get('upload_img')
+            cloud_upload = cloudinary.uploader.upload(
+                upload_img, width=580, radius=20, height=580)
+            uploaded_image = cloud_upload.get('secure_url')
+        else:
+            # Otherwise retrive the default img data from form
+            uploaded_image = request.form.get('upload_img')
+            is_vegan = True if request.form.get("is_vegan") else False
+            price = float(str((request.form.get('price'))))
+            rating = int(request.form.get('rating'))
+            brand_name = str(request.form.get('brand_name'))
+            tags = request.form.get('tags').split(",")
+            review = {
+                'category_name': request.form.get('category_name'),
+                'brand_name': brand_name,
+                'product_review': request.form.get('product_review'),
+                'price': price,
+                'is_vegan': is_vegan,
+                'rating': rating,
+                'tags': tags,
+                'added_by': session["user"].lower(),
+                'upload_img': uploaded_image,
+                'created_on': datetime.today().strftime("%d %b, %Y"),
+                'faved_by': []
+                }
+            reviews.update({'_id': ObjectId(review_id)}, review)
+            flash('Your changes have been saved', 'success')
+            return redirect(url_for(
+                'individual_view', title='Individual review',
+                individual_review=individual_review, review_id=review_id))
+    return render_template(
+        "edit_review.html", title='Edit review',
+        individual_review=individual_review, form=add_review_form,
+        category_name=category_name)
 
 
 """
