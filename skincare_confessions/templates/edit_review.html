@@ -1,9 +1,9 @@
 {% extends 'base.html'%} 
 {% block content %}
 <div class="add-review-bg">
-    <h2 class="user-headtitel mb-0">{{username|capitalize }}'s</h2>
+    <h2 class="user-headtitel mb-0">{{session.user|capitalize }}'s</h2>
     <h3 class="site-name">Skincare Confessions</h3>
-    <form action="{{url_for('add_reviews')}}" method="POST" enctype="multipart/form-data" id="reviewForm">
+    <form action="{{url_for('edit_review', review_id=individual_review._id)}}" method="POST" enctype="multipart/form-data" id="reviewForm">
         {{form.hidden_tag()}}
         <div class="container review-content">
             <!-- skincare category dropdown menu -->
@@ -11,11 +11,17 @@
                 <div class="col input-field">
                     <label for="skincare_categories"> Skincare Category </label>
                     <select id="category_name" name="category_name" class="category-field d-block" required>
-                        <option value="" disabled selected>Select an option</option>
+                        <option value="" disabled>Select an option</option>
                         {% for category in category_name %}
-                        <option value="{{category.category_name}}">
-                            {{category.category_name}}
-                        </option>
+                        {% if category.category_name == individual_review.category_name %}
+                            <option value="{{category.category_name}}" selected>
+                                {{category.category_name}}
+                            </option>
+                        {% else %}
+                            <option value="{{category.category_name}}">
+                                {{category.category_name}}
+                            </option>
+                        {% endif %}
                         {% endfor %}
                     </select>
                 </div>
@@ -72,7 +78,11 @@
                 <!-- Boolean field -->
                 <div class="col-4 custom-switch">
                     {{ form.is_vegan.label(class="custom-vegan-label d-block mb-0")}}
+                    {% if individual_review.is_vegan == "true" %}
+                    {{ form.is_vegan(class="custom-control-input switch-control, value="" ")}}
+                    {% else %}
                     {{ form.is_vegan(class="custom-control-input switch-control")}}
+                    {% endif %}
                     <span class="slider ball switch"></span>
                 </div>
                 <!-- Star Rating -->
@@ -146,4 +156,3 @@
 {% block script %}
 <script src="{{url_for('static', filename='js/add_review.js')}}"></script>
 {% endblock %}
-
