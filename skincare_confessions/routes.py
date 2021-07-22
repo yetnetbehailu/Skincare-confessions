@@ -74,7 +74,7 @@ def add_reviews():
             else:
                 uploaded_image = request.form.get('upload_img')
             is_vegan = True if request.form.get("is_vegan") else False
-            price = Decimal128(str((request.form.get('price'))))
+            price = float(str((request.form.get('price'))))
             rating = int(request.form.get('rating'))
             brand_name = str(request.form.get('brand_name'))
             tags = request.form.get('tags').split(",")
@@ -226,6 +226,41 @@ def individual_view(review_id):
 
 
 """
+#  Edit Review
+-------------------
+    Displays page that manages user updates, presented with pre-populated
+    fields. The user is only enabled to update their own review entries,
+    otherwise returning a 404 error.
+"""
+
+
+@app.route("/edit_review/<review_id>", methods=["GET", "POST"])
+def edit_review(review_id):
+    """ Display edit form page """
+    # Find the specific review to edit by Id
+    individual_review = reviews.find_one({'_id': ObjectId(review_id)})
+    add_review_form = AddReviewForm()
+    category_name = categories.find()
+    # Check if the selected review belongs to the signed in user
+    if individual_review['added_by'] == session['user'].lower():
+        # If the form data match the selected review data, send to front server
+        add_review_form.brand_name.data = individual_review["brand_name"]
+        add_review_form.product_review.data = (
+            individual_review["product_review"])
+        add_review_form.price.data = float(individual_review["price"])
+        add_review_form.is_vegan.data = individual_review["is_vegan"]
+        add_review_form.rating.data = individual_review["rating"]
+        add_review_form.tags.data = ' '.join(individual_review["tags"])
+        return render_template(
+            'edit_review.html', title='Edit review',
+            individual_review=individual_review, form=add_review_form,
+            category_name=category_name)
+    else:
+        # Otherwise render error page
+        return render_template('404.html', title="Page Not Found")
+
+
+"""
 #   About Us
 -------------------
 
@@ -246,6 +281,7 @@ def about():
                 'email': request.form.get('email')
             }
             subscribes.insert_one(email)
+            flash('Thank you for your subscription!', 'success')
             return render_template('about.html', title='About Us',
                                    form=form)
     return render_template('about.html', form=form)
