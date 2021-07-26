@@ -92,7 +92,7 @@ def add_reviews():
                 'faved_by': []
             }
             reviews.insert_one(review)
-            flash('Review successfully added', 'succes')
+            flash('Review successfully added', 'success')
             return redirect(url_for('my_reviews', review=review))
         return render_template("add_reviews.html", username=username,
                                category_name=category_name,
@@ -265,8 +265,8 @@ def edit_review(review_id):
 #  Update Review part.2
 -------------------
     Updates user new form inputs on the edit page at the time of submission and
-    sends updated data back to server. The user is only enabled to update their
-    own review entries.
+    sends updated data back to server & db. The user is only enabled to update
+    their own review entries.
 """
 
 
@@ -280,7 +280,7 @@ def update_review(review_id):
     category_name = categories.find()
     # If validation passes
     if add_review_form.validate_on_submit():
-        # If user uploads img file retrive the data & upload to cloudinary
+        # If user uploads img file, retrive the data & upload to cloudinary
         if add_review_form.upload_img.data:
             upload_img = request.files.get('upload_img')
             cloud_upload = cloudinary.uploader.upload(
@@ -289,29 +289,29 @@ def update_review(review_id):
         else:
             # Otherwise retrive the default img data from form
             uploaded_image = request.form.get('upload_img')
-            is_vegan = True if request.form.get("is_vegan") else False
-            price = float(str((request.form.get('price'))))
-            rating = int(request.form.get('rating'))
-            brand_name = str(request.form.get('brand_name'))
-            tags = request.form.get('tags').split(",")
-            review = {
-                'category_name': request.form.get('category_name'),
-                'brand_name': brand_name,
-                'product_review': request.form.get('product_review'),
-                'price': price,
-                'is_vegan': is_vegan,
-                'rating': rating,
-                'tags': tags,
-                'added_by': session["user"].lower(),
-                'upload_img': uploaded_image,
-                'created_on': datetime.today().strftime("%d %b, %Y"),
-                'faved_by': []
-                }
-            reviews.update({'_id': ObjectId(review_id)}, review)
-            flash('Your changes have been saved', 'success')
-            return redirect(url_for(
-                'individual_view', title='Individual review',
-                individual_review=individual_review, review_id=review_id))
+        is_vegan = True if request.form.get("is_vegan") else False
+        price = float(str((request.form.get('price'))))
+        rating = int(request.form.get('rating'))
+        brand_name = str(request.form.get('brand_name'))
+        tags = request.form.get('tags').split(",")
+        review = {
+            'category_name': request.form.get('category_name'),
+            'brand_name': brand_name,
+            'product_review': request.form.get('product_review'),
+            'price': price,
+            'is_vegan': is_vegan,
+            'rating': rating,
+            'tags': tags,
+            'added_by': session["user"].lower(),
+            'upload_img': uploaded_image,
+            'created_on': datetime.today().strftime("%d %b, %Y"),
+            'faved_by': []
+            }
+        reviews.update({'_id': ObjectId(review_id)}, review)
+        flash('Your changes have been saved', 'success')
+        return redirect(url_for(
+            'individual_view', title='Individual review',
+            individual_review=individual_review, review_id=review_id))
     return render_template(
         "edit_review.html", title='Edit review',
         individual_review=individual_review, form=add_review_form,
