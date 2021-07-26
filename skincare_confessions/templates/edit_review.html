@@ -3,7 +3,7 @@
 <div class="add-review-bg">
     <h2 class="user-headtitel mb-0">{{session.user|capitalize }}'s</h2>
     <h3 class="site-name">Skincare Confessions</h3>
-    <form action="{{url_for('edit_review', review_id=individual_review._id)}}" method="POST" enctype="multipart/form-data" id="reviewForm">
+    <form action="{{url_for('update_review', review_id=individual_review._id)}}" method="POST" enctype="multipart/form-data" id="reviewForm">
         {{form.hidden_tag()}}
         <div class="container review-content">
             <!-- skincare category dropdown menu -->
