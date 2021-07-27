@@ -319,6 +319,27 @@ def update_review(review_id):
 
 
 """
+#   Delete Review
+-------------------
+    Following route removes an individual review from database after checking
+    current user being the one whom created the entry.
+"""
+
+
+@app.route('/delete_review/<review_id>')
+def delete_review(review_id):
+    """ Find the specific review by Id to delete """
+    individual_view = reviews.find_one({'_id': ObjectId(review_id)})
+    if individual_view['added_by'] == session['user'].lower():
+        reviews.remove({'_id': ObjectId(review_id)})
+        flash('Your review has been deleted', 'success')
+        return redirect(url_for(
+            'home', title="Home page", individual_view=individual_view))
+    else:
+        return render_template('404.html', title="Page Not Found")
+
+
+"""
 #   About Us
 -------------------
 
