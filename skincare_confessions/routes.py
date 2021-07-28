@@ -36,7 +36,11 @@ subscribes = mongo.db.subscriptions
 @app.route("/")
 @app.route('/home')
 def home():
-    return render_template('home.html')
+    add_review_form = AddReviewForm()
+    # Selects the specified number of documents from db at a random
+    entries = ([entry for entry in reviews.aggregate(
+        [{"$sample": {"size": 4}}])])
+    return render_template('home.html', entries=entries, form=add_review_form)
 
 
 """

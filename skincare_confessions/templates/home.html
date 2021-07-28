@@ -8,5 +8,20 @@
     <img  class="hero-gif" src="{{url_for('static', filename='img/skincare-gif.gif')}}" alt="Skincare products gif">
   </div>
     <h1 class="home-title">Discover more reviews</h1>
+    <div class="container-fluid carousel">
+      <div class="row">
+        {% for entry in entries %}
+        {% include 'review_card.html'%}
+        {% endfor %}
+      </div>
+    </div>
 </div>
+{% endblock %}
+{% block script %}
+<script type=text/javascript>
+const mediaQuery = window.matchMedia("(min-width:320px)");
+if (mediaQuery.matches) {
+  $('.carousel .col-md-4').removeClass('col-md-4').addClass('col-md-6');
+}
+</script>
 {% endblock %}
