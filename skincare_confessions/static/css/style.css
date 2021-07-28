@@ -244,6 +244,10 @@ body {
     width: 100%;
     margin-top: 3rem;
 }
+
+.redirect-home {
+    text-decoration: none;
+}
 /* ---------------------------------------------------
     SITE LOGO
 ----------------------------------------------------- */
@@ -1110,6 +1114,7 @@ input[type='checkbox'].favorite{
 .home-title {
     font-family: 'Vollkorn';
     text-align: center;
+    margin-top: 3%;
 }
 
 .hero-gif {
@@ -1118,6 +1123,11 @@ input[type='checkbox'].favorite{
 
 .home-content {
     height: 100%;
+}
+
+.cards-preview {
+    margin-bottom: 4%;
+    width: 95%;
 }
 
 /* ---------------------------------------------------
@@ -1174,6 +1184,7 @@ input[type='checkbox'].favorite{
 
 .single_img {
     text-align: center;
+    margin-bottom: 3%;
 }
 
 .frame {
@@ -1205,6 +1216,12 @@ input[type='checkbox'].favorite{
     padding: 1px 7px;
     border:  2px solid #bf4545;
     background-color: #e85959;
+    text-decoration:none;
+    color: #000;
+}
+
+.delete-btn:hover {
+    color: #000;
 }
 
 .content-remarks {
@@ -1296,6 +1313,10 @@ input[type='checkbox'].favorite{
         width: 60%;
         margin: auto;
     }
+
+    .hero-gif {
+        height: 27rem;
+    }
 }
 
 @media (min-width: 992px) {
@@ -1370,6 +1391,10 @@ input[type='checkbox'].favorite{
     .intro {
         margin-top: 2%;
     }
+
+    .hero-gif {
+        height: 31rem;
+    }
 }
 
 @media (min-width: 1050px){
@@ -1389,6 +1414,10 @@ input[type='checkbox'].favorite{
 
     .about-text {
         margin-top: 2rem;
+    }
+
+    .hero-gif {
+        height: 36rem;
     }
 }
 
