@@ -34,13 +34,32 @@ subscribes = mongo.db.subscriptions
 
 
 @app.route("/")
-@app.route('/home')
+@app.route('/home', methods=['GET', 'POST'])
 def home():
     add_review_form = AddReviewForm()
+    emailform = EmailForm()
     # Selects the specified number of documents from db at a random
     entries = ([entry for entry in reviews.aggregate(
         [{"$sample": {"size": 4}}])])
-    return render_template('home.html', entries=entries, form=add_review_form)
+    if emailform.validate_on_submit():
+        # Check if email already exist in db
+        existing_email = subscribes.find_one(
+            {"email": request.form["email"].lower()})
+        if existing_email:
+            flash('This email already been registered', 'danger')
+        else:
+            email = {
+                'email': request.form.get('email')
+            }
+            subscribes.insert_one(email)
+            flash('Thank you for your subscription!', 'success')
+            return render_template(
+                'home.html', title='Home Page', entries=entries,
+                form=add_review_form,
+                emailform=emailform)
+    return render_template(
+        'home.html', title='Home Page', entries=entries, form=add_review_form,
+        emailform=emailform)
 
 
 """
@@ -367,7 +386,7 @@ def about():
             flash('Thank you for your subscription!', 'success')
             return render_template('about.html', title='About Us',
                                    form=form)
-    return render_template('about.html', form=form)
+    return render_template('about.html', title='About Us', form=form)
 
 
 """

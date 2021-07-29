@@ -4,10 +4,11 @@
   <div class="slogan">
       "A joy shared is a joy doubled"
   </div>
-  <div class="">
     <img  class="hero-gif" src="{{url_for('static', filename='img/skincare-gif.gif')}}" alt="Skincare products gif">
-  </div>
     <h1 class="home-title">Discover more reviews</h1>
+    <div class="discover-content">
+      <button type="button" class="discover-btn hvr-grow"><a href="{{url_for('browse_reviews')}}" class="discover-link">Discover</a></button>
+      </div>
     <div class="container-fluid cards-preview">
       <div class="row">
         {% for entry in entries %}
@@ -15,13 +16,36 @@
         {% endfor %}
       </div>
     </div>
+
+    <h5 class="subscribe-text">Subscribe to our newsletter</h5>
+    <div class="subscribe-content">
+        <form action="{{url_for('home')}}" method="POST" class="subscribe-form" id="subscribeEmail">
+            {{ emailform.csrf_token }}
+            <i class="fas fa-envelope"></i>
+            {% if emailform.email.errors %}
+                {{emailform.email(class='form-control email-field is-invalid', placeholder='Enter Email...')}} 
+            <div class="invalid-feedback mt-1">
+                {% for error in emailform.email.errors %}
+                <span class="text-danger">
+                    {{error}}
+                </span>
+                {% endfor %}
+            </div>
+            {% else %}
+                {{emailform.email(class='form-control email-field', placeholder='Enter Email...')}}
+            {% endif %}
+            <div class="subscribe">
+                {{emailform.subscribe(class='subscribe-btn')}}
+            </div>
+        </form>
+    </div>
 </div>
 {% endblock %}
 {% block script %}
 <script type=text/javascript>
 const mediaQuery = window.matchMedia("(min-width:320px)");
 if (mediaQuery.matches) {
-  $('.carousel .col-md-4').removeClass('col-md-4').addClass('col-md-6');
+  $('.cards-preview .col-md-4').removeClass('col-md-4').addClass('col-md-6');
 }
 </script>
 {% endblock %}
