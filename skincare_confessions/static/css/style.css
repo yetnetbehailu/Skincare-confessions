@@ -1127,9 +1127,32 @@ input[type='checkbox'].favorite{
 
 .cards-preview {
     margin-bottom: 4%;
-    width: 95%;
+    width: 85%;
 }
 
+.discover-content {
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.discover-btn {
+    width: 28%;
+    border-radius: 12px;
+    border: 2px solid #bb3d3d;
+    background-color: #ea4a4a;
+    padding: 4px;
+}
+
+.discover-link {
+    text-decoration: none;
+    color: #000;
+    display: block;
+}
+
+.discover-link:hover {
+    text-decoration: none;
+    color: #000;
+}
 /* ---------------------------------------------------
     Individual detailed view of review posts
 ----------------------------------------------------- */
@@ -1400,6 +1423,12 @@ input[type='checkbox'].favorite{
 @media (min-width: 1050px){
     #topnav a {
         font-size: 0.8rem;
+    }
+
+    .hero-gif {
+        width: 90%;
+        display: flex;
+        margin: auto;
     }
 }
 
