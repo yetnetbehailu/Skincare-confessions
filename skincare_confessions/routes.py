@@ -363,6 +363,40 @@ def delete_review(review_id):
 
 
 """
+#   Search
+-------------------
+
+"""
+
+
+@app.route("/search_reviews")
+def search_reviews():
+    """ Following route retrives user inputs/querys and finds the review with
+    matching indexed data type from database """
+    add_review_form = AddReviewForm()
+    card_per_page = 12
+    # Pagination
+    current_page = int(request.args.get('current_page', 1))
+    # Retrive form input/query from field with name attr value browse
+    browse = request.args.get('browse')
+    # Finds text search query on string content incl. array with string value
+    search_result = reviews.find(
+        {'$text': {'$search': str(browse)}}).count()
+    # Sorts latest entry first skipping the given number of documents in the
+    # query
+    entries = list(reviews.find(
+        {'$text': {'$search': str(browse)}}).sort(
+            '_id', pymongo.DESCENDING).skip(
+                (current_page - 1)*card_per_page).limit(card_per_page))
+    # Pages acquired
+    pages = range(1, int(math.ceil(search_result / card_per_page)) + 1)
+    return render_template(
+        "search_reviews.html", entries=entries, form=add_review_form,
+        pages=pages, current_page=current_page, search_result=search_result,
+        browse=browse)
+
+
+"""
 #   About Us
 -------------------
 
