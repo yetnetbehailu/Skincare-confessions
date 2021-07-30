@@ -39,7 +39,8 @@ document.getElementById("tagbtn").addEventListener("click", (e) => {
     if (e.target.id == "tagbtn") {
         e.preventDefault();
         input.value.split(",").forEach((tag) => {
-         if (tag){
+            //Removes any whitespace symbol then checks tag len grt then 0 value
+            if (tag.replace(/\s+/g, '').length>0){
                 tags.push(tag);
             }
         });
