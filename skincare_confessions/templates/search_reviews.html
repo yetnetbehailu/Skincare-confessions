@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container-fluid browse-page">
+        <h2 class="browse-headtitle">Search results found ({{ search_result }})</h2>
+        <!--Search-->
+        <div class="search-bar">
+            <form action="{{url_for('search_reviews', browse=browse, current_page=current_page)}}" method="GET" class="search-form">
+                <input type="search" name="browse" id="browse" placeholder="&#128269;  Search reviews...">
+            </form>
+        </div>
+        <!-- Main content card-decks -->
+        <div class="container-fluid">
+            <div class="card-deck row">
+                {% for entry in entries %}
+                    {% include "review_card.html" %} 
+                {% endfor %}
+            </div>
+            <!--Pagination-->
+            <ul class="pagination">
+                    {% for page in pages %} 
+                    {% if page == current_page %}
+                    <li class="active"><a class="pagination-links current-page">{{ page }}</a></li>
+                    {% else %}
+                    <li class="optional-page">
+                    <a class="pagination-links" href="{{ url_for('search_reviews', current_page=page, browse=browse) }}">{{ page }}</a>
+                    </li>
+                    {% endif %} 
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+{% block script %}
+<!--  Ajax call function for favorite functionallity
+Add on change event listener to all checkbox input card forms with class favorite.-->
+<script type=text/javascript>
+    $('.favorite').on("change", function(){
+        /* Get the id value that should be sent to backend server 
+        $(this) referring to the specific class which changed */
+        let review_id = $(this).attr("id");
+        let is_fave =$(this).prop('checked')
+            /* send URL,data of review_id & checkbox checked/unchecked state to server using ajax call post method */
+            $.post(`/update_favorites/${review_id}/${is_fave}`)
+            .done();
+        });
+</script> 
+{% endblock %}
+
