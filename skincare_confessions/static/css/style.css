@@ -243,6 +243,7 @@ body {
     position: fixed;
     width: 100%;
     margin-top: 3rem;
+    z-index: 1;
 }
 
 .redirect-home {
@@ -437,6 +438,7 @@ footer {
 .add-review-link {
     text-decoration: none;
     color: #000;
+    display: block;
 }
 
 .add-review-link:hover {
