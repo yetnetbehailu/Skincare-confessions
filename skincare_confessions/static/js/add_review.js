@@ -28,7 +28,7 @@ function clearTags() {
 function addTags() {
     clearTags();
     tags.slice().forEach((tag) => {
-        newTag = createTag(tag);
+        let newTag = createTag(tag);
         tagContainer.append(newTag);
     });
 }
