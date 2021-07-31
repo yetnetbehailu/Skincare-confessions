@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="home-content">
-  <div class="slogan">
-      "A joy shared is a joy doubled"
-  </div>
-    <img  class="hero-gif" src="{{url_for('static', filename='img/skincare-gif.gif')}}" alt="Skincare products gif">
+    <div class="slogan">
+        "A joy shared is a joy doubled"
+    </div>
+    <img class="hero-gif" src="{{url_for('static', filename='img/skincare-gif.gif')}}" alt="Skincare products gif" />
     <h1 class="home-title">Discover more reviews</h1>
     <div class="discover-content">
-      <button type="button" class="discover-btn hvr-grow"><a href="{{url_for('browse_reviews')}}" class="discover-link">Discover</a></button>
-      </div>
+        <button type="button" class="discover-btn hvr-grow"><a href="{{url_for('browse_reviews')}}" class="discover-link">Discover</a></button>
+    </div>
     <div class="container-fluid cards-preview">
-      <div class="row">
-        {% for entry in entries %}
-        {% include 'review_card.html'%}
-        {% endfor %}
-      </div>
+        <div class="row">
+            {% for entry in entries %}
+                {% include 'review_card.html'%}
+            {% endfor %}
+        </div>
     </div>
 
     <h5 class="subscribe-text">Subscribe to our newsletter</h5>
@@ -23,7 +23,7 @@
             {{ emailform.csrf_token }}
             <i class="fas fa-envelope"></i>
             {% if emailform.email.errors %}
-                {{emailform.email(class='form-control email-field is-invalid', placeholder='Enter Email...')}} 
+                {{emailform.email(class='form-control email-field is-invalid', placeholder='Enter Email...')}}
             <div class="invalid-feedback mt-1">
                 {% for error in emailform.email.errors %}
                 <span class="text-danger">
@@ -42,10 +42,20 @@
 </div>
 {% endblock %}
 {% block script %}
-<script type=text/javascript>
-const mediaQuery = window.matchMedia("(min-width:320px)");
-if (mediaQuery.matches) {
-  $('.cards-preview .col-md-4').removeClass('col-md-4').addClass('col-md-6');
-}
+<script>
+    const mediaQuery = window.matchMedia("(min-width:320px)");
+    if (mediaQuery.matches) {
+        $(".cards-preview .col-md-4").removeClass("col-md-4").addClass("col-md-6");
+    }
+    /* Ajax call function for favorite functionallity
+Add on change event listener to all checkbox input card forms with class favorite. */
+    $(".favorite").on("change", function () {
+        /* Get the id value that should be sent to backend server 
+    $(this) referring to the specific class which changed */
+        let review_id = $(this).attr("id");
+        let is_fave = $(this).prop("checked");
+        /* send URL,data of review_id & checkbox checked/unchecked state to  server using ajax call post method */
+        $.post(`/update_favorites/${review_id}/${is_fave}`).done();
+    });
 </script>
 {% endblock %}

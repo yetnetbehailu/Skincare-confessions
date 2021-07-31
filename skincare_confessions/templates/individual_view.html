@@ -48,14 +48,12 @@
                 </p>
                 {% endif %}
                 <p class="mb-2">
-                    Rating 
-                    {% for rating_num in range(individual_review.rating|int) %}
+                    Rating {% for rating_num in range(individual_review.rating|int) %}
                     <i class="fas fa-star star-rated" aria-hidden="true"></i>
                     {% endfor %}
                 </p>
                 <p>
-                    Tag 
-                    {% for tag in individual_review.tags %}
+                    Tag {% for tag in individual_review.tags %}
                     <span class="card-tag">{{tag}}</span>
                     {% endfor %}
                 </p>
@@ -70,10 +68,10 @@
 </div>
 {% endblock %}
 {% block script %}
-<script type=text/javascript>
-// Delete confirmation dialog
-$('#confirmDelete').click(function () {
-    return confirm('You are about to delete this review, are you sure you want to proceed?');
-});
+<script>
+    // Delete confirmation dialog
+    $("#confirmDelete").click(function () {
+        return confirm("You are about to delete this review, are you sure you want to proceed?");
+    });
 </script>
 {% endblock%}

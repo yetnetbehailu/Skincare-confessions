@@ -1,35 +1,38 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 {% block content %}
-        <div class="container">
-            <div class="row top-stick-figures">
-                <div class="col-4">
-                <img src="{{url_for('static', filename='img/stick-figure1.png')}}" alt="stick-figure1" class="errorImg-group">
-                </div>
-                <div class="col-4">
-                <img src="{{url_for('static', filename='img/stick-figure2.png')}}" alt="stick-figure2" class="errorImg-group">
-                </div>
-                <div class="col-4">
-                <img src="{{url_for('static', filename='img/stick-figure3.png')}}" alt="stick-figure3" class="errorImg-group">
-                </div>
-            </div>
-            <div class="row title404">
-                <h1 class="heading404">404 ERROR</h1>
-                <h2>PAGE NOT FOUND</h2>
-            </div>
-            <p class="errormessg">"Pssst.." We searched high & low but couldn't find what you are looking for. Not to worry, we think mistakes make excellent portals for discovery. <br> Let's explore a better place for you to go</p>
-            <div class="home_btn">
-                <button type="button" class="btn btn-success hvr-pulse"><a href="{{url_for('home')}}" class="link_home">Home</a></button>
-            </div>
-            <div class="row">
-                <div class="col-4">
-                <img src="{{url_for('static', filename='img/stick-figure4.png')}}" alt="stick-figure4" class="errorImg-group">
-                </div>
-                <div class="col-4">
-                <img src="{{url_for('static', filename='img/stick-figure5.png')}}" alt="stick-figure5" class="errorImg-group">
-                </div>
-                <div class="col-4">
-                <img src="{{url_for('static', filename='img/stick-figure6.png')}}" alt="stick-figure6" class="errorImg-group">
-                </div>
-            </div>
-         </div>
-       {% endblock%}
+<div class="container">
+    <div class="row top-stick-figures">
+        <div class="col-4">
+            <img src="{{url_for('static', filename='img/stick-figure1.png')}}" alt="stick-figure1" class="errorImg-group" />
+        </div>
+        <div class="col-4">
+            <img src="{{url_for('static', filename='img/stick-figure2.png')}}" alt="stick-figure2" class="errorImg-group" />
+        </div>
+        <div class="col-4">
+            <img src="{{url_for('static', filename='img/stick-figure3.png')}}" alt="stick-figure3" class="errorImg-group" />
+        </div>
+    </div>
+    <div class="row title404">
+        <h1 class="heading404">404 ERROR</h1>
+        <h2>PAGE NOT FOUND</h2>
+    </div>
+    <p class="errormessg">
+        "Pssst.." We searched high & low but couldn't find what you are looking for. Not to worry, we think mistakes make excellent portals for discovery. <br />
+        Let's explore a better place for you to go
+    </p>
+    <div class="home_btn">
+        <a href="{{url_for('home')}}" class="btn btn-success hvr-pulse">Home</a>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <img src="{{url_for('static', filename='img/stick-figure4.png')}}" alt="stick-figure4" class="errorImg-group" />
+        </div>
+        <div class="col-4">
+            <img src="{{url_for('static', filename='img/stick-figure5.png')}}" alt="stick-figure5" class="errorImg-group" />
+        </div>
+        <div class="col-4">
+            <img src="{{url_for('static', filename='img/stick-figure6.png')}}" alt="stick-figure6" class="errorImg-group" />
+        </div>
+    </div>
+</div>
+{% endblock%}
