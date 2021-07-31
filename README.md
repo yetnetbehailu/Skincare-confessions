@@ -45,6 +45,8 @@ _The aim of this project is to combine my current knowledge in HTML, CSS and Jav
 
      - _"As **site owner**, I want a simple visually appealing application easy to use across various screen devices."_
 
+     - _"As **site owner**, I want to drive public opinion to influence businesses to improve the services they offer and quality of their products."_
+
 **Below is a table depiction of site feature opportunities evaluated in terms of importance for the organization and measuring of how realistic the features are to implement &#40;viability and feasibility&#41;. Measured on a scale of 1 &#91;least&#93; - 5 &#91;most&#93;.**
 
 | Opportunity                                 | Importance | Viability / Feasibility |
@@ -142,7 +144,7 @@ The main focus of the structure plane is how users receive and get to specific i
 Below is a chart of the database structure showing the collections that will be retaining documented data. 
 > **Note:**<br>
 > Chart constructed before site development process using [dbdiagram.io](https://dbdiagram.io) 
-![dbdiagram.io](static/img/database.png)
+![dbdiagram.io](skincare_confessions/static/img/database.png)
 
 ### The Skeleton Plane 
 Before starting the development wireframe sketches were made using [Balsamiq wireframes](https://balsamiq.cloud/#). These display the actual arrangement of the various pieces of content on the website. Which makes for a perfect guideline during development of the interface, navigation, and information design. 
