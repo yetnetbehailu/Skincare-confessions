@@ -1067,18 +1067,6 @@ input[type='checkbox'].favorite{
     font-family: 'Vollkorn', Poppins;
 }
 
-
-.link_home {
-   text-decoration: none;
-   color: white;
-   display: block;
-}
-
-.link_home:hover {
-    text-decoration: none;
-    color: white;
-}
-
 .btn-success.hvr-pulse:hover {
     background-color: #21a568;
 }
