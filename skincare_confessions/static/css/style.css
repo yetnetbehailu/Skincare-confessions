@@ -1330,6 +1330,10 @@ input[type='checkbox'].favorite{
     .hero-gif {
         height: 27rem;
     }
+
+    .psst {
+        margin-top: 4rem;
+    }
 }
 
 @media (min-width: 992px) {
