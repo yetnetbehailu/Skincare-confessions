@@ -171,3 +171,26 @@ Before starting the development wireframe sketches were made using [Balsamiq wir
 
 - [Wireframes: Page 404](wireframes/page_404-wireframes.png)
 
+<summary><strong>Wireframe updates:</strong></summary><details>
+The completed site uses many of the concepts from the original Wireframe design, however it has departed from the original draw ups in a few areas.
+
+- Initial plan was to have a carousel slide on home page displaying a limited amount of review cards as preview. It would have been implemented using flexslider jquery plugin, however due to time constraint a different card display was curated. Showing a limited number of 4 card views, whilst on page refresh the card preview would shuffle and randomly display a different card set lined up.
+Other minor detail alterations made on home page was the email content disposition, where subscribe text, input field and subscribe btn got individual rows(common to about page). Aswell as the discover btn got at different placement bottom of hero-gif rather then on top of it.
+
+- The site logo on login & register got replaced with an image just for a little bit of fun and to avoid redundancy.
+
+
+- Initially the fields on the add review form all took up full individual row, but then a couple of the fields was adjusted to share a row as they didn't necessarily need to take up as much space.
+
+- The edit and delete buttons which primarily was planned to be placed on the user personal review page, was moved to the detailed view of the review page instead. Only manageable and displayed to the user whom inserted the review.
+
+- The individual view layout arrangement was altered due to visual preference. I decided to enclose the review card information in separate square shaped frames. Depending on screen size, either stack one after the other or display two side by side columns. Email form removed as it's already presented on the home & about page.
+
+- 404 page decorated with multiple images rather then just one.
+
+- Edit page added with same design as add reviews page.
+
+- Search result page added with same design as browse reviews page.
+
+</details>
+
