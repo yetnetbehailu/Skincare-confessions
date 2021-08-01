@@ -255,3 +255,66 @@ Animation has been curated to display the moving site slogan on home page.
 Hover effects has been added on button elements.
 
 ---
+## Features
+
+**Existing Features**
+
+- Home page: 
+
+  - Skincare confessions logo & head title- Identifies the type of application, (note logo links to home page).
+
+  - Clickable review cards that links to individual review page 
+  
+  - Heart icon checkbox input which triggers Ajax function that fills/removes color from icon, without causing browser to refresh.
+
+  - Account registration meeting validation requirements. Including link to log in if already an existing user.
+
+  - Login requirement meeting validation requirements to enable user further access to application features. Including link to register if user does not exist. If a user has tried to access a page while logged out, user will be redirected to this page upon successful login. 
+
+  - Email subscription field for communication purposes between user & site owner.
+
+  - Create entries users signed in to their accounts can create review entries either by clicking on the add review link button on the navigation menu or by pressing the add new review link button on my reviews page. Signed in users are also able to edit former entries using the edit link button on the individual review view page. <strong>For the review to be added/edited validation requirements must be meet.</strong>
+
+  &#8594; The user must select category input.
+  
+  &#8594; The user must input brand name.
+
+  &#8594; The user must input product review.
+
+  &#8594; The user must input price.
+
+  &#8594; Optional checking the vegan slider.
+
+  &#8594; The user must (star) rate the product.
+
+  &#8594; The user must input keyword search tag/tags.
+
+  &#8594; The user can opt to insert an image file uploaded to cloudinary to display on the entry(accepted types "jpg, png, jpeg"). Default image added if user decides to leave out image file. On mobile devices user can choose an image from the device library or take a photo using camera.
+
+  - Browse reviews main listing page displays all entries from latest to earliest inputs.
+
+  - My reviews displays users personal entries from latest to earliest inputs.
+
+  - Individual view page displays edit & delete buttons if the review belongs to the user signed in. The delete button removes the review entry once the user confirms in the confirmation dialog drop down. The edit link button redirects user to edit page form, with same requirements as add review form.
+
+  - Search bars allowing users to make quick and more precise queries.
+
+  - Security the user's password gets hashed upon account registration. This ensures the password can't easily be manipulated or revealed.
+
+  - Pagination added which limit the card display per page
+
+  - Footer - Containing copyright information & social media links.
+
+**Features** to **implement** in the **future:**
+
+ - Send out an actual email to users who subscribe using EmailJS.
+
+ - Make it possible for users to click the search tags to view more on the specified query.
+ 
+ - Create an Admin manage account for site owner to be able to make site configurations.
+
+ - Remember account holder information 
+
+ - Password recovery
+
+---
