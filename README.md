@@ -8,7 +8,7 @@ _The aim of this project is to combine my current knowledge in HTML, CSS and Jav
 ---
  ## User Experience 5 Planes (UX)
   ### The Strategy Plane
-  - 'Skincare confessions' website is designed to be obvious its purpose with the user experience kept front-in-mind. A combination of modern and minimalist design approach with simple intuitive structure, making it easy for users to quickly adapt and allure them to keep coming back. The website application will be built with a mobile first approach because of its simplicity and light content also taking into consideration that the majority of our audience most likely will be browsing online using a smartphone device because of 21st century convince.
+  - 'Skincare confessions' website is designed to be obvious its purpose with the user experience kept front-in-mind. A combination of modern and minimalist design approach with simple intuitive structure, making it easy for users to quickly adapt and allure them to keep coming back. The website application will be built with a mobile first approach because of its simplicity and light content also taking into consideration that the majority of our audience most likely will be browsing online using a smartphone device because of 21st century convenience.
   'Skincare confessions' enables access to all the reviews that's been published on the site even for non-registered users. With an additional function to subscribe to a newsletter keeping the user updated and engaged in what’s happening in the skincare community. At the same time however it gives the opportunity to create an account and benefit from the perks of having access to all features available on the website. Apart from being able to add, share, edit and delete their own reviews registered users are also able to save their favorite reviews.
   
 - ### User stories ###
@@ -194,3 +194,64 @@ Other minor detail alterations made on home page was the email content dispositi
 
 </details>
 
+### The Surface Plane 
+
+The visual experience of the product. If content looks familiar and responds in a way that's familiar then it becomes more sensible for the user and creates a better user experience. 
+
+- The end goal for the visual perception was to curate a site with modern & simplicit design. Adapting an easy intuitive structure for the user to instantly become comfortable with. The interaction design provides predictability, as users are provided with cues across the application that helps them predict the result of an action. Buttons include signalmen in form of icons or written text that hint what will occur when pressed. The interface also provides subtle visual feedback associated with points of actions such as hover, focus and button press. To provide some indication to user that an action has been acknowledged.
+
+- The application was built using Flexbox to align objects and Bootstraps responsive grid system. It is designed to be responsive with elements scaling according to device screen size.
+
+**Colors:**
+
+The main color of the website is green in varying shades. Aiming for a soft neutral design. Incorporating small dose of bright colors to differentiate and highlight valuable information. Detailed elaboration of color pallet blueprint can be found below; From Coolors.co
+
+- Primary colors used: 
+![Coolors.co](skincare_confessions/static/color_palette/primary_colors.png)
+
+- #24FF00 Amulet green shade: Used throughout for navbar items, footer, site logo, icons and buttons.
+
+- #257ac9 Aqua Spring mint green shade: Used mostly as background across site, but also seen on the success alert messages.
+
+- #fff White shade: Used mostly as background across the site. However also used on forms, review display cards, navbar and as white space.
+
+- Secondary colors used: 
+![Coolors.co](skincare_confessions/static/color_palette/secondary_colors.png)
+
+- #FFD01F Cyber yellow shade: Used for star icons and button borders.
+
+- #E2DF5A Straw yellow shade: Used for buttons.
+
+- #79C1FF Maya blue shade: Used for tag outputs, button and remarks content square.
+
+- #FF00BB Shocking pink shade: Used for favorited heart icons.
+
+- #FFDADF Pale Pink shade: Used for brand name field on focus.
+
+- #F9C6CF Pink shade: Used for intro info square and brand name field border
+
+- #DCC6FF Lavender blue shade: Used for product description fields.
+
+- #B483FF Lavender floral shade: Used for product description border
+
+- #000 Black shade: Incorporated for icons & written text throughout site to enhance visibility & readability. 
+
+- #E85959 Red salsa shade: Used for discover, delete buttons and to highlight error messages.
+
+**Typography:**
+
+Vollkorn and Poppins used interchangeable as primary font else fallback font in case for any reason the font isn't imported into the site correctly. Whilst monospace was used lightly to add contrast. I choose these fonts because they blend well together and are easy to read.
+
+**Images:**
+
+Images used are meant to reflect what the application is meant to be used for, in a fun & lightly quirky manner.
+
+**Icons, Animations & Effects:**
+
+Icons are used widely as they help users to interpret and find content. Another advantage of using them is being able to cross language barriers. 
+
+Animation has been curated to display the moving site slogan on home page.
+
+Hover effects has been added on button elements.
+
+---
