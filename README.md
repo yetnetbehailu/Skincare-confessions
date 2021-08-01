@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-<h1 align="center">Skincare confessions <i class="fas fa-leaf"></i></h1>
+<h1 align="center">Skincare confessions</h1>
+
+![Livesite view](skincare_confessions/static/img/mockup-view.png)
 
 ### Overview
 _The aim of this project is to combine my current knowledge in HTML, CSS and JavaScript with what I've been able to learn from the back end development process of making an application. Main purpose of this project is to utilize Python programming language integrated with MongoDB and Flask framework, to create a database for storing and retrieving data efficiently. As such I have decided to create the following skincare review site, which allow users to create, read, update and delete (CRUD) reviews/data.
@@ -318,3 +320,74 @@ Hover effects has been added on button elements.
  - Password recovery
 
 ---
+
+## Technologies Used
+
+### Languages 
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5) - Used to create website content and structure.
+
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) - Used to style HTML5 content. 
+
+- [JAVASCRIPT](https://en.wikipedia.org/wiki/JavaScript)- Used to implement the functionality and logic of the application.
+
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - Used for backend programming. 
+
+- [Jinja](https://jinja.palletsprojects.com/en/3.0.x/) - Templating engine which present back-end data outcome in front end.
+
+### Frameworks & Tools 
+
+* [Bootstrap](https://getbootstrap.com/) -  Used to assist with the responsiveness and styling of the website.
+
+* [Flexbox]() - Used to align object layout.
+
+* [JQuery](https://jquery.com) - Used to enable interactive elements of the application.
+
+* [Flask](https://flask.palletsprojects.com/en/2.0.x/patterns/jquery/) - Framework for building and rendering pages, forms & validation requirements.
+
+* [MongoDB](https://www.mongodb.com/) - NoSQL database back-end data storage.
+
+* [PyMongo](https://pypi.org/project/pymongo/) - Tool for interacting with MongoDB database from Python
+
+* [WTForms](https://pypi.org/project/WTForms/) - Used to create forms with validation
+
+* [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/) - Used to generate password hashing & verification.
+
+* [AJAX](https://flask.palletsprojects.com/en/2.0.x/patterns/jquery/) - Used to create asynchronous web application function
+    
+* [FontAwesome](https://fontawesome.com/) - Used for icons.
+
+* [Google Fonts](https://fonts.google.com/) - Used for Typography.
+
+* [Balsamiq wireframes](https://balsamiq.com/) - Used to create wireframes.
+
+* [CSS Autoprefixer](https://autoprefixer.github.io/) - All CSS code was run through Autoprefixer to ensure compatibility across multiple browsers.
+
+* [techsini](https://techsini.com/multi-mockup/)- Used to test web page layout responsive design
+
+* [hover.css](https://ianlunn.github.io/Hover/) - For visual effects on buttons.
+
+* [Adobe Photoshop](https://photoshop.adobe.com/)- Photoshop was used to resize images and edit photos for the website.
+
+* [Web formatter](https://webformatter.com/)- Used to beautify Html code.
+
+* [online-spellcheck](https://www.online-spellcheck.com/)- Used to check spelling.
+
+* [Tinypng](https://tinypng.com/)- Used to compress all the images. 
+
+* [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) - For testing responsive design and diagnose problems.
+
+* [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en)  - to test the performance of the application
+
+* [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) - Used to detect overflow.
+
+### Workspace, version control, repository storage & host platform
+
+* [GitHub](https://github.com/) - A cloud based version control service that stores the repository and various changes made.
+
+* [Gitpod](https://www.gitpod.io/) - IDE (Integrated Development Environment) used for writing code to develop website.
+
+* [Git](https://git-scm.com/) - Version control system to track changes and store file versions.
+
+* [Heroku](https://heroku.com/) - Application hosting platform.
+
