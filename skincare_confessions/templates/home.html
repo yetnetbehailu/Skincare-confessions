@@ -45,16 +45,19 @@
 <script>
     const mediaQuery = window.matchMedia("(min-width:320px)");
     if (mediaQuery.matches) {
-        $(".cards-preview .col-md-4").removeClass("col-md-4").addClass("col-md-6");
+        $(".cards-preview .col-md-4").removeClass(
+            "col-md-4").addClass("col-md-6");
     }
     /* Ajax call function for favorite functionallity
-Add on change event listener to all checkbox input card forms with class favorite. */
+Add on change event listener to all checkbox input card forms
+with class favorite. */
     $(".favorite").on("change", function () {
-        /* Get the id value that should be sent to backend server 
+        /* Get the id value that should be sent to backend server
     $(this) referring to the specific class which changed */
         let review_id = $(this).attr("id");
         let is_fave = $(this).prop("checked");
-        /* send URL,data of review_id & checkbox checked/unchecked state to  server using ajax call post method */
+        /* send URL,data of review_id & checkbox checked/unchecked state
+        to server using ajax call post method */
         $.post(`/update_favorites/${review_id}/${is_fave}`).done();
     });
 </script>

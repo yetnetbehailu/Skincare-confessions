@@ -69,9 +69,11 @@
 {% endblock %}
 {% block script %}
 <script>
-    // Delete confirmation dialog
+// Delete confirmation dialog
     $("#confirmDelete").click(function () {
-        return confirm("You are about to delete this review, are you sure you want to proceed?");
+        return confirm(
+            "You are about to delete this review, are you sure you want" +
+            " to proceed?");
     });
 </script>
 {% endblock%}
