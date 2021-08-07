@@ -5,7 +5,6 @@ from skincare_confessions.forms import (
     RegisterForm, LoginForm, AddReviewForm, EmailForm)
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-from bson.decimal128 import Decimal128
 import math
 from flask_pymongo import pymongo
 from datetime import datetime
@@ -273,7 +272,7 @@ def edit_review(review_id):
         add_review_form.price.data = float(individual_review["price"])
         add_review_form.is_vegan.data = individual_review["is_vegan"]
         add_review_form.rating.data = individual_review["rating"]
-        add_review_form.tags.data = ' '.join(individual_review["tags"])
+        add_review_form.tags.data = ','.join(individual_review["tags"])
         add_review_form.upload_img.data = individual_review["upload_img"]
         return render_template(
             'edit_review.html', title='Edit review',

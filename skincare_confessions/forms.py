@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import (StringField, PasswordField, SubmitField,
                      TextAreaField, BooleanField,
-                     DecimalField, RadioField)
+                     FloatField, RadioField)
 from wtforms.validators import (InputRequired, Length, EqualTo, Regexp,
                                 Email)
 from flask_wtf.file import FileField, FileAllowed
@@ -42,7 +42,7 @@ class AddReviewForm(FlaskForm):
             validators=[InputRequired(), Length(min=10, max=2000),
                         Regexp('^([a-zA-Z0-9-!@#$%^&*])',
                         message="Product review can't start with space")])
-    price = DecimalField('Price', validators=[InputRequired()])
+    price = FloatField('Price', validators=[InputRequired()])
     is_vegan = BooleanField('Vegan')
     rating = RadioField('Rating', validators=[InputRequired()],
                         choices=[('1', 'Boycott'),
