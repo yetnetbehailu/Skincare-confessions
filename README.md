@@ -261,8 +261,6 @@ Hover effects has been added on button elements.
 
 **Existing Features**
 
-- Home page: 
-
   - Skincare confessions logo & head title- Identifies the type of application, (note logo links to home page).
 
   - Clickable review cards that links to individual review page 
@@ -369,7 +367,7 @@ Hover effects has been added on button elements.
 
 * [Adobe Photoshop](https://photoshop.adobe.com/)- Photoshop was used to resize images and edit photos for the website.
 
-* [Web formatter](https://webformatter.com/)- Used to beautify Html code.
+* [Web formatter](https://webformatter.com/)- Used to format Html code.
 
 * [online-spellcheck](https://www.online-spellcheck.com/)- Used to check spelling.
 
@@ -390,4 +388,9 @@ Hover effects has been added on button elements.
 * [Git](https://git-scm.com/) - Version control system to track changes and store file versions.
 
 * [Heroku](https://heroku.com/) - Application hosting platform.
+
+## Testing
+
+Testing documentation can be found on a separate document [HERE](skincare_confessions/static/testing/testing.md)
+
 
