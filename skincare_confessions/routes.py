@@ -96,7 +96,7 @@ def add_reviews():
             else:
                 uploaded_image = request.form.get('upload_img')
             is_vegan = True if request.form.get("is_vegan") else False
-            price = float(str((request.form.get('price'))))
+            price = float(request.form.get('price'))
             rating = int(request.form.get('rating'))
             brand_name = str(request.form.get('brand_name'))
             tags = request.form.get('tags').split(",")
@@ -138,7 +138,6 @@ def my_reviews():
         username = users.find_one({'username':
                                    session['user'].lower()
                                    })['username']
-        user_id = users.find_one({'username': session['user'].lower()})['_id']
         add_review_form = AddReviewForm()
         # Finds & counts user personal review entries
         my_total_reviews = reviews.find({
@@ -156,7 +155,7 @@ def my_reviews():
             'my_reviews.html', username=username, author=author,
             title='My Reviews', my_total_reviews=my_total_reviews,
             pages=pages, current_page=current_page,
-            form=add_review_form, user_id=user_id)
+            form=add_review_form)
     return redirect(url_for('login'))
 
 
@@ -312,7 +311,7 @@ def update_review(review_id):
             # Otherwise retrive the default img data from form
             uploaded_image = request.form.get('upload_img')
         is_vegan = True if request.form.get("is_vegan") else False
-        price = float(str((request.form.get('price'))))
+        price = float(request.form.get('price'))
         rating = int(request.form.get('rating'))
         brand_name = str(request.form.get('brand_name'))
         tags = request.form.get('tags').split(",")
