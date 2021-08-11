@@ -137,7 +137,8 @@
             </div>
             <div class="add_form_btns">
                     {{ form.submit(class="add_review_btn hvr-pulse")}}
-                    {{ form.cancel(class="cancel_btn hvr-pulse")}}
+                    <a
+                    href="{{ url_for('add_reviews') }}" class="cancel_btn hvr-pulse">Cancel</a>
             </div>
         </div>
     </form>

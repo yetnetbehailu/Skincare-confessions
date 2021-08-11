@@ -56,7 +56,6 @@ class AddReviewForm(FlaskForm):
                            message="Search tag can't start with space")])
     upload_img = FileField(validators=[FileAllowed(['jpg', 'png', 'jpeg'])])
     submit = SubmitField('Add')
-    cancel = SubmitField('Cancel')
 
 
 class EmailForm(FlaskForm):
