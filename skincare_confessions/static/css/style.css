@@ -1247,6 +1247,7 @@ input[type='checkbox'].favorite{
     font-family: 'Poppins';
     padding-top: 4.2rem;
     padding-bottom: 6px;
+    cursor: default;
 }
 
 @-webkit-keyframes moving-slogan {
@@ -1273,6 +1274,7 @@ input[type='checkbox'].favorite{
     font-family: 'Vollkorn';
     text-align: center;
     margin-top: 3%;
+    cursor: default;
 }
 
 .hero-gif {
