@@ -6,8 +6,8 @@
         <div class="form-group">
             {{form.hidden_tag()}}
             <img class="psst" src="static/img/psst.jpg" alt="gossip girls" />
-            <h5 class="text-center m-0 p-1">Psst...</h5>
-            <h3 class="text-center">Create an account</h3>
+            <h5 class="text-style m-0 p-1">Psst...</h5>
+            <h3 class="text-style">Create an account</h3>
             {{ form.username.label(class="form-label d-block mb-0")}}
             {% if form.username.errors %}
             <i class="fas fa-user"></i>{{ form.username(class="form-control-lg is-invalid", placeholder="Enter username")}}
@@ -50,11 +50,11 @@
         </div>
         <!-- Register Button  -->
         <div class="submitBtn">
-            {{ form.submit(class="registerbtn")}}
+            {{ form.submit(class="registerbtn hvr-grow")}}
         </div>
         <!-- Link redirect to Login page -->
         <div class="redirect-link pt-2">
-            <small class="text-muted"> Already a user <a href="{{url_for('login')}}">Sign In!</a> </small>
+            <small class="text-muted text-style"> Already a user <a href="{{url_for('login')}}">Sign In!</a> </small>
         </div>
     </form>
 </div>

@@ -389,6 +389,10 @@ footer {
     -ms-flex-negative: 0;
         flex-shrink: 0;
 }
+
+.footer-text {
+    cursor: default;
+}
 /* ---------------------------------------------------
     Register - Login pages styling
 ----------------------------------------------------- */
@@ -478,6 +482,11 @@ footer {
     width: 100%;
 }
 
+.text-style {
+    text-align: center;
+    cursor: default;
+}
+
 /* ---------------------------------------------------
     My-reviews page
 ----------------------------------------------------- */
@@ -486,6 +495,7 @@ footer {
     text-align: center;
     padding-top: 5rem;
     text-shadow: 2px 1px 3px rgb(0 0 0 / 50%);
+    cursor: default;
     
 }
 
@@ -559,6 +569,7 @@ footer {
     text-shadow: 1px 1px 4px rgb(0 0 0 / 50%);
     text-align: center;
     font-family: 'Vollkorn', Poppins;
+    cursor: default;
 }
 
 
@@ -788,11 +799,14 @@ footer {
     padding: 3px 10px;
     border: none;
     background-color: #e85959;
+    color: #000;
+    text-decoration: none;
 }
 
 .cancel_btn.hvr-pulse:hover, .hvr-pulse:focus {
     -webkit-box-shadow: 0 0 2px 2px #bf4545;
             box-shadow: 0 0 2px 2px #bf4545;
+            color: #000;
 }
 
 .add_form_btns {
@@ -903,6 +917,7 @@ input:checked+.ball:before {
     font-family: 'Vollkorn', Poppins;
     padding-top: 5rem;
     text-shadow: 2px 1px 3px rgb(0 0 0 / 50%);
+    cursor: default;
 }
 
 .browse-page {
@@ -1094,6 +1109,7 @@ input[type='checkbox'].favorite{
 .about_title {
     text-align: center;
     padding-top: 5rem;
+    cursor: default;
 }
 
 .about-text {
@@ -1105,12 +1121,14 @@ input[type='checkbox'].favorite{
             box-shadow: 0px 2px 9px 5px #405d3f99;
     overflow: scroll;
     padding: 15px;
+    cursor: default;
 }
 
 .subscribe-text {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 0;
+    cursor: default;
 }
 
 .email-field {
