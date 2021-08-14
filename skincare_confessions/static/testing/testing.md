@@ -94,7 +94,17 @@ Following elements were tested to ensure web application functioning accurately.
 
  ➤ Add new review button cursor transforms to pointer when mouse enters and redirects to add reviews page when pressed. Grow effect gets triggered when hovered over.
 
-- **Add reviews Page;**
+- **Individual view Page;**
+
+ ➤ The edit button on the individual view for the review, is only displayed for the user whom is signed in & has written the post. This allows for only the writer of the review to edit the entry. When hovered over triggers the grow effect & when clicked re-directs to the edit review form page.
+
+ ➤ The delete button on the individual view for the review, is only displayed for the user whom is signed in & has written the post. This allows for only the writer of the review to remove the entry. When hovered over triggers the grow effect & when clicked deletes the review from database.
+
+- **Search reviews Page;**
+ 
+ ➤ Search result page is rendered when user has entered input & submitted via clicking enter on keyboard. Current status the user is able to enter an empty field & render the results page however with obvious zero result, (this will need to be fixed at another time).
+
+- **Add reviews Page & Edit review Page;**
 
  ➤ Signed in user username is displayed as head title to make sure it's rendered accurately user must be signed in to view.
 
@@ -112,6 +122,8 @@ Following elements were tested to ensure web application functioning accurately.
 
  ➤ Add & Cancel button on hover receives borders and pulsing hover effect is triggered. Add button on click submits form data & redirects to browse reviews page if all fields pass the validation requirements. Otherwise, error message alerts user on what needs to be done. Whilst cancel button refreshes and renders the same page.
 
+ ➤ Note on edit review form when page renders then some of the fields are pre-filled (for convenience). Pre-filled fields are Skincare Category, Brand Name, Product Review, Price & Vegan. 
+
 - **Logout;**
 
  ➤ To be able to logout user has to be logged in first. Logout button can then be found on either the topnav or sidenav, which on click will automatically sign out user & render the login page.
@@ -122,7 +134,7 @@ Following elements were tested to ensure web application functioning accurately.
 
  ➤ Stringfield inputs on click/focus receives border & background color.
 
- ➤ Login button on click validates login form, if all fields pass the validation requirements user gets redirected to home page. Otherwise, error message alerts user on what needs to be done.
+ ➤ Login button on click validates login form, if all fields pass the validation requirements user gets redirected to home page reciving a flash message. Otherwise, error message alerts user on what needs to be done.
 
  ➤ Below the login button a link which on click redirects to register page can be found. This is meant for new user who are not already members to register for an account.
 
@@ -132,10 +144,52 @@ Following elements were tested to ensure web application functioning accurately.
 
  ➤ Stringfield inputs on click/focus receives border & background color.
 
- ➤ Sign up button on click validates register form, if all fields pass the validation requirements user gets redirected to home page. Otherwise, error message alerts user on what needs to be done.
+ ➤ Sign up button on click validates register form, if all fields pass the validation requirements user gets redirected to home page receiving a flash message. Otherwise, error message alerts user on what needs to be done.
 
  ➤ Below the sign up button a link which on click redirects to login page can be found. This is meant for user who already are signed up members with an account.
 
 - **404 Page;**
 
  ➤ If user ends up on the 404 page, as an example having written incorrect url then there is a home link button center of that page meant to help user direct back to home page(on click). When hovered over it triggers a pulsating effect, to grab the user's attention.
+
+### Web application tested on following devices.
+- iPad
+
+- Moto G4
+
+- iPhone 5/SE,6,7,8,11,X,PLUS 
+
+- 13" Mac book air
+
+- Galaxy s9
+
+- Medium screen 1024×800
+
+- Large screen 1280x 800
+
+### User Stories Validation
+
+* For users to quickly & easily find reviews that they are looking for the review cards are being displayed on various pages of the app. The user is always able to navigate to desired page using the navbar menu alternatives. Browse reviews is a whole page dedicated to listing all user entries. Whilst My reviews page is a personal page where all the user individual review posts are collected, mainly for convenience to edit own posts. Home page displays a preview of (4) review cards which changes display at random on page refresh. Would user be tempted to see more, there's a discover button right above which re-directs user straight to browse reviews page. Would the user be looking for a specified review there's a search bar on browse reviews page, my reviews page & search_reviews page that allows user to type in keyword/keywords of what they are looking for. The results will show on the last mentioned page.
+
+* Users who would like further access to application features are able to create their own personal account.
+
+* Application has been created to be accessible from mobile, tablet, laptop and desktop devices. Constructed as a responsive web-site with mobile-first approach.
+
+* Only users with an account are able to make a review post as well as manage, update & delete (their individual review entries) as desired. Whilst all review entries can be found on the browse page, signed in user has also got the option to render their own personal page containing all of their written reviews.
+
+* To offer a better user experience search bar implementation has been curated. Enabling users to quickly be able to search the site to find a specific item, by inputting keyword/keywords into the field.
+
+* User entries are categorized however individual pages for each category type has not been made & will be left for future implementation.
+
+* For signed in users there is the opportunity to favorite reviews one would like to preserve. This is done by clicking the heart icon which can be found on each review card. This is to offer each user a more personalized experience. 
+
+* Signed in users are also able to upload image files as part of their review posts. Providing a greater visual support & appeal. Making it easier to associate the actual item with item name/description. If left out a default image is chosen to take its place.
+
+### Site owner Stories Validation
+* Skincare confessions' application was made to serve as a meeting hub for people whom share a common interest, which would be skincare/beauty. For this purpose users are able to interact with one another by sharing their own personal experiences. For further connection external links associated to social media accounts is provided(at footer), for users to connect with a large community outside the application as well.
+
+* Subscription option implemented for users to leave their contact information for further correspondence with the organization & vice versa.
+
+* Providing an About Us page section where users will find all essential information about the organization and the work performed. Content is kept short and simple to not overwhelm user.
+
+* With the generated user reviews the organization hopes to become a great industry influencer & the number 1 search engine for skincare reviews.
