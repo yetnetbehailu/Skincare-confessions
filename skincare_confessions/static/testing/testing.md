@@ -39,20 +39,23 @@ Following elements were tested to ensure web application functioning accurately.
 - **Mutual content;**
 
  ➤ Top navbar logo clicked to make sure link re-directs to home page. (Sidebar logo excluded)
- ![Navbar logo](skincare_confessions/static/app_test_imgs/topnav-logo.png)
+ ![Navbar logo](../app_test_imgs/topnav-logo.png)
 
  ➤ Navbar menue alternatives clicked to make sure they all got the hover grow effect and also redirect each to their own designated pages. Cursor also makes a switch to pointer.
-  ![Sidebar menu](skincare_confessions/static/app_test_imgs/sidebar-menu.png)
-  ![Topnav menu](skincare_confessions/static/app_test_imgs/topnav-menu.png)
+
+   <strong>Sidebar</strong>
+  ![Sidebar menu](../app_test_imgs/sidebar-menu.png)
+  <strong>Topnav</strong>
+  ![Topnav menu](../app_test_imgs/topnav-menu.png)
 
  ➤ Screen size resized to make sure burger icon display the sidebar menu rather then the top nav options. On click sidebar transitions into screen view. Cursor transforms to pointer when mouse enters the burger icon area.
- ![Burger icon](skincare_confessions/static/app_test_imgs/burger-icon.png)
+ ![Burger icon](../app_test_imgs/burger-icon.png)
 
  ➤ Overlay appears when burger icon is pressed covering the browser content, except for the sidebar. Click anywhere on the overlay will close/retract the sidebar. X mark icon on sidebar top corner will also have the same effect close/retract the sidebar.
- ![Overlay](skincare_confessions/static/app_test_imgs/overlay.png)
+ ![Overlay](../app_test_imgs/overlay.png)
 
  ➤ Social media icon links opens in a new tab browser when clicked. Cursor transforms to pointer.
- ![Footer links](skincare_confessions/static/app_test_imgs/footer-links.png)
+ ![Footer links](../app_test_imgs/footer-links.png)
 
  ➤ When hovered over footer text, cursor transforms to default.
 
@@ -68,7 +71,7 @@ Following elements were tested to ensure web application functioning accurately.
 
  ➤ On focus above mentioned objects outlined.
 
-![Home page](skincare_confessions/static/app_test_imgs/home-page.png)
+![Home page](../app_test_imgs/home-page.png)
 - **About us Page;**
 
  ➤ Subscribe input field on focus or clicked border color gets filled in. Cursor transforms to text.
@@ -79,7 +82,7 @@ Following elements were tested to ensure web application functioning accurately.
 
  ➤ On focus above mentioned objects gets outlined for improved accessibility.
 
-![About page](skincare_confessions/static/app_test_imgs/about-page.png)
+![About page](../app_test_imgs/about-page.png)
 
 - **Browse reviews Page;**
 
@@ -91,7 +94,7 @@ Following elements were tested to ensure web application functioning accurately.
 
  ➤ On hover, over pagination cursor transforms to pointer. When clicked the activated pagination gets a border to enhance the current page being displayed. Review card display on pages per pagination is a 12 card view(the latest entry to last order).
 
-![Browse reviews](skincare_confessions/static/app_test_imgs/browse-reviews.png)
+![Browse reviews](../app_test_imgs/browse-reviews.png)
 - **My reviews Page;**
 
  ➤ Personal review counter which tells the total amount of own individual reviews that has been posted, is rendered as head title. To check that it works insert a new review post to see that the counter counts accurately. Includes signed in user's username in front of it, to make sure it's rendered accurately user must be signed in to view.
@@ -105,21 +108,21 @@ Following elements were tested to ensure web application functioning accurately.
  ➤ Add new review button cursor transforms to pointer when mouse enters and redirects to add reviews page when pressed. Grow effect gets triggered when hovered over.
  
  * Note that my reviews page has the same layout as browse reviews, with the single difference that it only displays the users personal reviews & there being an add new review link button as displayed below.
-![My reviews](skincare_confessions/static/app_test_imgs/my-reviews.png)
+![My reviews](../app_test_imgs/my-reviews.png)
 
 - **Individual view Page;**
 
  ➤ The edit button on the individual view for the review, is only displayed for the user whom is signed in & has written the post. This allows for only the writer of the review to edit the entry. When hovered over triggers the grow effect & when clicked re-directs to the edit review form page.
 
  ➤ The delete button on the individual view for the review, is only displayed for the user whom is signed in & has written the post. This allows for only the writer of the review to remove the entry. When hovered over triggers the grow effect & when clicked deletes the review from database.
-![Individual view](skincare_confessions/static/app_test_imgs/individual-view.png)
-![Edit & Delete btn](skincare_confessions/static/app_test_imgs/edit-delete-btn.png)
+![Individual view](../app_test_imgs/individual-view.png)
+![Edit & Delete btn](../app_test_imgs/edit-delete-btn.png)
 
 - **Search reviews Page;**
  
  ➤ Search result page is rendered when user has entered input & submitted via clicking enter on keyboard. Current status the user is able to enter an empty field & render the results page however with obvious zero result, (this will need to be fixed at another time).
  * Note that search result page has the same layout as browse reviews, with the single difference that it only displays review cards which has the same value as the search bar input.
-![Search results](skincare_confessions/static/app_test_imgs/search-results.png)
+![Search results](../app_test_imgs/search-results.png)
 
 - **Add reviews Page & Edit review Page;**
 
@@ -140,7 +143,7 @@ Following elements were tested to ensure web application functioning accurately.
  ➤ Add & Cancel button on hover receives borders and pulsing hover effect is triggered. Add button on click submits form data & redirects to browse reviews page if all fields pass the validation requirements. Otherwise, error message alerts user on what needs to be done. Whilst cancel button refreshes and renders the same page.
 
  ➤ Note on edit review form when page renders then some of the fields are pre-filled (for convenience). Pre-filled fields are Skincare Category, Brand Name, Product Review, Price & Vegan. 
-![Add & Edit review](skincare_confessions/static/app_test_imgs/add-edit-review.png)
+![Add & Edit review](../app_test_imgs/add-edit-review.png)
 
 - **Logout;**
 
@@ -155,7 +158,7 @@ Following elements were tested to ensure web application functioning accurately.
  ➤ Login button on click validates login form, if all fields pass the validation requirements user gets redirected to home page reciving a flash message. Otherwise, error message alerts user on what needs to be done.
 
  ➤ Below the login button a link which on click redirects to register page can be found. This is meant for new user who are not already members to register for an account.
-![Login page](skincare_confessions/static/app_test_imgs/login-page.png)
+![Login page](../app_test_imgs/login-page.png)
 
 - **Register Page;**
 
@@ -166,12 +169,12 @@ Following elements were tested to ensure web application functioning accurately.
  ➤ Sign up button on click validates register form, if all fields pass the validation requirements user gets redirected to home page receiving a flash message. Otherwise, error message alerts user on what needs to be done.
 
  ➤ Below the sign up button a link which on click redirects to login page can be found. This is meant for user who already are signed up members with an account.
-![Register page](skincare_confessions/static/app_test_imgs/register-page.png)
+![Register page](../app_test_imgs/register-page.png)
 
 - **404 Page;**
 
  ➤ If user ends up on the 404 page, as an example having written incorrect url then there is a home link button center of that page meant to help user direct back to home page(on click). When hovered over it triggers a pulsating effect, to grab the user's attention.
-![404 error page](skincare_confessions/static/app_test_imgs/404error-page.png)
+![404 error page](../app_test_imgs/404error-page.png)
 
 ### Web application tested on following devices.
 - iPad
