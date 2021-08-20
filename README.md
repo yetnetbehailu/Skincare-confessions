@@ -393,4 +393,106 @@ Hover effects has been added on button elements.
 
 Testing documentation can be found on a separate document [HERE](skincare_confessions/static/testing/testing.md)
 
+---
+## Deployment 
+
+Before deployment ensure that the following below are installed:
+
+-   [Git](https://git-scm.com/)
+-   [Python 3](https://www.python.org/)
+-   [PIP](https://pypi.org/project/pip/)
+-   [MongoDB](https://www.mongodb.com/) application relies on having an account here
+-   [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) application relies on having an account here
+-   [Cloudinary](https://cloudinary.com/) application relies on having an account here
+
+### Local Deployment
+
+Following are the directions to deploy the application locally:
+
+1.  Go to application's github [repository](https://github.com/yetnetbehailu/Skincare-confessions), press the "code" button and download the zip of the repository.
+
+    Alternatively clone the repository using below line in your terminal:
+
+        git clone https://github.com/yetnetbehailu/Skincare-confessions.git
+
+2.  Access the folder in your terminal window and install the required modules for the application using command:
+        python -m pip -r requirements.txt
+
+3.  Open MongoDB in the online browser & construct a database called "SkincareDB".
+
+    This database will contain following collections:
+    ![SkincareDB-collections](skincare_confessions/static/img/skincaredb-collections.png)
+
+4.  Create a file containing your secret environmental variables not to be displayed or pushed to public repositery named `env.py` at the root level of the application. Containing following information
+
+    ```
+    import os
+
+    os.environ["HOSTNAME"] = "0.0.0.0"
+    os.environ["PORT"] = "5000"
+    os.environ["SECRET_KEY"] = "YOUR_SECRET_KEY"
+    os.environ["MONGO_URI"] = "YOUR_MONGODB_URI"
+    os.environ["CLOUDINARY_URL"]= "YOUR_CLOUDINARY_URL"
+    ```
+
+   **Note**<br> 
+   You need to update following `SECRET_KEY` with your own secret key, `MONGO_URI` and `CLOUDINARY_URL` variables with those provided by those applications.
+
+5.  The application can now be run locally. In your terminal after typing command `python3 run app.py`. The application will be available in your browser at the address `http://localhost:5000`.
+
+### Heroku Deployment 
+
+Steps to deploy to heroku host:
+
+1. Create a Heroku account and login to construct a new app.
+
+2. Ensure the Procfile and requirements.txt files exist are present in your local repository.
+
+    Procfile should contain following line:
+
+    ```
+    web: python app.py
+    ```
+
+    To ensure requirements.txt exists and is up to date, use:
+
+    ```
+    pip3 freeze --local > requirements.txt
+    ```
+
+3. Add heroku as a remote for your git repository by getting the heroku git URL for your application in its settings, and typing the following command:
+
+    ```
+    git remote add heroku https://git.heroku.com/your-heroku-git-url
+    ```
+
+4. Push application to heroku with using following command:
+
+    ```
+    git push heroku master
+    ```
+
+5. Enter following line in terminal to prepare the application for launch once it is deployed
+
+    ```
+    heroku ps:scale web=5
+    ```
+
+6. In the heroku app, go to settings, reveal  config vars and enter following variables:
+
+| Variable       | Value               |
+| -------------- | ------------------- |
+| HOSTNAME       | 0.0.0.0             |
+| PORT           | 5000                |
+| SECRET_KEY     | YOUR_SECRET_KEY     |
+| MONGO_URI      | YOUR_MONGO_URI      |
+| CLOUDINARY_URL | YOUR_CLOUDINARY_URL |
+
+
+Ensure to enter your own `SECRET_KEY`, `MONGO_URI` and `CLOUDINARY_URL`variables.
+
+1. Go to the deploy tab of the application, and click "Deploy Branch" under the manual deploy section.
+
+2. Your application is now deployed to heroku and can be accessed by pressing the "Open App" button.
+
 
