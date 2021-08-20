@@ -1,8 +1,8 @@
 <!--Review card-->
 <div class="col-sm-12 col-md-4 col-lg-3 d-grid mt-3 mb-2">
     <div class="card">
-    <a class="single-review-link" href="{{url_for('individual_view', review_id=entry._id)}}">
-        <h5 class="card-title">{{entry.brand_name|capitalize}}</h5>
+    <a class="single-review-link" href="{{url_for('individual_view', review_id=entry._id)}}" aria-label="Link to view single review">
+        <h2 class="card-title">{{entry.brand_name|capitalize}}</h2>
          <!-- Category name-->
         <div class="category-content">
             <p class="category-name">Category: {{entry.category_name|capitalize}}</p>
@@ -10,10 +10,12 @@
             <div class="fave-content">
                 <form action="{{url_for('update_favorites',review_id=review_id,is_fave=is_fave)}}" method="POST">
                 {% if user_id in entry.faved_by %}
-                <input type="checkbox" id="{{ entry._id }}" class="favorite" {{'checked'}}>
+                <label for="{{ entry._id }}">favorite
+                <input type="checkbox" id="{{ entry._id }}" class="favorite" {{'checked'}}></label>
                 <span class="heart-icon"></span>
                 {% else %}
-                <input type="checkbox" id="{{ entry._id }}" class="favorite" >
+                <label for="{{ entry._id }}">Unfavorite
+                <input type="checkbox" id="{{ entry._id }}" class="favorite" ></label>
                 <span class="heart-icon"></span>
                 {% endif %}
                 </form>

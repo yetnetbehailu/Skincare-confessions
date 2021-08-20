@@ -32,6 +32,234 @@
 
 - Another situation causing trouble was an indentation slip causing the default img on edit form not to update. Once formatted correctly the default img which had been entered could be altered & the route logic retrieved accurately.
 
+### Lighthouse performance
+Following findings were made during lighthouse performance testing;
+
+**Accessibility**
+
+<strong>Home Page</strong>
+
+ ➤ Aria-label was missing on the burger menu button. For accessibility purposes to enhance the experience for users of assistive technology this has been corrected.
+
+ ➤ Heading elements altered to display in sequentially-descending order. Providing proper semantic structure making it easier Properly ordered headings that do not skip levels convey the semantic structure of the page, making navigation easier when depending on assistive technologies.
+
+ ➤ Aria-label added to links where link text would not be appropriate, to distinguish and improve focus on the navigation experience for users depending on assistive technologies.
+
+ ➤ Form element containing the heart icon favorite checkbox was missing the associated labels meant for improving accessibility for users depending on assistive technology.
+
+Before status result was at 70% after alteration Accessibility improved to 100%.
+
+<strong>About Page</strong>
+
+➤ Heading elements are not in a sequentially-descending order, reason being to achieve a certain layout. Unable to adjust the heading sizing using css, therefore will have to mend in future application.
+
+Accessibility status result 98%
+
+<strong>Browse reviews Page</strong>
+
+Accessibility status result 100%
+
+<strong>My reviews Page</strong>
+
+Accessibility status result 100%
+
+<strong>Add reviews Page</strong>
+
+➤ The Skincare category drop down menu didn't have a sufficient contrast ratio between background and foreground color.
+
+➤ File field & star rating field elements do not have associated labels. For future implementation find a way to implement aria-label onto jinja generated template.
+
+➤ Star rating ID values seem to be getting mixed up & unidentifiable because it seems to have very similar instances. Leading to issues where its being overlooked by assistive technologies. 
+
+Before status result was at 81% after alteration Accessibility improved to 84%.
+
+<strong>Login Page</strong>
+
+Accessibility status result 100%
+
+<strong>Register Page</strong>
+
+Accessibility status result 100%
+
+<strong>Individual view Page</strong>
+
+Status result 100%
+
+<strong>Edit review Page</strong>
+
+➤ File field & star rating field elements do not have associated labels. For future implementation find a way to implement aria-label onto jinja generated template.
+
+➤ Star rating ID values seem to be getting mixed up & unidentifiable because it seems to have very similar instances. Leading to issues where its being overlooked by assistive technologies. 
+
+Status result 84%
+
+<strong>Browse reviews Page</strong>
+
+Status result 100%
+
+**SEO**
+
+ ➤ The meta name="description" element which provides a summary of an application page content, when added can increase search traffic to application & has therefor been added.
+
+Before status result was at 92% after alteration SEO improved to 100%.
+
+<strong>About Page</strong>
+
+➤ Footer social media links appears to be inaccurate. Need to be large enough (48x48px), and have enough space around.
+
+Status result at 95%.
+
+<strong>Browse reviews Page</strong>
+
+➤ I had to reform my active pagination link so that Google search engine could easily crawl, in other words follow my link. For this I had to add the href attr with a resolvable URL.
+
+Before status result was at 92% after alteration SEO improved to 100%.
+
+<strong>My reviews Page</strong>
+
+➤ I had to reform my active pagination link so that Google search engine could easily crawl, in other words follow my link. For this I had to add the href attr with a resolvable URL.
+
+Before status result was at 92% after alteration SEO improved to 100%.
+
+<strong>Add reviews Page</strong>
+
+➤ Star rating radio field options appears to be inaccurate. Need to be large enough (48x48px), and have enough space around to easily enable click.
+
+Status result at 96%.
+
+<strong>Login Page</strong>
+
+➤ Footer social media links appears to be inaccurate. Need to be large enough (48x48px), and have enough space around.
+
+Status result at 95%.
+
+<strong>Register Page</strong>
+
+Status result at 100%.
+
+<strong>Individual view Page</strong>
+
+Status result 100%
+
+<strong>Edit review Page</strong>
+
+➤ Footer social media links appears to be inaccurate. Need to be large enough (48x48px), and have enough space around.
+
+Status result 96%
+
+<strong>Search review Page</strong>
+
+➤ Footer social media links appears to be inaccurate. Need to be large enough (48x48px), and have enough space around.
+
+Status result 94%
+
+**Best practices**
+
+ ➤ To not expose the application to malicious security attacks and performance issues when linking to a page on another site using the target="_blank" attribute, rel="no opener" has been added.
+
+ ➤ Images displayed with incorrect aspect ratio, is an issue yet to be resolved. When explicit width & height is set it appears that it can disturbe (the natural aspect ratio). Which in turn may have the rendered image look distorted.
+
+Before status result was at 63% after alteration Best practices improved to 87%.
+
+<strong>About Page</strong>
+
+Status result 100%
+
+<strong>Browse reviews Page</strong>
+
+ ➤ Images displayed with incorrect aspect ratio, is an issue yet to be resolved. When explicit width & height is set it appears that it can disturb (the natural aspect ratio). Which in turn may have the rendered image look distorted.
+
+Status result 93%
+
+<strong>My reviews Page</strong>
+
+ ➤ Images displayed with incorrect aspect ratio, is an issue yet to be resolved. When explicit width & height is set it appears that it can disturb (the natural aspect ratio). Which in turn may have the rendered image look distorted.
+
+Status result 93%
+
+<strong>Add reviews Page</strong>
+
+Status result 100%
+
+<strong>Login Page</strong>
+
+ ➤ Images displayed with incorrect aspect ratio, is an issue yet to be resolved. When explicit width & height is set it appears that it can disturb (the natural aspect ratio). Which in turn may have the rendered image look distorted.
+
+Status result 93%
+
+<strong>Register Page</strong>
+
+ ➤ Images displayed with incorrect aspect ratio, is an issue yet to be resolved. When explicit width & height is set it appears that it can disturb (the natural aspect ratio). Which in turn may have the rendered image look distorted.
+
+Status result 93%
+
+<strong>Individual view Page</strong>
+
+ ➤ Images displayed with incorrect aspect ratio, is an issue yet to be resolved. When explicit width & height is set it appears that it can disturb (the natural aspect ratio). Which in turn may have the rendered image look distorted.
+
+Status result 93%
+
+<strong>Edit review Page</strong>
+
+Status result 100%
+
+<strong>Search review Page</strong>
+
+Status result 100%
+
+**Performance**
+
+ ➤ Implement explicit width and height to image elements.
+
+Before status result was at 53% after alteration Performance improved to 61%
+
+<strong>About Page</strong>
+
+➤ Implement explicit width and height to image elements.
+
+Before status result was at 69% after alteration Performance improved to 89%
+
+<strong>Browse reviews Page</strong>
+
+Status result 67%
+
+<strong>My reviews Page</strong>
+
+Status result 50%
+
+<strong>Add reviews Page</strong>
+
+Status result 90%
+
+<strong>Login Page</strong>
+
+➤ Implement explicit width and height to image element.
+
+Before status result was at 87% after alteration Performance remain at 87%
+
+<strong>Register Page</strong>
+
+Status result 78%
+
+<strong>Individual view Page</strong>
+
+➤ Implement explicit width and height to image element.
+
+Before status result was at 70% after alteration Performance improved to 76%
+
+<strong>Edit review Page</strong>
+
+Status result 89%
+
+<strong>Search review Page</strong>
+
+Status result 82%
+
+> **Note:**
+> For future reference common elements that could be improved to enhance site performance are shown in the image below;
+
+![](../app_test_imgs/performance.png)
+
 ### Manual testing
  
 Following elements were tested to ensure web application functioning accurately.

@@ -283,16 +283,19 @@ body {
     height: 2rem;
     border-radius: 5px;
     margin: 0px 3px;
+    width: 82px;
 }
 
 .sidebar-logo {
     height: 3rem;
     border-radius: 5px;
     margin: 0px 3px;
+    width: 118px;
 }
 
 .site-logo {
     height: 64px;
+    width: 10rem;
 }
 /* ---------------------------------------------------
     Hover Effects
@@ -393,6 +396,11 @@ footer {
 .footer-text {
     cursor: default;
 }
+
+.media-links {
+    display: block;
+    width: 65%;
+}
 /* ---------------------------------------------------
     Register - Login pages styling
 ----------------------------------------------------- */
@@ -466,6 +474,7 @@ footer {
         -ms-flex-pack: center;
             justify-content: center;
     margin: 20px auto 0;
+    width: 14rem;
 }
 
 .loginbtn {
@@ -598,7 +607,7 @@ footer {
     height: 2.5rem;
     margin-bottom: 13px;
     border: 3px dashed;
-    color: #7f7f7f;
+    color: #585757;
     padding: 5px;
 }
 
@@ -993,6 +1002,7 @@ input[type='checkbox'].favorite{
 .placeholder-img {
     width: 90.4%;
     border-radius: 8px;
+    height: 13rem;
 }
 
 .card-image {
@@ -1005,6 +1015,7 @@ input[type='checkbox'].favorite{
 }
 .review-img{
     width: 85%;
+    height: 13rem;
 }
 
 .card-title {
@@ -1158,7 +1169,7 @@ input[type='checkbox'].favorite{
 
 .fa-envelope {
     position: relative;
-    left: 22rem;
+    left: 11rem;
     top: 2.2rem;
 }
 
@@ -1281,6 +1292,7 @@ input[type='checkbox'].favorite{
 
 .hero-gif {
     width: 100%;
+    height: 170px;
 }
 
 .home-content {
@@ -1448,8 +1460,28 @@ input[type='checkbox'].favorite{
     .alert-dismissible .btn-close {
         padding: 10% 4% 2% 0%;
     }
+    
     .alert {
         padding: 16px 27px 16px 5px;
+    }
+}
+
+@media (min-width: 340px) and (max-width:359px) {
+    .fa-envelope {
+        left: 12rem;
+    }
+}
+
+
+@media (min-width: 360px) and (max-width: 390px) {
+    .fa-envelope {
+        left: 13rem;
+    }
+}
+
+@media (min-width: 390px) and (max-width: 414px) {
+    .fa-envelope {
+        left: 15rem;
     }
 }
 
@@ -1465,6 +1497,10 @@ input[type='checkbox'].favorite{
 
     .footer-content{
         font-size: 100%;
+    }
+
+    .fa-envelope {
+        left: 22rem;
     }
 }
 
@@ -1621,6 +1657,10 @@ input[type='checkbox'].favorite{
         display: flex;
         margin: auto;
     }
+
+    .fa-envelope {
+        left: 25rem;
+    }
 }
 
 @media (min-width: 1200px){
@@ -1638,6 +1678,10 @@ input[type='checkbox'].favorite{
 
     .hero-gif {
         height: 36rem;
+    }
+
+    .fa-envelope {
+        left: 30rem;
     }
 }
 

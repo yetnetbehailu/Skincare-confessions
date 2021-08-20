@@ -19,7 +19,7 @@
             <ul class="pagination">
                     {% for page in pages %} 
                     {% if page == current_page %}
-                    <li class="active"><a class="pagination-links current-page">{{ page }}</a></li>
+                    <li class="active"><a href="{{ url_for('browse_reviews') }}" class="pagination-links current-page">{{ page }}</a></li>
                     {% else %}
                     <li class="optional-page">
                     <a class="pagination-links" href="{{ url_for('browse_reviews', current_page=page) }}">{{ page }}</a>
