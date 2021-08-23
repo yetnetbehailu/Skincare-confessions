@@ -6,16 +6,15 @@
          <!-- Category name-->
         <div class="category-content">
             <p class="category-name">Category: {{entry.category_name|capitalize}}</p>
+        <!-- favorite heart icon -->
         {% if session.user %}
             <div class="fave-content">
                 <form action="{{url_for('update_favorites',review_id=review_id,is_fave=is_fave)}}" method="POST">
                 {% if user_id in entry.faved_by %}
-                <label for="{{ entry._id }}">favorite
-                <input type="checkbox" id="{{ entry._id }}" class="favorite" {{'checked'}}></label>
+                <input type="checkbox" id="{{ entry._id }}" class="favorite" aria-label="favorite" {{'checked'}}>
                 <span class="heart-icon"></span>
                 {% else %}
-                <label for="{{ entry._id }}">Unfavorite
-                <input type="checkbox" id="{{ entry._id }}" class="favorite" ></label>
+                <input type="checkbox" id="{{ entry._id }}" class="favorite" aria-label="Unfavorite">
                 <span class="heart-icon"></span>
                 {% endif %}
                 </form>
