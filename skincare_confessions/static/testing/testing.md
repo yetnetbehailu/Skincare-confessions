@@ -32,6 +32,8 @@
 
 - Another situation causing trouble was an indentation slip causing the default img on edit form not to update. Once formatted correctly the default img which had been entered could be altered & the route logic retrieved accurately.
 
+- An unresolved issue would be the layout of the short description on each review card. The idea was to have it display as an ellipsis with the text content wrapping two rows instead of current display wrapping one.
+
 ### Lighthouse performance
 Following findings were made during lighthouse performance testing;
 
