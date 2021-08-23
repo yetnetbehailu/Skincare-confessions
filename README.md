@@ -379,6 +379,8 @@ Hover effects has been added on button elements.
 
 * [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) - Used to detect overflow.
 
+* [Lunapic Editor](https://www2.lunapic.com/editor/) - Used to edit site logo coloring.
+
 ### Workspace, version control, repository storage & host platform
 
 * [GitHub](https://github.com/) - A cloud based version control service that stores the repository and various changes made.
@@ -495,4 +497,48 @@ Ensure to enter your own `SECRET_KEY`, `MONGO_URI` and `CLOUDINARY_URL`variables
 
 2. Your application is now deployed to heroku and can be accessed by pressing the "Open App" button.
 
+## Credits
 
+### Code 
+ Some of the code for this website was resourced from the following sources:
+
+- [Corey Schaefer](https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g) for his youtube tutorials on python & Flask, specifically for constructing the logic around login & registration forms.
+
+- [ByAnonymous](https://www.kodhus.com/kodnest/land/TmeSFPc) - The tag field js tag construction on add reviews & edit review page.
+
+- [Css tricks](https://css-tricks.com/the-checkbox-hack/) - For favorite heart icon alteration/toggle state.
+
+- [W3schools](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_switch) - For constructing the Toggle Switch on add reviews & edit review page.
+
+- [Star rating](https://www.javatpoint.com/oprweb/test.jsp?filename=jquery-star-rating1) - Contributing to the star rating logic.
+
+- [Pagination](https://github.com/ShaneMuir/Cookbook-Recipe-Manager/blob/master/main.py) - Source of inspiration for pagination logic incorporated in Browse reviews, My reviews & search reviews pages from Shane Muirhead's Cookbook project.
+
+- [Bootstrapious](https://bootstrapious.com/p/bootstrap-sidebar) -  Sidebar reconstruction source of inspiration.
+
+### Content
+
+Application text written by me, except from user review inputs.
+
+### Media
+
+Website images content sourced from 
+
+- [Google](https://www.google.com/webhp?hl=sv&sa=X&ved=0ahUKEwjpmJqYzrjvAhXGtYsKHeRtDroQPAgI) 
+    -  The confessions part of site logo
+    - Gif on home page
+    - Women-talking-over-coffee Login & register page image
+    - Review placeholder image
+    - Vector images on About us page 
+    - Stick man images on 404 page
+
+- [Font Awsome](https://fontawesome.com/start) - Source for icons
+
+- [Amp What](https://www.amp-what.com/unicode/search/search) - Magnifying glass & close x mark icon
+
+### Acknowledgments
+
+I would like to thank my amazing mentor @Seun Owonikoko for her support & guidance. Code Institute tutors, fellow students, family & friends who have helped me throughout the development of this project. Special thanks to my study buddies/rubber ducks @Simon, @Benkav & @Seanlead.
+
+---
+Project created for educational use only.
