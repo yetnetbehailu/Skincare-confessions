@@ -140,8 +140,8 @@ def my_reviews():
                                    })['username']
         add_review_form = AddReviewForm()
         # Finds & counts user personal review entries
-        my_total_reviews = reviews.find({
-            "added_by": session["user"].lower()}).count()
+        my_total_reviews = reviews.count_documents({
+            "added_by": session["user"].lower()})
         card_per_page = 12
         current_page = int(request.args.get('current_page', 1))
         pages = range(1, int(math.ceil(my_total_reviews / card_per_page)) + 1)
@@ -172,7 +172,7 @@ def browse_reviews():
     Total amount of published reviews is counted for, arranged latest to oldest
     post
     """
-    total = reviews.count()
+    total = reviews.count_documents({})
     card_per_page = 12
     current_page = int(request.args.get('current_page', 1))
     pages = range(1, int(math.ceil(total / card_per_page)) + 1)
@@ -378,8 +378,8 @@ def search_reviews():
     # Retrive form input/query from field with name attr value browse
     browse = request.args.get('browse')
     # Finds text search query on string content incl. array with string value
-    search_result = reviews.find(
-        {'$text': {'$search': str(browse)}}).count()
+    search_result = reviews.count_documents(
+        {'$text': {'$search': str(browse)}})
     # Sorts latest entry first skipping the given number of documents in the
     # query
     entries = list(reviews.find(
