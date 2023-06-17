@@ -1,7 +1,10 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 <h1 align="center">Skincare confessions</h1>
 
-![Livesite view](skincare_confessions/static/img/mockup-view.png)
+![Mockup view](skincare_confessions/static/img/mockup-view.png)
+
+> **Note:**<br>
+>Heroku hosting has been substituted with Render hosting, to view the live site on Render click [here](https://skincare-reviews-app.onrender.com/)
 
 ### Overview
 _The aim of this project is to combine my current knowledge in HTML, CSS and JavaScript with what I've been able to learn from the back end development process of making an application. Main purpose of this project is to utilize Python programming language integrated with MongoDB and Flask framework, to create a database for storing and retrieving data efficiently. As such I have decided to create the following skincare review site, which allow users to create, read, update and delete (CRUD) reviews/data.
